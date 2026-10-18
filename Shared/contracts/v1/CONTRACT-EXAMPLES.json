@@ -1,0 +1,1228 @@
+{
+  "purpose": "isolated contract examples only; excluded from every runtime release",
+  "two_endpoint_result": {
+    "result_id": "probe-two-stocks",
+    "contract_version": "1.0.0",
+    "result_context": {
+      "context": {
+        "context_id": "test-context",
+        "contract_version": "1.0.0",
+        "release_id": "test-release",
+        "scope_token": "test-scope",
+        "view_id": "complaints",
+        "permission_revision": "test-policy",
+        "capabilities": [
+          "sources"
+        ],
+        "timezone": "Australia/Melbourne",
+        "evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "evidence_boundary": "exclusive_stock_endpoint",
+        "origin_population_reference": null,
+        "analysis_mode": "reconstructed",
+        "analysis_as_of": null,
+        "source_set_version": "test-inputs",
+        "analysis_set_version": "test-outputs",
+        "taxonomy_version": null,
+        "supported_definitions": [],
+        "supported_response_dimensions": [],
+        "resolved_at": "2026-10-14T09:00:00+11:00",
+        "expires_at": "2026-10-14T09:05:00+11:00",
+        "synthetic_demo": true
+      },
+      "predicate": {
+        "population_id": "probe-pop-september",
+        "population_version": "probe-v1",
+        "population_sha256": "840781a84576367bd4520d81a6bce3d2449f7f984cff8bbbdb8e9914b7ad09b4",
+        "entity_unit": "case_id",
+        "definition": {
+          "registry_id": "runtime-measures-0.2.0",
+          "measure_id": "cases.open",
+          "definition_version": "0.2.0"
+        },
+        "activity_start": "2025-10-01T00:00:00+10:00",
+        "activity_end_exclusive": "2026-10-01T00:00:00+10:00",
+        "receipt_basis": "original_institution",
+        "receipt_cohort_start": null,
+        "receipt_cohort_end_exclusive": null,
+        "stock_endpoint": "2026-10-01T00:00:00+10:00",
+        "evidence_cutoff": "2026-10-01T00:00:00+10:00",
+        "knowledge_rule": "stock_at_endpoint",
+        "taxonomy_level": null,
+        "taxonomy_version": null,
+        "issue_ids": [],
+        "selection_operator": "none",
+        "issue_population_mode": "active_at_endpoint",
+        "case_ids": [],
+        "afca_matter_ids": [],
+        "case_statuses": [
+          "open"
+        ],
+        "age_bands": [],
+        "membership_states": [
+          "included"
+        ],
+        "combination_projection": "not_applicable",
+        "extension_parameters": {}
+      },
+      "versions": {
+        "source_set_version": "probe-input-september",
+        "analysis_set_version": "probe-analysis-september",
+        "taxonomy_version": null,
+        "algorithm_version": "probe-calculation-v1"
+      },
+      "computed_at": "2026-10-14T09:00:00+11:00",
+      "published_at": "2026-10-14T09:00:00+11:00",
+      "calculation_id": "probe-calc-series",
+      "input_set_sha256": "249d1f9cb846410c407c6569aa28ba7ac9f8cd6d95685ba6321a627fa0997db5"
+    },
+    "computation_state": "ready",
+    "shape": "series",
+    "cells": [
+      {
+        "key": "march",
+        "label": "Contract probe march",
+        "point": {
+          "value": 2,
+          "state": "known",
+          "unit": "cases",
+          "reason": null,
+          "contributor_set_reference": "probe-set-march",
+          "included_count": 2,
+          "excluded_count": 0,
+          "uncertain_count": 0,
+          "coverage_ids": [],
+          "calculation_reference": "probe-calc-march"
+        },
+        "distribution": null,
+        "contributor_set_id": "probe-set-march",
+        "population_id": "probe-pop-march",
+        "population": {
+          "population_id": "probe-pop-march",
+          "binding_version": "probe-v1",
+          "predicate": {
+            "population_id": "probe-pop-march",
+            "population_version": "probe-v1",
+            "population_sha256": "4c30dad27189fa203176d124b2bb0233e53f1fc49687bcffe11b1a1c91c34875",
+            "entity_unit": "case_id",
+            "definition": {
+              "registry_id": "runtime-measures-0.2.0",
+              "measure_id": "cases.open",
+              "definition_version": "0.2.0"
+            },
+            "activity_start": "2025-10-01T00:00:00+10:00",
+            "activity_end_exclusive": "2026-04-01T00:00:00+11:00",
+            "receipt_basis": "original_institution",
+            "receipt_cohort_start": null,
+            "receipt_cohort_end_exclusive": null,
+            "stock_endpoint": "2026-04-01T00:00:00+11:00",
+            "evidence_cutoff": "2026-04-01T00:00:00+11:00",
+            "knowledge_rule": "stock_at_endpoint",
+            "taxonomy_level": null,
+            "taxonomy_version": null,
+            "issue_ids": [],
+            "selection_operator": "none",
+            "issue_population_mode": "active_at_endpoint",
+            "case_ids": [],
+            "afca_matter_ids": [],
+            "case_statuses": [
+              "open"
+            ],
+            "age_bands": [],
+            "membership_states": [
+              "included"
+            ],
+            "combination_projection": "not_applicable",
+            "extension_parameters": {}
+          },
+          "selectors": [],
+          "predicate_sha256": "4c30dad27189fa203176d124b2bb0233e53f1fc49687bcffe11b1a1c91c34875",
+          "effective_evidence_as_of": "2026-04-01T00:00:00+11:00",
+          "evidence_boundary": "exclusive_stock_endpoint",
+          "versions": {
+            "source_set_version": "probe-input-march",
+            "analysis_set_version": "probe-analysis-march",
+            "taxonomy_version": null,
+            "algorithm_version": "probe-calculation-v1"
+          },
+          "input_set_sha256": "fa75b5c25fc089798cf96479474da0ebe84c6cb743a1f1010bb05fd8756275b7",
+          "assessment_id": "probe-assessment-march",
+          "assessed_evidence_as_of": "2026-04-01T00:00:00+11:00",
+          "analysis_mode": "reconstructed",
+          "analysis_as_of": null,
+          "computed_at": "2026-10-14T09:00:00+11:00",
+          "published_at": "2026-10-14T09:00:00+11:00"
+        },
+        "coverage": {
+          "coverage_ids": [],
+          "eligible_count": 2,
+          "included_count": 2,
+          "excluded_count": 0,
+          "uncertain_count": 0,
+          "missing_count": 0,
+          "assessment_state": "complete_for_declared_release",
+          "limitations": [],
+          "entity_unit": "case_id",
+          "dimension": "eligibility"
+        },
+        "additional_coverage": [],
+        "interval_start": null,
+        "interval_end_exclusive": "2026-04-01T00:00:00+11:00",
+        "effective_end": "2026-04-01T00:00:00+11:00",
+        "partial_bucket": false
+      },
+      {
+        "key": "september",
+        "label": "Contract probe september",
+        "point": {
+          "value": 3,
+          "state": "known",
+          "unit": "cases",
+          "reason": null,
+          "contributor_set_reference": "probe-set-september",
+          "included_count": 3,
+          "excluded_count": 0,
+          "uncertain_count": 0,
+          "coverage_ids": [],
+          "calculation_reference": "probe-calc-september"
+        },
+        "distribution": null,
+        "contributor_set_id": "probe-set-september",
+        "population_id": "probe-pop-september",
+        "population": {
+          "population_id": "probe-pop-september",
+          "binding_version": "probe-v1",
+          "predicate": {
+            "population_id": "probe-pop-september",
+            "population_version": "probe-v1",
+            "population_sha256": "840781a84576367bd4520d81a6bce3d2449f7f984cff8bbbdb8e9914b7ad09b4",
+            "entity_unit": "case_id",
+            "definition": {
+              "registry_id": "runtime-measures-0.2.0",
+              "measure_id": "cases.open",
+              "definition_version": "0.2.0"
+            },
+            "activity_start": "2025-10-01T00:00:00+10:00",
+            "activity_end_exclusive": "2026-10-01T00:00:00+10:00",
+            "receipt_basis": "original_institution",
+            "receipt_cohort_start": null,
+            "receipt_cohort_end_exclusive": null,
+            "stock_endpoint": "2026-10-01T00:00:00+10:00",
+            "evidence_cutoff": "2026-10-01T00:00:00+10:00",
+            "knowledge_rule": "stock_at_endpoint",
+            "taxonomy_level": null,
+            "taxonomy_version": null,
+            "issue_ids": [],
+            "selection_operator": "none",
+            "issue_population_mode": "active_at_endpoint",
+            "case_ids": [],
+            "afca_matter_ids": [],
+            "case_statuses": [
+              "open"
+            ],
+            "age_bands": [],
+            "membership_states": [
+              "included"
+            ],
+            "combination_projection": "not_applicable",
+            "extension_parameters": {}
+          },
+          "selectors": [],
+          "predicate_sha256": "840781a84576367bd4520d81a6bce3d2449f7f984cff8bbbdb8e9914b7ad09b4",
+          "effective_evidence_as_of": "2026-10-01T00:00:00+10:00",
+          "evidence_boundary": "exclusive_stock_endpoint",
+          "versions": {
+            "source_set_version": "probe-input-september",
+            "analysis_set_version": "probe-analysis-september",
+            "taxonomy_version": null,
+            "algorithm_version": "probe-calculation-v1"
+          },
+          "input_set_sha256": "249d1f9cb846410c407c6569aa28ba7ac9f8cd6d95685ba6321a627fa0997db5",
+          "assessment_id": "probe-assessment-september",
+          "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+          "analysis_mode": "reconstructed",
+          "analysis_as_of": null,
+          "computed_at": "2026-10-14T09:00:00+11:00",
+          "published_at": "2026-10-14T09:00:00+11:00"
+        },
+        "coverage": {
+          "coverage_ids": [],
+          "eligible_count": 3,
+          "included_count": 3,
+          "excluded_count": 0,
+          "uncertain_count": 0,
+          "missing_count": 0,
+          "assessment_state": "complete_for_declared_release",
+          "limitations": [],
+          "entity_unit": "case_id",
+          "dimension": "eligibility"
+        },
+        "additional_coverage": [],
+        "interval_start": null,
+        "interval_end_exclusive": "2026-10-01T00:00:00+10:00",
+        "effective_end": "2026-10-01T00:00:00+10:00",
+        "partial_bucket": false
+      }
+    ],
+    "legacy_result_reference": null,
+    "synthetic_demo": true
+  },
+  "contributor_page": {
+    "result_id": "probe-two-stocks",
+    "cell_key": "march",
+    "population_id": "probe-pop-march",
+    "contributor_set_id": "probe-set-march",
+    "predicate_sha256": "4c30dad27189fa203176d124b2bb0233e53f1fc49687bcffe11b1a1c91c34875",
+    "population": {
+      "population_id": "probe-pop-march",
+      "binding_version": "probe-v1",
+      "predicate": {
+        "population_id": "probe-pop-march",
+        "population_version": "probe-v1",
+        "population_sha256": "4c30dad27189fa203176d124b2bb0233e53f1fc49687bcffe11b1a1c91c34875",
+        "entity_unit": "case_id",
+        "definition": {
+          "registry_id": "runtime-measures-0.2.0",
+          "measure_id": "cases.open",
+          "definition_version": "0.2.0"
+        },
+        "activity_start": "2025-10-01T00:00:00+10:00",
+        "activity_end_exclusive": "2026-04-01T00:00:00+11:00",
+        "receipt_basis": "original_institution",
+        "receipt_cohort_start": null,
+        "receipt_cohort_end_exclusive": null,
+        "stock_endpoint": "2026-04-01T00:00:00+11:00",
+        "evidence_cutoff": "2026-04-01T00:00:00+11:00",
+        "knowledge_rule": "stock_at_endpoint",
+        "taxonomy_level": null,
+        "taxonomy_version": null,
+        "issue_ids": [],
+        "selection_operator": "none",
+        "issue_population_mode": "active_at_endpoint",
+        "case_ids": [],
+        "afca_matter_ids": [],
+        "case_statuses": [
+          "open"
+        ],
+        "age_bands": [],
+        "membership_states": [
+          "included"
+        ],
+        "combination_projection": "not_applicable",
+        "extension_parameters": {}
+      },
+      "selectors": [],
+      "predicate_sha256": "4c30dad27189fa203176d124b2bb0233e53f1fc49687bcffe11b1a1c91c34875",
+      "effective_evidence_as_of": "2026-04-01T00:00:00+11:00",
+      "evidence_boundary": "exclusive_stock_endpoint",
+      "versions": {
+        "source_set_version": "probe-input-march",
+        "analysis_set_version": "probe-analysis-march",
+        "taxonomy_version": null,
+        "algorithm_version": "probe-calculation-v1"
+      },
+      "input_set_sha256": "fa75b5c25fc089798cf96479474da0ebe84c6cb743a1f1010bb05fd8756275b7",
+      "assessment_id": "probe-assessment-march",
+      "assessed_evidence_as_of": "2026-04-01T00:00:00+11:00",
+      "analysis_mode": "reconstructed",
+      "analysis_as_of": null,
+      "computed_at": "2026-10-14T09:00:00+11:00",
+      "published_at": "2026-10-14T09:00:00+11:00"
+    },
+    "total_count": 2,
+    "items": [
+      {
+        "entity_id": "probe-case-1",
+        "case_ids": [
+          "probe-case-1"
+        ],
+        "source_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "inclusion_reason": "Isolated specimen",
+        "observation_reference": null
+      },
+      {
+        "entity_id": "probe-case-2",
+        "case_ids": [
+          "probe-case-2"
+        ],
+        "source_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "inclusion_reason": "Isolated specimen",
+        "observation_reference": null
+      }
+    ],
+    "next_cursor": null
+  },
+  "mx_partition_cells": [
+    {
+      "key": "on_time",
+      "label": "Contract probe on_time",
+      "point": {
+        "value": 1,
+        "state": "known",
+        "unit": "commitments",
+        "reason": null,
+        "contributor_set_reference": "probe-set-on_time",
+        "included_count": 1,
+        "excluded_count": 0,
+        "uncertain_count": 0,
+        "coverage_ids": [],
+        "calculation_reference": "probe-calc-on_time"
+      },
+      "distribution": null,
+      "contributor_set_id": "probe-set-on_time",
+      "population_id": "probe-pop-on_time",
+      "population": {
+        "population_id": "probe-pop-on_time",
+        "binding_version": "probe-v1",
+        "predicate": {
+          "population_id": "probe-pop-on_time",
+          "population_version": "probe-v1",
+          "population_sha256": "ee1820fea3014dbefdbceb095eff24fa368cfd0c8da51e36323e43c2e34b3630",
+          "entity_unit": "commitment_id",
+          "definition": {
+            "registry_id": "shared-measures-1.0.0",
+            "measure_id": "mx.commitments.follow_through",
+            "definition_version": "1.0.0"
+          },
+          "activity_start": "2025-10-01T00:00:00+10:00",
+          "activity_end_exclusive": "2026-10-01T00:00:00+10:00",
+          "receipt_basis": "original_institution",
+          "receipt_cohort_start": null,
+          "receipt_cohort_end_exclusive": null,
+          "stock_endpoint": null,
+          "evidence_cutoff": "2026-10-01T00:00:00+10:00",
+          "knowledge_rule": "flow_at_selected_cutoff",
+          "taxonomy_level": null,
+          "taxonomy_version": null,
+          "issue_ids": [],
+          "selection_operator": "none",
+          "issue_population_mode": "all_linked_to_date",
+          "case_ids": [],
+          "afca_matter_ids": [],
+          "case_statuses": [],
+          "age_bands": [],
+          "membership_states": [
+            "included"
+          ],
+          "combination_projection": "not_applicable",
+          "extension_parameters": {}
+        },
+        "selectors": [
+          {
+            "kind": "commitment_outcome",
+            "outcome": "on_time",
+            "due_basis": "original"
+          }
+        ],
+        "predicate_sha256": "ee1820fea3014dbefdbceb095eff24fa368cfd0c8da51e36323e43c2e34b3630",
+        "effective_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "evidence_boundary": "inclusive_cutoff",
+        "versions": {
+          "source_set_version": "probe-input-on_time",
+          "analysis_set_version": "probe-analysis-on_time",
+          "taxonomy_version": null,
+          "algorithm_version": "probe-calculation-v1"
+        },
+        "input_set_sha256": "aaa3c05a07c62dcae922b6dacb514fae205ee35e2befd440deda9c07efcc7609",
+        "assessment_id": "probe-assessment-on_time",
+        "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "analysis_mode": "reconstructed",
+        "analysis_as_of": null,
+        "computed_at": "2026-10-14T09:00:00+11:00",
+        "published_at": "2026-10-14T09:00:00+11:00"
+      },
+      "coverage": {
+        "coverage_ids": [],
+        "eligible_count": 1,
+        "included_count": 1,
+        "excluded_count": 0,
+        "uncertain_count": 0,
+        "missing_count": 0,
+        "assessment_state": "complete_for_declared_release",
+        "limitations": [],
+        "entity_unit": "commitment_id",
+        "dimension": "eligibility"
+      },
+      "additional_coverage": [],
+      "interval_start": null,
+      "interval_end_exclusive": "2026-10-01T00:00:00+10:00",
+      "effective_end": "2026-10-01T00:00:00+10:00",
+      "partial_bucket": false
+    },
+    {
+      "key": "unknown",
+      "label": "Contract probe unknown",
+      "point": {
+        "value": 1,
+        "state": "known",
+        "unit": "commitments",
+        "reason": null,
+        "contributor_set_reference": "probe-set-unknown",
+        "included_count": 1,
+        "excluded_count": 0,
+        "uncertain_count": 0,
+        "coverage_ids": [],
+        "calculation_reference": "probe-calc-unknown"
+      },
+      "distribution": null,
+      "contributor_set_id": "probe-set-unknown",
+      "population_id": "probe-pop-unknown",
+      "population": {
+        "population_id": "probe-pop-unknown",
+        "binding_version": "probe-v1",
+        "predicate": {
+          "population_id": "probe-pop-unknown",
+          "population_version": "probe-v1",
+          "population_sha256": "fe50ffda9f04294e775716a39dc01c89f44145cc3c93037a7dc6dfab92e2ef29",
+          "entity_unit": "commitment_id",
+          "definition": {
+            "registry_id": "shared-measures-1.0.0",
+            "measure_id": "mx.commitments.follow_through",
+            "definition_version": "1.0.0"
+          },
+          "activity_start": "2025-10-01T00:00:00+10:00",
+          "activity_end_exclusive": "2026-10-01T00:00:00+10:00",
+          "receipt_basis": "original_institution",
+          "receipt_cohort_start": null,
+          "receipt_cohort_end_exclusive": null,
+          "stock_endpoint": null,
+          "evidence_cutoff": "2026-10-01T00:00:00+10:00",
+          "knowledge_rule": "flow_at_selected_cutoff",
+          "taxonomy_level": null,
+          "taxonomy_version": null,
+          "issue_ids": [],
+          "selection_operator": "none",
+          "issue_population_mode": "all_linked_to_date",
+          "case_ids": [],
+          "afca_matter_ids": [],
+          "case_statuses": [],
+          "age_bands": [],
+          "membership_states": [
+            "included"
+          ],
+          "combination_projection": "not_applicable",
+          "extension_parameters": {}
+        },
+        "selectors": [
+          {
+            "kind": "commitment_outcome",
+            "outcome": "unknown",
+            "due_basis": "original"
+          }
+        ],
+        "predicate_sha256": "fe50ffda9f04294e775716a39dc01c89f44145cc3c93037a7dc6dfab92e2ef29",
+        "effective_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "evidence_boundary": "inclusive_cutoff",
+        "versions": {
+          "source_set_version": "probe-input-unknown",
+          "analysis_set_version": "probe-analysis-unknown",
+          "taxonomy_version": null,
+          "algorithm_version": "probe-calculation-v1"
+        },
+        "input_set_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc",
+        "assessment_id": "probe-assessment-unknown",
+        "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "analysis_mode": "reconstructed",
+        "analysis_as_of": null,
+        "computed_at": "2026-10-14T09:00:00+11:00",
+        "published_at": "2026-10-14T09:00:00+11:00"
+      },
+      "coverage": {
+        "coverage_ids": [],
+        "eligible_count": 1,
+        "included_count": 1,
+        "excluded_count": 0,
+        "uncertain_count": 0,
+        "missing_count": 0,
+        "assessment_state": "complete_for_declared_release",
+        "limitations": [],
+        "entity_unit": "commitment_id",
+        "dimension": "eligibility"
+      },
+      "additional_coverage": [],
+      "interval_start": null,
+      "interval_end_exclusive": "2026-10-01T00:00:00+10:00",
+      "effective_end": "2026-10-01T00:00:00+10:00",
+      "partial_bucket": false
+    }
+  ],
+  "response_candidates_and_supported": [
+    {
+      "kind": "member_outcome_response",
+      "common": {
+        "analysis_id": "probe-response-analysis",
+        "logical_occurrence_id": "probe-response-occurrence",
+        "version": "probe-v1",
+        "supersedes_analysis_id": null,
+        "case_ids": [
+          "probe-case"
+        ],
+        "member_reference": "probe-member",
+        "member_identity_state": "known",
+        "member_life_state": "living",
+        "problem_reference": null,
+        "problem_link_state": "uncertain",
+        "event_time": {
+          "precision": "day",
+          "date": "2026-05-31"
+        },
+        "source_bindings": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857"
+          }
+        ],
+        "supporting_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "contradictory_refs": [],
+        "evidence_state": "uncertain",
+        "attribution": "direct_words",
+        "context_id": "test-context",
+        "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "computed_at": "2026-10-14T09:00:00+11:00",
+        "published_at": "2026-10-14T09:00:00+11:00",
+        "policy": {
+          "access": {
+            "view_ids": [
+              "complaints"
+            ],
+            "classification": "standard",
+            "redaction_state": "none"
+          },
+          "entitlement_policy_id": "probe-policy",
+          "permission_revision": "probe-v1"
+        },
+        "review_state": "not_reviewed"
+      },
+      "response_relationship_id": "probe-response-candidate",
+      "response_occasion_id": "probe-response-occasion",
+      "respondent": {
+        "party_reference": "probe-member",
+        "role": "member",
+        "represented_member_reference": "probe-member",
+        "authority_state": "supported",
+        "evidence_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ]
+      },
+      "target_id": null,
+      "target_version": null,
+      "target_link_state": "uncertain",
+      "target_identity_state": "unidentified",
+      "target_link_reason": "Available statement does not establish target",
+      "dimension": "unknown",
+      "expressed_position": "disagree",
+      "stated_reason": null,
+      "supersedes_position_relationship_id": null
+    },
+    {
+      "kind": "member_outcome_response",
+      "common": {
+        "analysis_id": "probe-response-analysis",
+        "logical_occurrence_id": "probe-response-occurrence",
+        "version": "probe-v1",
+        "supersedes_analysis_id": null,
+        "case_ids": [
+          "probe-case"
+        ],
+        "member_reference": "probe-member",
+        "member_identity_state": "known",
+        "member_life_state": "living",
+        "problem_reference": null,
+        "problem_link_state": "uncertain",
+        "event_time": {
+          "precision": "day",
+          "date": "2026-05-31"
+        },
+        "source_bindings": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857"
+          }
+        ],
+        "supporting_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "contradictory_refs": [],
+        "evidence_state": "uncertain",
+        "attribution": "direct_words",
+        "context_id": "test-context",
+        "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "computed_at": "2026-10-14T09:00:00+11:00",
+        "published_at": "2026-10-14T09:00:00+11:00",
+        "policy": {
+          "access": {
+            "view_ids": [
+              "complaints"
+            ],
+            "classification": "standard",
+            "redaction_state": "none"
+          },
+          "entitlement_policy_id": "probe-policy",
+          "permission_revision": "probe-v1"
+        },
+        "review_state": "not_reviewed"
+      },
+      "response_relationship_id": "probe-response-candidate",
+      "response_occasion_id": "probe-response-occasion",
+      "respondent": {
+        "party_reference": "probe-member",
+        "role": "member",
+        "represented_member_reference": "probe-member",
+        "authority_state": "supported",
+        "evidence_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ]
+      },
+      "target_id": "probe-target",
+      "target_version": "probe-v1",
+      "target_link_state": "uncertain",
+      "target_identity_state": "identified",
+      "target_link_reason": "Available statement does not establish target",
+      "dimension": "service",
+      "expressed_position": "disagree",
+      "stated_reason": null,
+      "supersedes_position_relationship_id": null
+    },
+    {
+      "kind": "member_outcome_response",
+      "common": {
+        "analysis_id": "probe-response-analysis",
+        "logical_occurrence_id": "probe-response-occurrence",
+        "version": "probe-v1",
+        "supersedes_analysis_id": null,
+        "case_ids": [
+          "probe-case"
+        ],
+        "member_reference": "probe-member",
+        "member_identity_state": "known",
+        "member_life_state": "living",
+        "problem_reference": null,
+        "problem_link_state": "uncertain",
+        "event_time": {
+          "precision": "day",
+          "date": "2026-05-31"
+        },
+        "source_bindings": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857"
+          }
+        ],
+        "supporting_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "contradictory_refs": [],
+        "evidence_state": "supported",
+        "attribution": "direct_words",
+        "context_id": "test-context",
+        "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+        "computed_at": "2026-10-14T09:00:00+11:00",
+        "published_at": "2026-10-14T09:00:00+11:00",
+        "policy": {
+          "access": {
+            "view_ids": [
+              "complaints"
+            ],
+            "classification": "standard",
+            "redaction_state": "none"
+          },
+          "entitlement_policy_id": "probe-policy",
+          "permission_revision": "probe-v1"
+        },
+        "review_state": "not_reviewed"
+      },
+      "response_relationship_id": "probe-response-candidate",
+      "response_occasion_id": "probe-response-occasion",
+      "respondent": {
+        "party_reference": "probe-member",
+        "role": "member",
+        "represented_member_reference": "probe-member",
+        "authority_state": "supported",
+        "evidence_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ]
+      },
+      "target_id": "probe-target",
+      "target_version": "probe-v1",
+      "target_link_state": "supported",
+      "target_identity_state": "identified",
+      "target_link_reason": "Available statement does not establish target",
+      "dimension": "service",
+      "expressed_position": "disagree",
+      "stated_reason": null,
+      "supersedes_position_relationship_id": null
+    }
+  ],
+  "deadline_cohorts": [
+    {
+      "wording": "by 31 May",
+      "evidence_refs": [
+        {
+          "source_id": "test-source",
+          "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "anchor": {
+            "kind": "text",
+            "start_codepoint": 1,
+            "end_codepoint": 2
+          }
+        }
+      ],
+      "interpretation_state": "interpreted",
+      "boundary": "2026-06-01T00:00:00+10:00",
+      "boundary_kind": "exclusive_next_local_day",
+      "cohort_anchor": {
+        "precision": "day",
+        "date": "2026-05-31"
+      },
+      "timezone": "Australia/Melbourne",
+      "precision": "day",
+      "calendar_id": null,
+      "calendar_version": null,
+      "interpretation_basis": "Explicit named date resolved by context"
+    },
+    {
+      "wording": "at midnight 1 June",
+      "evidence_refs": [
+        {
+          "source_id": "test-source",
+          "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "anchor": {
+            "kind": "text",
+            "start_codepoint": 1,
+            "end_codepoint": 2
+          }
+        }
+      ],
+      "interpretation_state": "interpreted",
+      "boundary": "2026-06-01T00:00:00+10:00",
+      "boundary_kind": "inclusive_instant",
+      "cohort_anchor": {
+        "precision": "instant",
+        "instant": "2026-06-01T00:00:00+10:00"
+      },
+      "timezone": "Australia/Melbourne",
+      "precision": "instant",
+      "calendar_id": null,
+      "calendar_version": null,
+      "interpretation_basis": "Explicit named date resolved by context"
+    },
+    {
+      "wording": "soon",
+      "evidence_refs": [
+        {
+          "source_id": "test-source",
+          "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "anchor": {
+            "kind": "text",
+            "start_codepoint": 1,
+            "end_codepoint": 2
+          }
+        }
+      ],
+      "interpretation_state": "unknown",
+      "boundary": null,
+      "boundary_kind": "unknown",
+      "cohort_anchor": null,
+      "timezone": "Australia/Melbourne",
+      "precision": "unknown",
+      "calendar_id": null,
+      "calendar_version": null,
+      "interpretation_basis": "Explicit named date resolved by context"
+    }
+  ],
+  "closure_crosswalk": {
+    "cases": {
+      "never_closed": {
+        "status": "open",
+        "closures": []
+      },
+      "closed_stays_closed": {
+        "status": "closed",
+        "closures": [
+          "2026-03-10"
+        ]
+      },
+      "closed_reopened": {
+        "status": "reopened",
+        "closures": [
+          "2026-03-10"
+        ]
+      },
+      "closed_reclosed": {
+        "status": "closed",
+        "closures": [
+          "2026-03-10",
+          "2026-03-25"
+        ]
+      }
+    },
+    "baseline": {
+      "closed_stays_closed": "2026-03-10",
+      "closed_reclosed": "2026-03-25"
+    },
+    "companion": {
+      "closed_stays_closed": "2026-03-10",
+      "closed_reopened": "2026-03-10",
+      "closed_reclosed": "2026-03-25"
+    }
+  },
+  "coverage_units": [
+    {
+      "coverage_ids": [],
+      "eligible_count": 2,
+      "included_count": 2,
+      "excluded_count": 0,
+      "uncertain_count": 0,
+      "missing_count": 0,
+      "assessment_state": "complete_for_declared_release",
+      "limitations": [],
+      "entity_unit": "case_id",
+      "dimension": "time"
+    },
+    {
+      "coverage_ids": [],
+      "eligible_count": 3,
+      "included_count": 2,
+      "excluded_count": 0,
+      "uncertain_count": 0,
+      "missing_count": 1,
+      "assessment_state": "complete_for_declared_release",
+      "limitations": [],
+      "entity_unit": "request_event_id",
+      "dimension": "identity"
+    }
+  ],
+  "permission_filtered_redacted_asset": {
+    "asset_version_id": "probe-redacted-asset",
+    "logical_document_id": "probe-document",
+    "version": "probe-v1",
+    "representation_role": "derived_redacted",
+    "filename": "redacted.pdf",
+    "media_type": "application/pdf",
+    "byte_size": 32,
+    "bytes_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+    "scenario_document_time": {
+      "precision": "unknown",
+      "reason": "Unknown"
+    },
+    "scenario_available_at": "2026-05-31T10:00:00+10:00",
+    "permitted_source_ids": [
+      "probe-redacted-source"
+    ],
+    "permitted_parent_asset_version_ids": [],
+    "lineage_disclosure": "limited",
+    "permitted_actions": [
+      "inline"
+    ]
+  },
+  "taxonomy": {
+    "taxonomy_version": "probe-tax-v2",
+    "published_at": "2026-10-14T09:00:00+11:00",
+    "acceptance_id": "probe-tax-acceptance",
+    "nodes": [
+      {
+        "node_id": "probe-family",
+        "level": "family",
+        "label": "Renamed family",
+        "definition": "Contract example",
+        "dimension": "original_problem",
+        "parent_node_id": null,
+        "aliases": [
+          "Old label"
+        ],
+        "permitted_finding_ids": [
+          "probe-finding-1",
+          "probe-finding-2"
+        ]
+      },
+      {
+        "node_id": "probe-mechanism",
+        "level": "mechanism",
+        "label": "Specific mechanism",
+        "definition": "Contract example",
+        "dimension": "original_problem",
+        "parent_node_id": "probe-family",
+        "aliases": [],
+        "permitted_finding_ids": [
+          "probe-finding-1"
+        ]
+      }
+    ],
+    "lineage_notes": []
+  },
+  "source_only_inventory": {
+    "case_id": "probe-case",
+    "stream_reference": "probe-sources-stream",
+    "total_permitted_count": 1,
+    "completeness": "complete_permitted",
+    "items": [
+      {
+        "source_id": "probe-uncited-summary",
+        "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+        "source_family": "call_summary",
+        "subtype": "member_call",
+        "scenario_available_at": "2026-05-31T10:00:00+10:00",
+        "occurrence": {
+          "precision": "day",
+          "date": "2026-05-31"
+        },
+        "permitted_asset_version_ids": []
+      }
+    ],
+    "next_cursor": null,
+    "limitations": []
+  },
+  "independent_file_inventory": {
+    "case_id": "probe-case",
+    "total_permitted_count": 2,
+    "items": [
+      {
+        "asset": {
+          "asset_version_id": "probe-failed-pdf",
+          "logical_document_id": "probe-document",
+          "version": "probe-v1",
+          "representation_role": "derived_redacted",
+          "filename": "redacted.pdf",
+          "media_type": "application/pdf",
+          "byte_size": 32,
+          "bytes_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "scenario_document_time": {
+            "precision": "unknown",
+            "reason": "Unknown"
+          },
+          "scenario_available_at": "2026-05-31T10:00:00+10:00",
+          "permitted_source_ids": [
+            "probe-redacted-source"
+          ],
+          "permitted_parent_asset_version_ids": [],
+          "lineage_disclosure": "limited",
+          "permitted_actions": [
+            "inline"
+          ]
+        },
+        "permitted_parent_source_ids": [],
+        "permitted_attachment_occurrence_ids": [],
+        "extraction_state": "failed",
+        "mapping_state": "unmapped"
+      },
+      {
+        "asset": {
+          "asset_version_id": "probe-shared",
+          "logical_document_id": "probe-document",
+          "version": "probe-v1",
+          "representation_role": "derived_redacted",
+          "filename": "redacted.pdf",
+          "media_type": "application/pdf",
+          "byte_size": 32,
+          "bytes_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "scenario_document_time": {
+            "precision": "unknown",
+            "reason": "Unknown"
+          },
+          "scenario_available_at": "2026-05-31T10:00:00+10:00",
+          "permitted_source_ids": [
+            "probe-redacted-source"
+          ],
+          "permitted_parent_asset_version_ids": [],
+          "lineage_disclosure": "limited",
+          "permitted_actions": [
+            "inline"
+          ]
+        },
+        "permitted_parent_source_ids": [
+          "probe-source-1",
+          "probe-source-2"
+        ],
+        "permitted_attachment_occurrence_ids": [
+          "probe-attachment-1",
+          "probe-attachment-2"
+        ],
+        "extraction_state": "complete",
+        "mapping_state": "unmapped"
+      }
+    ],
+    "next_cursor": null
+  },
+  "independent_case_dimensions": {
+    "projection_id": "probe-case-state",
+    "case_id": "probe-case",
+    "assessed_evidence_as_of": "2026-10-01T00:00:00+10:00",
+    "computed_at": "2026-10-14T09:00:00+11:00",
+    "published_at": "2026-10-14T09:00:00+11:00",
+    "source_set_version": "probe-inputs",
+    "analysis_set_version": "probe-analysis",
+    "administrative": {
+      "value": "closed",
+      "evidence_refs": [
+        {
+          "source_id": "test-source",
+          "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+          "anchor": {
+            "kind": "text",
+            "start_codepoint": 1,
+            "end_codepoint": 2
+          }
+        }
+      ],
+      "reason": "Sourced closure"
+    },
+    "merits": [
+      {
+        "target_reference": "probe-merits",
+        "value": "communicated",
+        "evidence_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "reason": "Decision communicated"
+      }
+    ],
+    "service": [
+      {
+        "target_reference": "probe-service",
+        "value": "conflicting",
+        "assertion_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "confirmation_refs": [],
+        "contradictory_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "reason": "Completion assertion conflicts with execution evidence"
+      }
+    ],
+    "responses": [
+      {
+        "target_reference": "probe-update",
+        "dimension": "explanation",
+        "respondent": {
+          "party_reference": "probe-member",
+          "role": "member",
+          "represented_member_reference": "probe-member",
+          "authority_state": "supported",
+          "evidence_refs": [
+            {
+              "source_id": "test-source",
+              "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+              "anchor": {
+                "kind": "text",
+                "start_codepoint": 1,
+                "end_codepoint": 2
+              }
+            }
+          ]
+        },
+        "position": "update_only",
+        "relationship_references": [
+          "probe-update-response"
+        ],
+        "evidence_refs": [
+          {
+            "source_id": "test-source",
+            "content_sha256": "2cf190eb416eac88e55885b85ca2b27a77037b7e401a973a867e82cc4779a857",
+            "anchor": {
+              "kind": "text",
+              "start_codepoint": 1,
+              "end_codepoint": 2
+            }
+          }
+        ],
+        "reason": "Thanks for update, not acceptance of completion"
+      }
+    ],
+    "coverage": [],
+    "resolver_version": "probe-resolver-v1"
+  }
+}

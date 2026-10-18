@@ -1,0 +1,22 @@
+{
+  "contract_version": "1.0.0",
+  "candidate": "2026-10-14-review-2",
+  "files": {
+    "DECISIONS.md": "8b6b03b79485a9488004b9a23245f70e8720efa9bdbddb53df364fb77ff75d66",
+    "MEMBER-EXPERIENCE.md": "a6c98923a4432c44143512cb92ff5f3682b63e6001fc669e9432a0be39e24a93",
+    "shared.schema.json": "6800d6146996a7489e28d3c1ff5540d1d8383ab8f19fc143f03b07976b946faa",
+    "measure-additions.json": "8877fdbd0dfe00dd2e70f9161a0296903ed8a67795384a54cdd74817682b7bf5",
+    "author_contracts.py": "cd8f62ce4e522928e094d48c93b28dcc4768ae0b608d038d47b5777ab44d88a9",
+    "check_contracts.py": "e868a9a99cddfecfc1fdbecaf311117179714f31d371efc39c68574e444e2927",
+    "review2_examples.py": "417e3d735279c64b7381550895e435e1de44751e45ccdf0389809df43ec125a9",
+    "CONTRACT-EXAMPLES.json": "3dd3f27ff469bd1e9f7100ac7f199ecbbe2ac506fc60aaa30adfcf5c9114cf53",
+    "REVIEW-1-CLOSURE.md": "532707120b9cd91bc1befb6c875e3a3429ff1185be64cefe8c1d8a9e50ccb504"
+  },
+  "pinned_data_baseline": {
+    "runtime.schema.json": "c2cabf84807cd7102217189d0a4fb0cfbddbed78a048944f66047473378579bf",
+    "evaluation.schema.json": "bd0326399a69c825b2f72befdb35d591e08f217369930bafd226777c102330f9",
+    "metric-registry.json": "3861b12d6cc218272458440b03bd074cabaa2f3264188f764e94ae117c2901e0",
+    "demo-config.json": "caf733dfa3d7f331ee1b48d68b4604a22923f2d4e05ee5f29e9d6e5d0c586901"
+  },
+  "manifest_content_sha256": "b0b22c6742de24c4bc8643cb6c988624fa4b093db407896071a7e9a64acc1585"
+}

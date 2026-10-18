@@ -1,0 +1,134 @@
+{
+  "corpus_id": "combined500-v1",
+  "description": "Intended final demonstration population: retained P4 (20 members / 25 cases) plus final cloud480 (480 / 625), per Data's 17 Oct 2026 delivery review. Preflight binding only: no runtime merge, store or inference exists for it yet.",
+  "bundles": [
+    {
+      "bundle_id": "p4",
+      "path": "Data/synthesis/authored-candidates/b-8f2d6a910c4e47aab-p4/runtime/intake-bundle",
+      "delivery_manifest_sha256": "6a7282a033c0da0df8660a0fcf36e3fca9fbd15fcdc1e0c160b029b6faebcf4d"
+    },
+    {
+      "bundle_id": "cloud480-p8",
+      "path": "Implementation/ai-backend/var/intake-staging/cloud480-ef4e6ffd-p8/unpacked/runtime/intake-bundle",
+      "delivery_manifest_sha256": "fe8e14ab3648a13c7969e28e451d3db90739825fb8204f1544d31397978f7488",
+      "runtime_zip": {
+        "path": "Implementation/ai-backend/var/intake-staging/cloud480-ef4e6ffd-p8/runtime.zip",
+        "sha256": "ca24671a8933585cbf1f43dba750ea5be1a774cbe1d028a30fedb0deea54c1a7",
+        "extracted_from": "Data/incoming/cloud-480-members-v1/CloudData480-PRIVATE-AUDIT-DELIVERY.zip :: cloud-return/snapshots/cloud-480/ef4e6ffd5b4e49ae821ef7b0013427dd-p8/ef4e6ffd5b4e49ae821ef7b0013427dd-p8-runtime.zip (only this member; outer transport sha256 96afaedded29e3037e7b1cffd8a55608e7b00484ab55ae3c2c9fa2bfb8f41fbc)"
+      }
+    }
+  ],
+  "pilot_bundle_id": "p4",
+  "source_quality_basis": [
+    {
+      "path": "Data/reviews/fresh-trial-25-cases-quality-2026-10-17/PRINCIPAL-DATA-P4-DECISION.json",
+      "sha256": "1c6e57d4574e106c339a0c162946f48c145c3b08f7c0d744e4a7eb5dad250ca1",
+      "decision": "accepted_for_bounded_source_quality_trial_with_disclosed_limitations",
+      "scope": "bounded source quality only; not extraction, diagnostic gold, AI or UI acceptance",
+      "bundle_id": "p4"
+    },
+    {
+      "bundle_id": "cloud480-p8",
+      "path": "Data/reviews/cloud480-delivery-and-demo-coverage-2026-10-17/PRINCIPAL-DATA-DECISION.json",
+      "sha256": "2c22b31d29166c7d2d69c521dd2a38fa1e21972faa66527a97b5e017de134875",
+      "decision": "accepted_as_integration_data_candidate_with_disclosed_limitations",
+      "scope": "integration data candidate; not diagnostic gold, AI accuracy or production quality"
+    }
+  ],
+  "expected_counts": {
+    "members": 500,
+    "cases": 650,
+    "originals": 7945,
+    "afca_matters": 76
+  },
+  "expected_split": {
+    "development": 400,
+    "holdout": 100
+  },
+  "splits": [
+    {
+      "bundle_id": "p4",
+      "path": "Implementation/ai-backend/config/demo/splits/p4-member-split.json",
+      "sha256": "2080ff2d8c1ec4b34f7622301a51680f08a1ac28c851b2e996179188015ba584"
+    },
+    {
+      "bundle_id": "cloud480-p8",
+      "path": "Implementation/ai-backend/config/demo/splits/cloud480-member-split.json",
+      "sha256": "4b206bf84ca74c792261c98d439eb92f50176de918789b26d5b041f6356ad4bf"
+    }
+  ],
+  "worklist": {
+    "rule": "eligible = development members (400); holdout members (100) are ingested as source evidence only, never sent to a model, used for examples or inspected",
+    "early_evaluation_member_references": [
+      "1737d13b-0610-478e-ab58-2c5bf45fc4b9",
+      "3a651303bc844de4a1493a57b7d0ae04",
+      "e97bf7c62c704aa99c6a2c4da0f7aeab"
+    ],
+    "early_evaluation_note": "unchanged 3 P4 members fixed before tuning; extending the reserved subset into cloud480 is an Architect decision, not made here"
+  },
+  "excluded_corpora": [
+    {
+      "label": "cloud first80 checkpoint snapshot",
+      "reason": "contained byte-identically in the final480 snapshot (1,375 originals); never bound as an additional bundle \u2014 the count reconciliation proves it is not added again"
+    },
+    {
+      "label": "outer PRIVATE audit ZIP, private review and proposed answers",
+      "reason": "never ingested; only the runtime ZIP member and member/split fields were read"
+    },
+    {
+      "label": "Case 11 accepted v2",
+      "path": "Data/synthesis/receiving-exports/case-11-complete-accepted-v2/intake-bundle"
+    },
+    {
+      "label": "Case 11 accepted v1",
+      "path": "Data/synthesis/receiving-exports/case-11-complete-accepted-v1/intake-bundle"
+    },
+    {
+      "label": "Case 11 accepted slice",
+      "path": "Data/synthesis/receiving-exports/case-11-accepted-slice-v1/intake-bundle"
+    },
+    {
+      "label": "Case 11 complete candidate",
+      "path": "Data/synthesis/receiving-exports/case-11-complete-candidate-v1/intake-bundle"
+    },
+    {
+      "label": "Case 11 rehearsal v3",
+      "path": "Data/synthesis/pilot-v2-releases/case-11-rehearsal-v3/intake-bundle"
+    },
+    {
+      "label": "authored candidate b-4831cd9e62014fa8a-p1 (earlier unaccepted fragment build of P4 members)",
+      "path": "Data/synthesis/authored-candidates/b-4831cd9e62014fa8a-p1/runtime/intake-bundle",
+      "superseded_by_bundle": "p4"
+    },
+    {
+      "label": "authored candidate b-3c74a09f86514eb19-p1 (earlier unaccepted fragment build of P4 members)",
+      "path": "Data/synthesis/authored-candidates/b-3c74a09f86514eb19-p1/runtime/intake-bundle",
+      "superseded_by_bundle": "p4"
+    },
+    {
+      "label": "FX worked fixture (fx-five-members)",
+      "reason": "authoring example only; no runtime bundle is bound from it"
+    },
+    {
+      "label": "P4 package versions p1\u2013p3",
+      "reason": "superseded package versions of the bound P4 batch; only p4 is bound"
+    },
+    {
+      "label": "rejected old100 REL-b0adf88b716fd0648b45",
+      "reason": "rejected; legacy served store untouched"
+    }
+  ],
+  "observation_window": {
+    "start": "2025-10-01",
+    "end_exclusive": "2026-10-01"
+  },
+  "timezone": "Australia/Melbourne",
+  "publication_policy": "synthetic-demo-v1",
+  "temporal_policy": "demo-held-day-v1",
+  "association_profile": "factual-v1",
+  "selected_provider": "gemma-local (mlx-community/gemma-4-e4b-it-4bit) \u2014 the only qualified route; Google route later",
+  "store": {
+    "data_dir": "var/demo/combined500-v1",
+    "state": "not created"
+  }
+}

@@ -1,0 +1,57 @@
+{
+ "corpus_id": "p4-pilot-v1",
+ "description": "New explicitly named demo corpus: Data's accepted P4 twenty-customer / twenty-five-case source-quality trial. Excludes Case 11, the rejected old100 corpus and FX fixtures.",
+ "bundle": "Data/synthesis/authored-candidates/b-8f2d6a910c4e47aab-p4/runtime/intake-bundle",
+ "delivery_manifest_sha256": "6a7282a033c0da0df8660a0fcf36e3fca9fbd15fcdc1e0c160b029b6faebcf4d",
+ "expected_counts": {
+  "members": 20,
+  "cases": 25,
+  "originals": 253
+ },
+ "source_quality_basis": {
+  "path": "Data/reviews/fresh-trial-25-cases-quality-2026-10-17/PRINCIPAL-DATA-P4-DECISION.json",
+  "sha256": "1c6e57d4574e106c339a0c162946f48c145c3b08f7c0d744e4a7eb5dad250ca1",
+  "decision": "accepted_for_bounded_source_quality_trial_with_disclosed_limitations",
+  "scope": "bounded source quality only; not extraction, diagnostic gold, AI or UI acceptance"
+ },
+ "publication_policy": "synthetic-demo-v1",
+ "temporal_policy": "demo-held-day-v1",
+ "association_profile": "factual-v1",
+ "excluded_corpora": [
+  "case-11 releases",
+  "rejected old100 REL-b0adf88b716fd0648b45",
+  "FX fixtures"
+ ],
+ "worklist": {
+  "eligible_member_references": [
+   "1737d13b-0610-478e-ab58-2c5bf45fc4b9",
+   "228f64c8-afeb-4bb6-80d5-64ea1550f014",
+   "22b24f4b1134425f8b46ab02d3b7eeb7",
+   "3a651303bc844de4a1493a57b7d0ae04",
+   "7704d1fd-6aa5-4c79-b795-a96bb11f5f95",
+   "8b637a0e-4f99-4bd6-b4ac-7f30ed85e37f",
+   "96b98d49c232440e8ba1f32cfbd20096",
+   "974d857b-bd13-4f97-8f56-742f0d4c627d",
+   "R-049c6f1dece74245b1",
+   "R-234f7a1f118a4e7b85",
+   "R-36163ef7d358419cbb",
+   "R-558b2186bec74fd68e",
+   "R-b455a54133004a5bb2",
+   "e0315ef433634512b763a67e92a7b8d0",
+   "e97bf7c62c704aa99c6a2c4da0f7aeab"
+  ],
+  "early_evaluation_member_references": [
+   "1737d13b-0610-478e-ab58-2c5bf45fc4b9",
+   "3a651303bc844de4a1493a57b7d0ae04",
+   "e97bf7c62c704aa99c6a2c4da0f7aeab"
+  ],
+  "not_eligible_member_count": 5,
+  "basis": "Explicit allowlist derived by the coordinator from Data's split manifest (member/split fields only) before any tuning. Members outside the allowlist are ingested as source evidence but never sent to a model, used for examples or inspected for tuning; their cases are reported as unassessed.",
+  "early_evaluation_rule": "first three eligible members by sha256('early-eval-v1|'+member_reference); fixed before tuning; excluded from prompt iteration until prompts freeze"
+ },
+ "store": {
+  "data_dir": "var/demo/p4-pilot-v1",
+  "policy_path": "config/demo/policy.json",
+  "port": 8091
+ }
+}

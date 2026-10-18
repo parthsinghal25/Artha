@@ -1,0 +1,41 @@
+{
+  "batch": "case11-rehearsal",
+  "package_version": 1,
+  "defects": [
+    {"id": "PD-1", "found_by": "author visual inspection of first render (renderer r1)", "kind": "content_layout",
+     "record": "Final-response-letter-13-March-2026.pdf",
+     "description": "'Remedy' heading orphaned at the foot of page 1, separated from its paragraph.",
+     "repair": "headings keep-with-next (renderer r2)", "files_changed": ["letter PDF", "covering EML 2026-03-13"]},
+    {"id": "PD-2", "found_by": "author visual inspection of first render (renderer r1)", "kind": "content_layout",
+     "record": "11-05-portal-upload-receipt.jpg",
+     "description": "Receipt card border cut through the last file row.",
+     "repair": "card extended (renderer r2)", "files_changed": ["receipt JPEG", "EML 2026-01-02", "EML 2026-01-08"]},
+    {"id": "PD-3", "found_by": "first run of the automated checks", "kind": "checker_defect",
+     "record": "checks.py",
+     "description": "Call-summary section was parsed from the banner text 'CALL SUMMARY', so header lines counted as summary text (false word-count and speaker-line failures).",
+     "repair": "section split on the standalone heading line", "content_changed": false},
+    {"id": "PD-4", "found_by": "first run of the automated checks", "kind": "checker_defect",
+     "record": "checks.py / 11-D17 must_not_match",
+     "description": "Forbidden-claim pattern for 'satisfied' also matched the legitimate heading 'If you are not satisfied'.",
+     "repair": "pattern narrowed to a stated state of satisfaction", "content_changed": false},
+    {"id": "PD-5", "found_by": "first run of the automated checks", "kind": "checker_defect",
+     "record": "checks.py",
+     "description": "Planning-vocabulary scan matched the CSS property 'font-family' in preview HTML.",
+     "repair": "style blocks stripped before scan", "content_changed": false},
+    {"id": "PD-6", "found_by": "first run of the automated checks", "kind": "manifest_naming",
+     "record": "delivery-manifest.json",
+     "description": "Manifest key 'private_conversation_included' used restricted vocabulary.",
+     "repair": "renamed to input_scope: summary_only", "content_changed": false}
+  ],
+  "summary": {
+    "originals_total": 12,
+    "originals_with_content_defect_on_first_render": 2,
+    "first_render_defect_rate": 0.167,
+    "authored_prose_records_needing_prose_repair": 0,
+    "authored_prose_records_total": 5,
+    "files_whose_bytes_changed_as_a_consequence": 5,
+    "checker_or_naming_defects": 4,
+    "independent_review_repair_rate": null,
+    "note": "Author-side only. The first-render outputs were never delivered or reviewed, so no accepted bytes were altered."
+  }
+}

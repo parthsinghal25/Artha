@@ -1,0 +1,525 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:example-super:evaluation:0.2.0",
+  "title": "Restricted evaluation authoring v0.2",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2.0"
+        },
+        "kind": {
+          "const": "world_truth"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "world_entity_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            "entity_type": {
+              "type": "string",
+              "enum": [
+                "incident",
+                "party",
+                "case",
+                "episode",
+                "event",
+                "opportunity",
+                "work",
+                "financial",
+                "afca",
+                "relationship"
+              ]
+            },
+            "incident_id": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "actual_propositions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 0
+            },
+            "actual_event_at": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "actual_values": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "field_key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "minItems": 0
+                          }
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "field_key",
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 0
+            },
+            "visible_source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "hidden_relationship_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "world_entity_id",
+            "entity_type",
+            "incident_id",
+            "actual_propositions",
+            "actual_event_at",
+            "actual_values",
+            "visible_source_ids",
+            "hidden_relationship_ids"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2.0"
+        },
+        "kind": {
+          "const": "evidence_gold"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "target_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            "target_type": {
+              "type": "string",
+              "enum": [
+                "atomic_fact",
+                "relationship",
+                "incident",
+                "membership",
+                "temporal",
+                "clarification",
+                "post_closure_return"
+              ]
+            },
+            "entity_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "context": {
+              "type": "object",
+              "properties": {
+                "view_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160,
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+                },
+                "snapshot": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "source_version": {
+                  "type": "string"
+                },
+                "clarification_request_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 160,
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "view_id",
+                "snapshot",
+                "source_version",
+                "clarification_request_ids"
+              ],
+              "additionalProperties": false
+            },
+            "expected_state": {
+              "type": "string",
+              "enum": [
+                "known",
+                "partial",
+                "unknown",
+                "conflicting",
+                "not_applicable"
+              ]
+            },
+            "acceptable_values": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 0
+                  }
+                ]
+              },
+              "minItems": 0
+            },
+            "acceptable_claims": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 0
+            },
+            "acceptable_proof_sets": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "$ref": "urn:example-super:runtime:0.2.0#/$defs/evidence_ref"
+                },
+                "minItems": 0
+              },
+              "minItems": 0
+            },
+            "contradictory_refs": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:example-super:runtime:0.2.0#/$defs/evidence_ref"
+              },
+              "minItems": 0
+            },
+            "rationale": {
+              "type": "string"
+            },
+            "reviewer_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            "review_state": {
+              "type": "string",
+              "enum": [
+                "draft",
+                "reviewed",
+                "adjudicated"
+              ]
+            }
+          },
+          "required": [
+            "target_id",
+            "target_type",
+            "entity_ids",
+            "context",
+            "expected_state",
+            "acceptable_values",
+            "acceptable_claims",
+            "acceptable_proof_sets",
+            "contradictory_refs",
+            "rationale",
+            "reviewer_reference",
+            "review_state"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2.0"
+        },
+        "kind": {
+          "const": "metric_oracle"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "fixture_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            "query": {
+              "$ref": "urn:example-super:runtime:0.2.0#/$defs/query"
+            },
+            "expected_result": {
+              "$ref": "urn:example-super:runtime:0.2.0#/$defs/metric_result"
+            },
+            "included_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "excluded_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "uncertain_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "independent_calculation_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            }
+          },
+          "required": [
+            "fixture_id",
+            "query",
+            "expected_result",
+            "included_ids",
+            "excluded_ids",
+            "uncertain_ids",
+            "independent_calculation_reference"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": "0.2.0"
+        },
+        "kind": {
+          "const": "split_manifest"
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "split_id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            "partition": {
+              "type": "string",
+              "enum": [
+                "pilot",
+                "development",
+                "evaluation",
+                "private_holdout"
+              ]
+            },
+            "connected_group_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "world_entity_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "mechanism_family_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "annotation_version": {
+              "type": "string"
+            },
+            "frozen_at": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "split_id",
+            "partition",
+            "connected_group_ids",
+            "world_entity_ids",
+            "source_ids",
+            "mechanism_family_ids",
+            "annotation_version",
+            "frozen_at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "data"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

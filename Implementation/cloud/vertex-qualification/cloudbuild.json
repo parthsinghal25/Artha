@@ -1,0 +1,21 @@
+{
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": [
+        "build",
+        "-t",
+        "us-central1-docker.pkg.dev/project-c2a6c144-4e0d-440b-918/superdashboard/artha-vertex-qual:3a9d205ee53e",
+        "."
+      ]
+    }
+  ],
+  "images": [
+    "us-central1-docker.pkg.dev/project-c2a6c144-4e0d-440b-918/superdashboard/artha-vertex-qual:3a9d205ee53e"
+  ],
+  "serviceAccount": "projects/project-c2a6c144-4e0d-440b-918/serviceAccounts/artha-build@project-c2a6c144-4e0d-440b-918.iam.gserviceaccount.com",
+  "options": {
+    "logging": "CLOUD_LOGGING_ONLY"
+  },
+  "timeout": "600s"
+}

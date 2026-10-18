@@ -1,0 +1,20 @@
+# Direct dependencies (exact resolved versions pinned in requirements.lock). Python 3.12.
+google-genai
+jsonschema
+referencing
+fastapi
+uvicorn
+httpx
+pdfplumber
+pypdf
+pypdfium2
+openpyxl
+python-docx
+pillow
+pyobjc-framework-Vision ; sys_platform == "darwin"
+pyobjc-framework-Quartz ; sys_platform == "darwin"
+mlx ; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-lm ; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-vlm ; sys_platform == "darwin" and platform_machine == "arm64"
+huggingface_hub
+pytest

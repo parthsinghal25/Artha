@@ -1,0 +1,25 @@
+{
+  "registry_id": "reviewers-local-poc",
+  "registry_version": "2",
+  "note": "Trusted backend-owned allowlist mapping the EXISTING independent Principal roles to the gates they may decide (Architect integration plan 2026-10-15 §I04; participant instruction 2026-10-15). A role entry is not a passing decision: only real, exact hash-bound decisions issued by that role are imported. Never sourced from Data deliveries, model output or requests. The coder (ai-backend-coder) and authoring workers (data-generator) can never decide.",
+  "reviewers": {
+    "principal-data-engineer": {
+      "display_name": "Principal Data Engineer",
+      "role": "Data Principal: source and native-input review",
+      "gates": ["source", "native_input"],
+      "independent_of": ["ai-backend-coder", "data-generator"]
+    },
+    "principal-ai-engineer": {
+      "display_name": "Principal AI Engineer",
+      "role": "AI Principal: extraction fidelity and diagnostic review against independently prepared references",
+      "gates": ["extraction", "diagnostic_evaluation"],
+      "independent_of": ["ai-backend-coder", "data-generator"]
+    },
+    "principal-validator": {
+      "display_name": "Principal Validator",
+      "role": "Validator: result integrity and final integrated verification",
+      "gates": ["result_integrity"],
+      "independent_of": ["ai-backend-coder", "data-generator"]
+    }
+  }
+}

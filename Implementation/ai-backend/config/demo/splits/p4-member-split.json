@@ -1,0 +1,86 @@
+{
+ "derived_from": "Data P4 POPULATION-AND-SPLIT-MANIFEST.json (member reference + split fields only)",
+ "source_sha256": "ae9eda0612c3d8066e0c08e618a4d6be27ec46f1bc2e3de0310973adfad5d612",
+ "members": [
+  {
+   "member_reference": "1737d13b-0610-478e-ab58-2c5bf45fc4b9",
+   "split": "development"
+  },
+  {
+   "member_reference": "228f64c8-afeb-4bb6-80d5-64ea1550f014",
+   "split": "development"
+  },
+  {
+   "member_reference": "22b24f4b1134425f8b46ab02d3b7eeb7",
+   "split": "development"
+  },
+  {
+   "member_reference": "3a651303bc844de4a1493a57b7d0ae04",
+   "split": "development"
+  },
+  {
+   "member_reference": "7704d1fd-6aa5-4c79-b795-a96bb11f5f95",
+   "split": "development"
+  },
+  {
+   "member_reference": "8b637a0e-4f99-4bd6-b4ac-7f30ed85e37f",
+   "split": "development"
+  },
+  {
+   "member_reference": "8e2f8abd-25c6-4b7f-af99-ad71efce45d3",
+   "split": "holdout"
+  },
+  {
+   "member_reference": "96b98d49c232440e8ba1f32cfbd20096",
+   "split": "development"
+  },
+  {
+   "member_reference": "974d857b-bd13-4f97-8f56-742f0d4c627d",
+   "split": "development"
+  },
+  {
+   "member_reference": "99f704d5a0044fd1b9b9916380342fca",
+   "split": "holdout"
+  },
+  {
+   "member_reference": "R-049c6f1dece74245b1",
+   "split": "development"
+  },
+  {
+   "member_reference": "R-234f7a1f118a4e7b85",
+   "split": "development"
+  },
+  {
+   "member_reference": "R-36163ef7d358419cbb",
+   "split": "development"
+  },
+  {
+   "member_reference": "R-3b62c96eecc041b6be",
+   "split": "holdout"
+  },
+  {
+   "member_reference": "R-558b2186bec74fd68e",
+   "split": "development"
+  },
+  {
+   "member_reference": "R-b455a54133004a5bb2",
+   "split": "development"
+  },
+  {
+   "member_reference": "R-c9677623ff2d4ab5a9",
+   "split": "holdout"
+  },
+  {
+   "member_reference": "e0315ef433634512b763a67e92a7b8d0",
+   "split": "development"
+  },
+  {
+   "member_reference": "e97bf7c62c704aa99c6a2c4da0f7aeab",
+   "split": "development"
+  },
+  {
+   "member_reference": "f6f191a1-58c6-4d06-8512-f73737725f91",
+   "split": "holdout"
+  }
+ ]
+}

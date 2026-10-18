@@ -1,0 +1,34 @@
+{"event_id": "FX-EV-0101", "kind": "instruction_received", "case_ids": ["FX-C01"], "occurred": "2026-09-02T09:14:00+10:00", "episode_ref": "FX-EP-01", "member_reference": "FX-M01"}
+{"event_id": "FX-EV-0102", "kind": "validity_assessed", "case_ids": ["FX-C01"], "occurred": "2026-09-03T11:20:00+10:00", "prerequisite_event_ids": ["FX-EV-0101"], "label": "instruction accepted", "episode_ref": "FX-EP-01"}
+{"event_id": "FX-EV-0103", "kind": "service_attempted", "case_ids": ["FX-C01"], "occurred": "2026-09-26", "label": "pension paid to old account", "episode_ref": "FX-EP-01"}
+{"event_id": "FX-EV-0104", "kind": "case_received", "case_ids": ["FX-C01"], "occurred": "2026-09-29T08:40:00+10:00"}
+{"event_id": "FX-FIN-0101", "kind": "financial", "case_ids": ["FX-C01"], "occurred": "2026-09-29", "state": "requested", "obligation_id": "FX-OBL-01", "amount_minor": 1500, "category": "compensation"}
+{"event_id": "FX-WRK-0101", "kind": "work", "case_ids": ["FX-C01"], "occurred": "2026-09-29", "duration_seconds": 1200, "basis": "recorded", "contributor_role": "complaints case manager", "phase": "member_contact", "actor": "FX-STAFF-CM01"}
+{"event_id": "FX-EV-0201", "kind": "instruction_received", "case_ids": ["FX-C02"], "occurred": "2026-09-10T19:02:00+10:00", "episode_ref": "FX-EP-02", "label": "incomplete, no BSB"}
+{"event_id": "FX-EV-0202", "kind": "evidence_requested", "case_ids": ["FX-C02"], "occurred": "2026-09-11T10:15:00+10:00", "prerequisite_event_ids": ["FX-EV-0201"]}
+{"event_id": "FX-EV-0203", "kind": "case_received", "case_ids": ["FX-C02"], "occurred": "2026-09-30T14:22:00+10:00"}
+{"event_id": "FX-EV-0301", "kind": "evidence_received", "case_ids": ["FX-C03"], "occurred": "2025-12-04", "episode_ref": "FX-EP-03"}
+{"event_id": "FX-EV-0302", "kind": "validity_assessed", "case_ids": ["FX-C03"], "occurred": "2025-12-08", "prerequisite_event_ids": ["FX-EV-0301"], "label": "valid"}
+{"event_id": "FX-EV-0303", "kind": "evidence_requested", "case_ids": ["FX-C03"], "occurred": "2026-01-12", "episode_ref": "FX-EP-03", "label": "same item requested again"}
+{"event_id": "FX-EV-0304", "kind": "case_received", "case_ids": ["FX-C03"], "occurred": "2026-01-20T10:05:00+11:00"}
+{"event_id": "FX-FIN-0301", "kind": "financial", "case_ids": ["FX-C03"], "occurred": "2026-03-02", "state": "approved", "obligation_id": "FX-OBL-03", "amount_minor": 25000, "category": "compensation"}
+{"event_id": "FX-FIN-0302", "kind": "financial", "case_ids": ["FX-C03"], "occurred": "2026-03-09", "state": "payment", "obligation_id": "FX-OBL-03", "amount_minor": 25000, "category": "compensation", "prerequisite_event_ids": ["FX-FIN-0301"]}
+{"event_id": "FX-EV-0305", "kind": "case_closed", "case_ids": ["FX-C03"], "occurred": "2026-03-12T14:30:00+11:00"}
+{"event_id": "FX-EV-0306", "kind": "evidence_requested", "case_ids": ["FX-C03"], "occurred": "2026-05-28", "episode_ref": "FX-EP-03", "label": "requested a third time"}
+{"event_id": "FX-EV-0307", "kind": "case_reopened", "case_ids": ["FX-C03"], "occurred": "2026-06-03"}
+{"event_id": "FX-WRK-0301", "kind": "work", "case_ids": ["FX-C03"], "occurred": "2026-01-22", "duration_seconds": 1800, "basis": "recorded", "contributor_role": "complaints case manager", "phase": "evidence_gathering", "actor": "FX-STAFF-CM02"}
+{"event_id": "FX-WRK-0302", "kind": "work", "case_ids": ["FX-C03"], "occurred": "2026-03-02", "duration_seconds": 2700, "basis": "recorded", "contributor_role": "complaints case manager", "phase": "approval", "actor": "FX-STAFF-CM02"}
+{"event_id": "FX-WRK-0303", "kind": "work", "case_ids": ["FX-C03"], "occurred": "2026-06-04", "duration_seconds": 1500, "basis": "recorded", "contributor_role": "complaints case manager", "phase": "member_contact", "actor": "FX-STAFF-CM02"}
+{"event_id": "FX-EV-0401", "kind": "case_received", "case_ids": ["FX-C04"], "occurred": "2026-04-14T11:30:00+10:00", "episode_ref": "FX-EP-04"}
+{"event_id": "FX-EV-0404", "kind": "case_closed", "case_ids": ["FX-C04"], "occurred": "2026-06-30"}
+{"event_id": "FX-EV-0403", "kind": "case_received", "case_ids": ["FX-C06"], "occurred": "2026-07-02T08:55:00+10:00", "episode_ref": "FX-EP-04"}
+{"event_id": "FX-EV-0402", "kind": "afca_lodged", "case_ids": ["FX-C04", "FX-C06"], "occurred": "2026-07-20", "afca_matter_ids": ["FX-AFCA-01"]}
+{"event_id": "FX-FIN-0401", "kind": "financial", "case_ids": ["FX-C04", "FX-C06"], "occurred": "2026-08-20", "state": "invoiced", "obligation_id": "FX-OBL-04", "amount_minor": 310000, "category": "afca_fee", "invoice_reference": "FX-INV-7781", "afca_matter_ids": ["FX-AFCA-01"]}
+{"event_id": "FX-FIN-0402", "kind": "financial", "case_ids": ["FX-C04", "FX-C06"], "occurred": "2026-09-29", "state": "payment", "obligation_id": "FX-OBL-04", "amount_minor": 310000, "category": "afca_fee", "invoice_reference": "FX-INV-7781", "afca_matter_ids": ["FX-AFCA-01"]}
+{"event_id": "FX-WRK-0401", "kind": "work", "case_ids": ["FX-C04", "FX-C06"], "occurred": "2026-07-24", "duration_seconds": 5400, "basis": "recorded", "contributor_role": "complaints case manager", "phase": "submission_preparation", "actor": "FX-STAFF-CM02", "afca_matter_ids": ["FX-AFCA-01"]}
+{"event_id": "FX-EV-0501", "kind": "case_received", "case_ids": ["FX-C05"], "occurred": "2026-04-28T13:47:00+10:00", "episode_ref": "FX-EP-05"}
+{"event_id": "FX-FIN-0501", "kind": "financial", "case_ids": ["FX-C05"], "occurred": "2026-05-08", "state": "approved", "obligation_id": "FX-OBL-05", "amount_minor": 20000, "category": "refund_entitlement"}
+{"event_id": "FX-FIN-0502", "kind": "financial", "case_ids": ["FX-C05"], "occurred": "2026-05-12", "state": "payment", "obligation_id": "FX-OBL-05", "amount_minor": 20000, "category": "refund_entitlement"}
+{"event_id": "FX-FIN-0503", "kind": "financial", "case_ids": ["FX-C05"], "occurred": "2026-05-19", "state": "payment_reversal", "obligation_id": "FX-OBL-05", "amount_minor": -20000, "category": "refund_entitlement", "label": "returned by member's bank"}
+{"event_id": "FX-FIN-0504", "kind": "financial", "case_ids": ["FX-C05"], "occurred": "2026-05-21", "state": "payment", "obligation_id": "FX-OBL-05", "amount_minor": 20000, "category": "refund_entitlement"}
+{"event_id": "FX-EV-0502", "kind": "case_closed", "case_ids": ["FX-C05"], "occurred": "2026-05-25"}

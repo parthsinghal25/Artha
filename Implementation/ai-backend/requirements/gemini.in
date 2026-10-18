@@ -1,0 +1,2 @@
+# Optional: Gemini API adapter (only used when a verified free-tier key is configured; never installed implicitly)
+google-genai

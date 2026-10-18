@@ -1,0 +1,464 @@
+{
+  "card": "11-D06",
+  "revision": 2,
+  "kind": "call_summary",
+  "service_banner": "CASE SUMMARY SERVICE - CALL SUMMARY",
+  "participants": [
+    "Beth Martin (claimant; daughter of deceased member Alan Martin)",
+    "Alicia Romero (Complaints Case Manager)"
+  ],
+  "summary": "Beth Martin and Alicia Romero discussed request REQ-2025-11-01. Beth said she has sent the same documents three times and, in frustrated terms, said she does not understand what else is wanted. She said she recalls being told the papers were all accepted, separated that from the benefit being decided, and wants to know exactly which item is missing. Alicia said she could not confirm what was said earlier. She holds Beth's email from this morning with four attachments, including the portal upload receipt, which shows DC-11, ID-11 and RF-11 as received, but had no reply from the specialist team yet, so could not say whether DC-11 had been assessed or what is outstanding, and gave no assurance that everything is complete. Beth interrupted Alicia's explanation to ask what was missing. Alicia said she will ask Alice Hughes (Death Benefits Administration) for the case-specific records; no due date was stated. Beth agreed to that step but said the matter is not sorted and she is not happy.",
+  "follow_up_items": [
+    "Alicia Romero to request case-specific records from Alice Hughes, Death Benefits Administration. No due date stated."
+  ],
+  "conversation": [
+    {
+      "n": 1,
+      "speaker": "Alicia Romero",
+      "text": "Good morning Beth, it's Alicia Romero from the complaints team. Thanks for picking up."
+    },
+    {
+      "n": 2,
+      "speaker": "Beth Martin",
+      "text": "Hello. I've just sent you another email, I don't know if you've seen it yet."
+    },
+    {
+      "n": 3,
+      "speaker": "Alicia Romero",
+      "text": "I have, it came in this morning with the four attachments. Before anything else, I'm sorry about your father. I know this is a hard time to be chasing paperwork."
+    },
+    {
+      "n": 4,
+      "speaker": "Beth Martin",
+      "text": "Thank you. It's just that I keep being asked for the same things. I've sent the documents three times now. I don't understand what else you want from me."
+    },
+    {
+      "n": 5,
+      "speaker": "Alicia Romero",
+      "text": "I hear you. Let me check I've got the concern right. The request is REQ-2025-11-01. The death certificate, DC-11, has been asked for again even though you uploaded it in December, and you want to know exactly which item is missing."
+    },
+    {
+      "n": 6,
+      "speaker": "Beth Martin",
+      "text": "Yes. And I was told the papers were all accepted. I know that's not the same as the benefit being decided, that's a separate thing. But I was told they were all accepted, and now this."
+    },
+    {
+      "n": 7,
+      "speaker": "Alicia Romero",
+      "text": "I'm not doubting that that's what you recall. I can't tell you what was said before the complaint, though, and I don't want to confirm it either way until I've seen the records. What I can tell you is what I actually have in front of me, which is"
+    },
+    {
+      "n": 8,
+      "speaker": "Beth Martin",
+      "text": "So you can't tell me what's missing."
+    },
+    {
+      "n": 9,
+      "speaker": "Alicia Romero",
+      "text": "Not yet. What I have is your request reference, the three documents and the upload receipt image. The receipt shows DC-11, ID-11 and RF-11 as received on the portal. A receipt tells me the files arrived. It doesn't tell me on its own whether DC-11 has been assessed against the requirement, and I haven't had a reply from the specialist team yet. I'd rather say that than tell you everything is fine and turn out to be wrong."
+    },
+    {
+      "n": 10,
+      "speaker": "Beth Martin",
+      "text": "That's what I was told last time. That it was all fine."
+    },
+    {
+      "n": 11,
+      "speaker": "Alicia Romero",
+      "text": "I understand why that's frustrating. What I can do is ask Alice Hughes in Death Benefits Administration for the case-specific records: what was recorded when DC-11 came in, and what the checklist shows now. Then I'll know what to tell you."
+    },
+    {
+      "n": 12,
+      "speaker": "Beth Martin",
+      "text": "And when will I hear back?"
+    },
+    {
+      "n": 13,
+      "speaker": "Alicia Romero",
+      "text": "I can't give you a date I can't stand behind, Beth, because it depends on what the specialist team can find. I'd rather be straight with you about that."
+    },
+    {
+      "n": 14,
+      "speaker": "Beth Martin",
+      "text": "Right. I'll be honest, I'm not happy. It's the third time I've sent them."
+    },
+    {
+      "n": 15,
+      "speaker": "Alicia Romero",
+      "text": "That's fair, and I've got it down that you sent them with your first email, with the complaint, and again this morning."
+    },
+    {
+      "n": 16,
+      "speaker": "Beth Martin",
+      "text": "Fine. Ask her. But as far as I'm concerned it isn't sorted."
+    },
+    {
+      "n": 17,
+      "speaker": "Alicia Romero",
+      "text": "Understood. Thank you for your patience, Beth."
+    }
+  ],
+  "required_tokens": [
+    "REQ-2025-11-01",
+    "DC-11",
+    "Alice Hughes",
+    "three times",
+    "interrupted Alicia"
+  ],
+  "must_not_match": [
+    "\\bresolved\\b",
+    "\\bsatisf(ied|action)\\b",
+    "\\bapolog",
+    "\\bdisconnect"
+  ],
+  "authored_meta": {
+    "authored_by": "synthetic-data coding assistant (Claude, Anthropic) in-session",
+    "basis": "v1 revision 2 overlay of card 11-D06; summary rewritten to add the interruption and drop repetition; private dialogue turns unchanged; fidelity matrix split into spoken versus header-metadata claims with consequential-content requirements"
+  },
+  "fidelity": {
+    "claims": [
+      {
+        "claim": "request reference was spoken",
+        "source": "spoken",
+        "turns": [
+          5
+        ],
+        "check_strings": [
+          "REQ-2025-11-01"
+        ]
+      },
+      {
+        "claim": "case reference comes from the summary header metadata, not speech",
+        "source": "metadata",
+        "turns": [],
+        "check_strings": [
+          "C-e1da28538652e263887a"
+        ]
+      },
+      {
+        "claim": "Beth says she has sent the documents three times and does not understand what else is wanted",
+        "source": "spoken",
+        "turns": [
+          4
+        ],
+        "check_strings": [
+          "three times",
+          "what else you want"
+        ]
+      },
+      {
+        "claim": "Beth recalls being told the papers were all accepted (attributed, not established)",
+        "source": "spoken",
+        "turns": [
+          6
+        ],
+        "check_strings": [
+          "I was told the papers were all accepted"
+        ]
+      },
+      {
+        "claim": "Beth separates being told the papers were accepted from the benefit being decided",
+        "source": "spoken",
+        "turns": [
+          6
+        ],
+        "check_strings": [
+          "benefit being decided",
+          "separate thing"
+        ]
+      },
+      {
+        "claim": "Beth wants to know exactly which item is missing (manager restates, Beth confirms)",
+        "source": "spoken",
+        "turns": [
+          5,
+          6
+        ],
+        "check_strings": [
+          "exactly which item is missing",
+          "Yes"
+        ]
+      },
+      {
+        "claim": "Alicia says she cannot confirm what was said before the complaint",
+        "source": "spoken",
+        "turns": [
+          7
+        ],
+        "check_strings": [
+          "can't tell you what was said before the complaint",
+          "either way"
+        ]
+      },
+      {
+        "claim": "Alicia has the morning email with four attachments",
+        "source": "spoken",
+        "turns": [
+          3
+        ],
+        "check_strings": [
+          "four attachments"
+        ]
+      },
+      {
+        "claim": "the receipt shows DC-11, ID-11 and RF-11 as received",
+        "source": "spoken",
+        "turns": [
+          9
+        ],
+        "check_strings": [
+          "DC-11, ID-11 and RF-11 as received on the portal"
+        ]
+      },
+      {
+        "claim": "no specialist reply yet; cannot say whether DC-11 has been assessed",
+        "source": "spoken",
+        "turns": [
+          9
+        ],
+        "check_strings": [
+          "haven't had a reply from the specialist team",
+          "whether DC-11 has been assessed"
+        ]
+      },
+      {
+        "claim": "Alicia gives no assurance that everything is complete",
+        "source": "spoken",
+        "turns": [
+          9
+        ],
+        "check_strings": [
+          "tell you everything is fine"
+        ]
+      },
+      {
+        "claim": "Beth interrupts Alicia's explanation to ask what is missing",
+        "source": "spoken",
+        "turns": [
+          7,
+          8
+        ],
+        "check_strings": [
+          "which is",
+          "what's missing"
+        ]
+      },
+      {
+        "claim": "Alicia will ask Alice Hughes for the case-specific records",
+        "source": "spoken",
+        "turns": [
+          11
+        ],
+        "check_strings": [
+          "ask Alice Hughes",
+          "case-specific records"
+        ]
+      },
+      {
+        "claim": "Alicia gives no date",
+        "source": "spoken",
+        "turns": [
+          13
+        ],
+        "check_strings": [
+          "can't give you a date"
+        ]
+      },
+      {
+        "claim": "Beth agrees to the step but remains dissatisfied",
+        "source": "spoken",
+        "turns": [
+          14,
+          16
+        ],
+        "check_strings": [
+          "not happy",
+          "Fine. Ask her",
+          "isn't sorted"
+        ]
+      }
+    ],
+    "metadata_fields": [
+      {
+        "field": "case reference",
+        "carried_in": "summary header",
+        "note": "must not be narrated as spoken in the summary prose"
+      }
+    ],
+    "required_content": [
+      {
+        "id": "three_sends",
+        "detail": "Beth reports three sends",
+        "turns": [
+          4,
+          14
+        ],
+        "must_match": [
+          "three times"
+        ],
+        "must_not_match": [
+          "\\b(once|twice|four times)\\b"
+        ]
+      },
+      {
+        "id": "attributed_recollection",
+        "detail": "recollected acceptance stays attributed to Beth",
+        "turns": [
+          6,
+          10
+        ],
+        "must_match": [
+          "recalls being told",
+          "all accepted"
+        ],
+        "must_not_match": [
+          "confirmed (that )?(the )?(papers|documents) (were|had been) accepted"
+        ]
+      },
+      {
+        "id": "benefit_decision_distinction",
+        "detail": "accepted-papers recollection separated from the benefit being decided",
+        "turns": [
+          6
+        ],
+        "must_match": [
+          "benefit being decided"
+        ],
+        "must_not_match": []
+      },
+      {
+        "id": "item_missing_question",
+        "detail": "Beth wants to know which item is missing",
+        "turns": [
+          5,
+          6
+        ],
+        "must_match": [
+          "which item is missing"
+        ],
+        "must_not_match": []
+      },
+      {
+        "id": "interruption",
+        "detail": "Beth interrupted Alicia's explanation (turn 7 ends unfinished; turn 8 is Beth)",
+        "turns": [
+          7,
+          8,
+          9
+        ],
+        "turn_unfinished": 7,
+        "must_match": [
+          "interrupted Alicia'?s explanation"
+        ],
+        "must_not_match": [
+          "hung up",
+          "disconnect",
+          "\\brude\\b",
+          "abus"
+        ]
+      },
+      {
+        "id": "cannot_confirm_earlier",
+        "detail": "Alicia could not confirm what was said earlier",
+        "turns": [
+          7
+        ],
+        "must_match": [
+          "could not confirm what was said earlier"
+        ],
+        "must_not_match": [
+          "confirmed what was said"
+        ]
+      },
+      {
+        "id": "email_and_receipt_held",
+        "detail": "Alicia holds the morning email and the receipt",
+        "turns": [
+          3,
+          9
+        ],
+        "must_match": [
+          "four attachments",
+          "receipt"
+        ],
+        "must_not_match": []
+      },
+      {
+        "id": "no_specialist_reply",
+        "detail": "no reply from the specialist team yet",
+        "turns": [
+          9
+        ],
+        "must_match": [
+          "no reply from the specialist team"
+        ],
+        "must_not_match": []
+      },
+      {
+        "id": "no_assurance",
+        "detail": "Alicia gave no assurance everything is complete",
+        "turns": [
+          9
+        ],
+        "must_match": [
+          "no assurance"
+        ],
+        "must_not_match": [
+          "assured"
+        ]
+      },
+      {
+        "id": "next_step",
+        "detail": "Alicia will ask Alice Hughes for the case-specific records",
+        "turns": [
+          11
+        ],
+        "must_match": [
+          "will ask Alice Hughes"
+        ],
+        "must_not_match": [
+          "will not ask",
+          "won't ask",
+          "declined to ask",
+          "refused",
+          "did not agree"
+        ]
+      },
+      {
+        "id": "no_due_date",
+        "detail": "no due date stated for that action",
+        "turns": [
+          13
+        ],
+        "must_match": [
+          "no due date was stated"
+        ],
+        "must_not_match": [
+          "\\bby \\d",
+          "within \\d",
+          "tomorrow",
+          "next week"
+        ]
+      },
+      {
+        "id": "dissatisfaction",
+        "detail": "Beth agrees to the step and remains dissatisfied",
+        "turns": [
+          14,
+          16
+        ],
+        "must_match": [
+          "not happy",
+          "not sorted"
+        ],
+        "must_not_match": [
+          "satisf",
+          "resolved",
+          "happy with",
+          "pleased",
+          "relieved"
+        ]
+      }
+    ]
+  }
+}

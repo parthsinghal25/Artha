@@ -1,0 +1,10 @@
+{
+  "batch": "case11-rehearsal",
+  "package_version": 3,
+  "defects": [
+    {"id": "RD-9", "found_by": "independent review of v2 (external)", "kind": "content", "record": "D05 follow-up EML", "repair": "SR-2 single-sentence replacement (authored v3 overlay, revision 3)"},
+    {"id": "RD-10", "found_by": "independent review of v2 (external)", "kind": "quotation_dependency", "record": "D10 forward EML", "repair": "re-rendered quoting corrected D05 exactly; own text unchanged"},
+    {"id": "RD-11", "found_by": "independent review of v2 (external)", "kind": "tooling", "record": "Batch.publish", "repair": "R03-A kernel no-replace rename (renamex_np RENAME_EXCL / renameat2 RENAME_NOREPLACE), fail closed; staging identity separated from final package identity"},
+    {"id": "RD-12", "found_by": "independent review of v2 (external)", "kind": "documentation", "record": "REPAIR-CLOSURE v2 naming", "repair": "new reports use the final package basename; old reports not edited"}
+  ]
+}

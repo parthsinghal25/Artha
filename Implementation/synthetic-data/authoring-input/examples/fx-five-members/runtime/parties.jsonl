@@ -1,0 +1,5 @@
+{"party_id": "FX-P01", "member_reference": "FX-M01", "party_role": "member", "support_preferences": [], "clocks": {"recorded_at": "2026-09-29T09:05:00+10:00", "available_at": "2026-09-29T09:05:00+10:00"}}
+{"party_id": "FX-P02", "member_reference": "FX-M02", "party_role": "member", "support_preferences": [], "clocks": {"recorded_at": "2026-09-30T14:30:00+10:00", "available_at": "2026-09-30T14:30:00+10:00"}}
+{"party_id": "FX-P03", "member_reference": "FX-M03", "party_role": "member", "support_preferences": [], "clocks": {"recorded_at": "2026-01-20T10:20:00+11:00", "available_at": "2026-01-20T10:20:00+11:00"}}
+{"party_id": "FX-P04", "member_reference": "FX-M04", "party_role": "member", "support_preferences": [], "clocks": {"recorded_at": "2026-04-14T12:10:00+10:00", "available_at": "2026-04-14T12:10:00+10:00"}}
+{"party_id": "FX-P05", "member_reference": "FX-M05", "party_role": "member", "support_preferences": [], "clocks": {"recorded_at": "2026-04-28T14:05:00+10:00", "available_at": "2026-04-28T14:05:00+10:00"}}

@@ -1,0 +1,14 @@
+# Base runtime + deterministic test dependencies (all platforms). Exact versions come from ../requirements.lock
+# via `-c`; install: python -m pip install -r requirements/base.in -c requirements.lock
+jsonschema
+referencing
+fastapi
+uvicorn
+httpx
+pdfplumber
+pypdf
+pypdfium2
+openpyxl
+python-docx
+pillow
+pytest

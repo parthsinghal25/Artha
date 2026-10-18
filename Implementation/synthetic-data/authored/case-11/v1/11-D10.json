@@ -1,0 +1,62 @@
+{
+  "card": "11-D10",
+  "revision": 1,
+  "kind": "email",
+  "forward_of": "11-D05",
+  "authoring_meta": {
+    "authored_by": "synthetic-data coding assistant (Claude, Anthropic) in-session",
+    "basis": "assistant pack 11 artifact 11-D10; knowledge limited to cards dated on/before 2026-01-08"
+  },
+  "greeting": "Hi Alice,",
+  "blocks": [
+    {
+      "p": "Thanks for your note yesterday on REQ-2025-11-01. I'm forwarding Beth Martin's follow-up email below so that we are both looking at exactly the same papers."
+    },
+    {
+      "p": "Attached are:"
+    },
+    {
+      "ul": [
+        "DC-11.pdf, ID-11.pdf and RF-11.pdf, exactly as Beth sent them",
+        "11-05-portal-upload-receipt.jpg, her screenshot of the upload receipt (UP-11-20251221)",
+        "11-07-receiving-document-checklist.csv, the current receiving checklist for the request, as of 7 January"
+      ]
+    },
+    {
+      "p": "I have two questions:"
+    },
+    {
+      "ol": [
+        "Was DC-11 assessed when it was first uploaded on 21 December? The historical validity record is not in this bundle and it is not in the complaints file either, so I can't tell Beth whether the first copy was acceptable or why it is being requested again. If a record exists, please send it, or tell me who holds it and how I can get it.",
+        "Please treat the RF-11 witness-date question as separate from DC-11 receipt and validity. The checklist lists them as separate items, and I don't want Beth to be told that her whole bundle is invalid, or that RF-11 is the reason DC-11 was requested again, unless we can show that."
+      ]
+    },
+    {
+      "p": "I owe Beth her next update by 12 January, so anything you can tell me before then would help."
+    }
+  ],
+  "signoff": [
+    "Thanks,",
+    "Alicia Romero",
+    "Complaints Case Manager"
+  ],
+  "required_tokens": [
+    "REQ-2025-11-01",
+    "DC-11.pdf",
+    "ID-11.pdf",
+    "RF-11.pdf",
+    "11-05-portal-upload-receipt.jpg",
+    "11-07-receiving-document-checklist.csv",
+    "not in this bundle",
+    "RF-11 witness-date",
+    "12 January",
+    "Forwarded message"
+  ],
+  "must_not_match": [
+    "\\bAPR-",
+    "\\bACT-",
+    "\\bAF-e",
+    "DOC-11-NDA",
+    "\\bapproved\\b"
+  ]
+}

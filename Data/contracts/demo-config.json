@@ -1,0 +1,119 @@
+{
+  "schema_version": "0.2.0",
+  "status": "proposed_for_joint_review",
+  "institution_timezone": "Australia/Melbourne",
+  "week_start": "monday",
+  "interval_convention": "start_inclusive_end_exclusive",
+  "stock_history_mode": "snapshot_faithful",
+  "receipt_basis_default": "original_institution",
+  "issue_population_default": "active_in_window",
+  "age_bands_inclusive": [
+    [
+      0,
+      7
+    ],
+    [
+      8,
+      30
+    ],
+    [
+      31,
+      60
+    ],
+    [
+      61,
+      90
+    ],
+    [
+      91,
+      180
+    ],
+    [
+      181,
+      null
+    ]
+  ],
+  "duration_basis_member_days": "elapsed_seconds_divided_by_86400",
+  "rounding": {
+    "money_storage": "integer_minor_units",
+    "display_hours": "half_up_2dp",
+    "optional_capacity": "half_up_per_entry_then_sum"
+  },
+  "afca_demo_profile": {
+    "schedule": "FY27_public_reference",
+    "effective_from": "2026-07-01",
+    "effective_to_exclusive": "2027-07-01",
+    "currency": "AUD",
+    "amount_basis": "gross_including_gst",
+    "standard_level_minor": {
+      "registration_referral": 10952,
+      "rules_assessment": 0,
+      "case_management": 263212,
+      "decision": 1094268
+    },
+    "stage_to_fee_level": {
+      "registration_referral": "registration_referral",
+      "rules_assessment": "rules_assessment",
+      "case_management": "case_management",
+      "conciliation": "case_management",
+      "preliminary_assessment": "decision",
+      "decision": "decision"
+    },
+    "closed_rule": "retain_last_supported_non_closed_fee_category",
+    "mapping_status": "declared_synthetic_profile_not_verified_invoice_mapping",
+    "free_allowance_logic": false,
+    "annual_shared_charges": false,
+    "source": "https://www.afca.org.au/members/funding-model/fee-structure"
+  },
+  "optional_capacity": {
+    "enabled_by_default": false,
+    "hourly_rate_minor": 7500
+  },
+  "post_closure_return_rule": {
+    "version": "post-closure-return-0.1",
+    "status": "user_authorised_addition",
+    "scope": "same_continuing_problem_after_evidenced_case_closure",
+    "initiators": [
+      "complainant",
+      "representative"
+    ],
+    "requires_strict_later_order": true,
+    "maximum_gap_days": null,
+    "same_day_date_only_order": "uncertain_unless_independent_evidence_orders_events",
+    "contact_dedup": "one_contact_across_prior_closures_episodes_and_source_copies",
+    "flag_is_proof_of_wrongful_closure": false,
+    "new_case_time_basis": "explicit_case_receipt_basis",
+    "reopening_time_basis": "supported_transition_time",
+    "unknown_or_excluded_in_confirmed_totals": false
+  },
+  "temporal_rule": {
+    "version": "demo-temporal-0.1",
+    "review_status": "proposed",
+    "new_history_days": 28,
+    "persistent_complete_weeks": 4,
+    "persistent_incidence_weeks_min": 3,
+    "recurrence_quiet_days": 14,
+    "residual_compare_complete_days": 14
+  },
+  "semantic_success_thresholds": null,
+  "runtime_input_kinds": [
+    "party",
+    "case",
+    "source",
+    "procedure",
+    "coverage"
+  ],
+  "analysis_output_kinds": [
+    "extracted_fact",
+    "episode",
+    "contact_link",
+    "finding",
+    "work_entry",
+    "obligation",
+    "financial_event",
+    "afca_matter",
+    "afca_link",
+    "metric_result",
+    "post_closure_return"
+  ]
+}

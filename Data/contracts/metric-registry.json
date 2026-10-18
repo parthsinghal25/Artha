@@ -1,0 +1,327 @@
+{
+  "schema_version": "0.2.0",
+  "status": "proposed_for_joint_review",
+  "timezone": "Australia/Melbourne",
+  "metrics": [
+    {
+      "metric_id": "cases.new",
+      "unit": "cases",
+      "basis": "flow",
+      "contributor_entity": "case_id",
+      "population_rule": "Receipt date in activity window under explicit receipt basis; unique visible complaints.",
+      "aggregation": "sum",
+      "unknown_rule": "Unknown receipt dates excluded and disclosed.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "members.active",
+      "unit": "members",
+      "basis": "flow_distinct",
+      "contributor_entity": "member_reference",
+      "population_rule": "Known members with at least one permitted case event in activity window.",
+      "aggregation": "recompute_distinct",
+      "unknown_rule": "Unknown member IDs excluded and disclosed.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "contacts.repeat",
+      "unit": "contacts",
+      "basis": "flow",
+      "contributor_entity": "contact_id",
+      "population_rule": "Supported same-episode subsequent complainant/representative contacts in window; deduplicate.",
+      "aggregation": "sum",
+      "unknown_rule": "Uncertain continuity or first-contact history separate.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "contacts.post_closure_return",
+      "unit": "contacts",
+      "basis": "flow",
+      "contributor_entity": "contact_id",
+      "population_rule": "Unique complainant/authorised-representative contacts in window with supported same-continuing-problem linkage and strictly later timing than an evidenced prior case closure. Count each contact once across prior closures, episodes and copies; use deduplicated contact occurrence time.",
+      "aggregation": "sum",
+      "unknown_rule": "Uncertain identity, continuity, timing or closure evidence separate; absence under missing history is not zero. Review signal, not proof of defective resolution.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "members.post_closure_return",
+      "unit": "members",
+      "basis": "flow_distinct",
+      "contributor_entity": "member_reference",
+      "population_rule": "Distinct known members associated with supported post-closure return contacts in window under contacts.post_closure_return eligibility.",
+      "aggregation": "recompute_distinct",
+      "unknown_rule": "Unknown member references disclosed; a representative counts for the supported represented member, not as an extra member. No invented identity matching.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.new_after_closure",
+      "unit": "cases",
+      "basis": "flow",
+      "contributor_entity": "case_id",
+      "population_rule": "Unique newly received internal complaint cases in window under explicit receipt basis, supported as arising from a post-closure return about the same continuing problem in an earlier case. Earlier and new case IDs differ; reopening the earlier case is not a new case. Return contact need not fall in the receipt window but must be evidenced by snapshot.",
+      "aggregation": "sum",
+      "unknown_rule": "Unknown receipt dates or unsupported return-to-new-case relationships excluded and disclosed; source copies and multiple prior closures do not multiply cases.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.reopened_after_return",
+      "unit": "reopenings",
+      "basis": "flow",
+      "contributor_entity": "reopening_fact_id",
+      "population_rule": "Unique source-backed reopening transitions in window at transition time, linked to a supported same-problem post-closure return. Require an actual closed-to-reopened transition on that case after its closure and a return contact no later than the transition; deduplicate fact/source copies.",
+      "aggregation": "sum",
+      "unknown_rule": "Administrative reopenings without a supported member-return link excluded; uncertain timing/linkage separate. Repeated genuine transitions count separately, not repeated status snapshots.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.open",
+      "unit": "cases",
+      "basis": "stock",
+      "contributor_entity": "case_id",
+      "population_rule": "Visible latest sourced administrative state open/awaiting/reopened at endpoint; includes carry-in.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown historical states separate; no current-status backfill.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "work.recorded_hours",
+      "unit": "hours",
+      "basis": "flow",
+      "contributor_entity": "work_id",
+      "population_rule": "Unique recorded seconds in window divided by 3600; do not include estimated duration.",
+      "aggregation": "sum_seconds_then_divide",
+      "unknown_rule": "Missing duration excluded; partial coverage explicit.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "work.estimated_hours",
+      "unit": "hours",
+      "basis": "flow",
+      "contributor_entity": "work_id",
+      "population_rule": "Unique separately estimated seconds in window divided by 3600.",
+      "aggregation": "sum_seconds_then_divide",
+      "unknown_rule": "No replacement or duplicate of recorded work.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cash.expenses_paid",
+      "unit": "AUD_minor",
+      "basis": "flow",
+      "contributor_entity": "financial_event_id",
+      "population_rule": "Net unique payments/reversals for AFCA fee, external assistance and other complaint expense.",
+      "aggregation": "sum_minor",
+      "unknown_rule": "Incomplete payment evidence yields partial subtotal, not full zero.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cash.remedies_paid",
+      "unit": "AUD_minor",
+      "basis": "flow",
+      "contributor_entity": "financial_event_id",
+      "population_rule": "Net unique compensation and settlement payment/reversal events in window.",
+      "aggregation": "sum_minor",
+      "unknown_rule": "Requests/offers/approvals/invoices not cash.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cash.expenses_and_remedies_paid",
+      "unit": "AUD_minor",
+      "basis": "flow",
+      "contributor_entity": "financial_event_id",
+      "population_rule": "Union of eligible expense and remedy payments; excludes benefit/refund entitlements.",
+      "aggregation": "sum_minor",
+      "unknown_rule": "Must be labelled combined cash; no hours or estimates.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "obligations.outstanding",
+      "unit": "AUD_minor",
+      "basis": "stock",
+      "contributor_entity": "obligation_id",
+      "population_rule": "Latest supported applicable obligation amount less net payments/credits as of endpoint; exclude offers/requests.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown/conflicting amount excluded with coverage; overpayment flagged.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.age_distribution",
+      "unit": "cases",
+      "basis": "stock_grouped",
+      "contributor_entity": "case_id",
+      "population_rule": "Open cases by calendar-day age bands 0-7,8-30,31-60,61-90,91-180,>180 and unknown.",
+      "aggregation": "period_end",
+      "unknown_rule": "Explicit receipt basis; all bands including unknown reconcile.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.open_spell_age",
+      "unit": "days",
+      "basis": "stock_distribution",
+      "contributor_entity": "case_id",
+      "population_rule": "Calendar-day age since latest supported reopening/open transition, separately from original age.",
+      "aggregation": "recompute_distribution",
+      "unknown_rule": "Unknown spell start remains unknown.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "cases.closed_duration",
+      "unit": "days",
+      "basis": "flow_distribution",
+      "contributor_entity": "case_id",
+      "population_rule": "Supported closed cases in period: receipt to closure calendar days; exclude still-open cases.",
+      "aggregation": "recompute_distribution",
+      "unknown_rule": "Denominator and missing endpoints disclosed.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "waits.current",
+      "unit": "seconds",
+      "basis": "stock_distribution",
+      "contributor_entity": "dependency_id",
+      "population_rule": "Sourced current ongoing dependency duration to snapshot; distinguish parallel waits and missing starts.",
+      "aggregation": "recompute_distribution",
+      "unknown_rule": "No sum of parallel waits as elapsed case age.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "episodes.unresolved_member_days",
+      "unit": "member_days",
+      "basis": "interval_union",
+      "contributor_entity": "member_reference",
+      "population_rule": "Union supported unresolved intervals per known member intersected with window; seconds/86400 with declared duration basis.",
+      "aggregation": "union_intervals_then_divide",
+      "unknown_rule": "Missing completion alone not proof of unresolved service; incomplete intervals separate.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "issues.linked_cases",
+      "unit": "cases",
+      "basis": "population",
+      "contributor_entity": "case_id",
+      "population_rule": "Union supported included case links under active-in-window or all-linked-to-date selection.",
+      "aggregation": "recompute_distinct",
+      "unknown_rule": "Excluded/uncertain memberships not counted as included.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "issues.linked_members",
+      "unit": "members",
+      "basis": "population",
+      "contributor_entity": "member_reference",
+      "population_rule": "Distinct known members in supported issue population.",
+      "aggregation": "recompute_distinct",
+      "unknown_rule": "Unknown member IDs not silently complete.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "issues.new_episode_starts",
+      "unit": "episodes",
+      "basis": "flow",
+      "contributor_entity": "episode_id",
+      "population_rule": "One sourced first problem-start event per supported episode in window; not every contact or complaint.",
+      "aggregation": "sum",
+      "unknown_rule": "Unknown starts excluded with coverage.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "issues.open_linked_cases",
+      "unit": "cases",
+      "basis": "stock",
+      "contributor_entity": "case_id",
+      "population_rule": "Union supported issue population intersected with reconstructed open cases at endpoint.",
+      "aggregation": "period_end",
+      "unknown_rule": "Historical resolved associations not silently current dependencies.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.new",
+      "unit": "matters",
+      "basis": "flow",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "Distinct formal external receipt/referral dates in window, not threats to escalate.",
+      "aggregation": "sum",
+      "unknown_rule": "Unknown receipt dates separate.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.open",
+      "unit": "matters",
+      "basis": "stock",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "External matters with supported non-closed state at snapshot.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown state distinct from open.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.closed_routes",
+      "unit": "matters",
+      "basis": "flow_grouped",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "Matters concluded in window by exclusive observed route; negotiation/conciliation/determination/withdrawn/other/unknown.",
+      "aggregation": "sum",
+      "unknown_rule": "Open matters excluded from closed-route denominator.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.stage_distribution",
+      "unit": "matters",
+      "basis": "stock_grouped",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "One current evidenced external stage per matter at snapshot.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown stage is its own bucket.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.age_distribution",
+      "unit": "matters",
+      "basis": "stock_grouped",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "Open external matters by local-calendar days since external receipt; original complaint age separate.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown external receipt in unknown band.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.fee_estimate",
+      "unit": "AUD_minor",
+      "basis": "stock",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "One declared standard-stream current fee level per known matter, not summed stages or linked internal cases.",
+      "aggregation": "period_end",
+      "unknown_rule": "Unknown fee category not zero; do not add estimate to invoice/payment.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.hours_by_phase",
+      "unit": "hours",
+      "basis": "flow_grouped",
+      "contributor_entity": "work_id",
+      "population_rule": "Unique recorded AFCA-linked work seconds by phase at work time, divided by 3600.",
+      "aggregation": "sum_seconds_then_divide",
+      "unknown_rule": "Unknown phase retained; unknown duration separate.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "afca.mean_paid_remedy",
+      "unit": "AUD_minor",
+      "basis": "flow_ratio",
+      "contributor_entity": "afca_matter_id",
+      "population_rule": "Net paid remedy to snapshot for matters concluded in period divided by matters with known remedy/payment coverage, including supported zero amounts; shared obligations need explicit attribution.",
+      "aggregation": "recompute_ratio",
+      "unknown_rule": "Concluded-cohort payments differ from payments-in-period and final awarded amounts; disclose excluded unknowns.",
+      "definition_version": "0.2.0"
+    },
+    {
+      "metric_id": "work.optional_capacity_value",
+      "unit": "AUD_minor",
+      "basis": "flow",
+      "contributor_entity": "work_id",
+      "population_rule": "Unique eligible work seconds times 7500 cents/hour /3600, rounded half-up per entry then summed; optional.",
+      "aggregation": "sum_rounded_entries",
+      "unknown_rule": "Estimated capacity, never payroll or cash; duration provenance retained.",
+      "definition_version": "0.2.0"
+    }
+  ]
+}

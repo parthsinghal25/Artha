@@ -1,0 +1,48 @@
+{
+ "corpus_id": "p4-agy-qual-v1",
+ "description": "Antigravity CLI qualification (18 Oct 2026): the accepted P4 bundle, unchanged, with the model worklist restricted to 4 development members / 5 cases chosen from the frozen P4 pilot outputs (related pair, image source, AFCA/uncertain, contradiction). Early-evaluation members excluded. No new data.",
+ "bundle": "Data/synthesis/authored-candidates/b-8f2d6a910c4e47aab-p4/runtime/intake-bundle",
+ "delivery_manifest_sha256": "6a7282a033c0da0df8660a0fcf36e3fca9fbd15fcdc1e0c160b029b6faebcf4d",
+ "expected_counts": {
+  "members": 20,
+  "cases": 25,
+  "originals": 253
+ },
+ "source_quality_basis": {
+  "path": "Data/reviews/fresh-trial-25-cases-quality-2026-10-17/PRINCIPAL-DATA-P4-DECISION.json",
+  "sha256": "1c6e57d4574e106c339a0c162946f48c145c3b08f7c0d744e4a7eb5dad250ca1",
+  "decision": "accepted_for_bounded_source_quality_trial_with_disclosed_limitations",
+  "scope": "bounded source quality only; not extraction, diagnostic gold, AI or UI acceptance"
+ },
+ "publication_policy": "synthetic-demo-v1",
+ "temporal_policy": "demo-held-day-v1",
+ "association_profile": "factual-v1",
+ "excluded_corpora": [
+  "case-11 releases",
+  "rejected old100 REL-b0adf88b716fd0648b45",
+  "FX fixtures"
+ ],
+ "worklist": {
+  "eligible_member_references": [
+   "R-234f7a1f118a4e7b85",
+   "R-36163ef7d358419cbb",
+   "R-558b2186bec74fd68e",
+   "R-b455a54133004a5bb2"
+  ],
+  "early_evaluation_member_references": [],
+  "not_eligible_member_count": 16,
+  "basis": "subset of the p4-pilot-v1 eligible allowlist (development members only); selection used only the frozen pilot outputs of non-early-evaluation members",
+  "qualification_cases": [
+   "C-587f4c66062340fa9a",
+   "C-fa9eb796b45d480e81",
+   "C-b3eeee4ede52497298",
+   "C-349380176c054006b4",
+   "C-12d6f27100234332b0"
+  ]
+ },
+ "store": {
+  "data_dir": "var/demo/p4-agy-qual-v1",
+  "state": "qualification",
+  "provider": "agy gemini-3.8-flash-low"
+ }
+}

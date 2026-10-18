@@ -1,0 +1,6 @@
+# Hosted read-serving image (Linux, Cloud Run). Base runtime + the two Google clients used by sdbackend/cloud and
+# the Firestore serving state. Deliberately NO mlx/mlx-*, pyobjc/Vision/Quartz, google-genai or model weights:
+# the serving container never runs a model or OCR.
+-r base.in
+google-cloud-storage
+google-cloud-firestore

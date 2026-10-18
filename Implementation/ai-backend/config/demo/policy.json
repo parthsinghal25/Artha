@@ -1,0 +1,28 @@
+{
+  "policy_id": "pol-local-poc",
+  "policy_note": "Trusted backend-owned entitlement allowlist for the local POC. Never sourced from Data deliveries, model output or browser requests. Any edit changes permission_revision and invalidates contexts, cursors and asset actions.",
+  "views": {
+    "complaints-leadership": {
+      "description": "Specialist complaints leadership: full complaints-role access to the selected synthetic corpus",
+      "case_scope": "all_except_denied",
+      "denied_case_ids": [],
+      "denied_source_ids": [],
+      "denied_asset_version_ids": []
+    },
+    "denied-test": {
+      "description": "Deliberately restricted test view: no case access (exercises neutral RESOURCE_UNAVAILABLE)",
+      "case_scope": "none",
+      "denied_case_ids": [],
+      "denied_source_ids": [],
+      "denied_asset_version_ids": []
+    }
+  },
+  "principals": {
+    "leader.demo": {"display_name": "Complaints leadership (demo)", "view_id": "complaints-leadership",
+                     "capabilities": ["aggregate", "contributors", "cases", "sources", "originals", "previews", "download"]},
+    "analyst.demo": {"display_name": "Complaints analyst, no download (demo)", "view_id": "complaints-leadership",
+                      "capabilities": ["aggregate", "contributors", "cases", "sources", "originals", "previews"]},
+    "restricted.demo": {"display_name": "Restricted test principal (demo)", "view_id": "denied-test",
+                         "capabilities": []}
+  }
+}

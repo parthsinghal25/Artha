@@ -1,0 +1,196 @@
+{
+  "registry_id": "shared-measures-1.0.0",
+  "definition_version": "1.0.0",
+  "baseline_registry": "Data/contracts/metric-registry.json@0.2.0",
+  "definitions": [
+    {
+      "measure_id": "cases.closure_transitions",
+      "unit": "closure_transitions",
+      "entity": "closure_transition_id",
+      "basis": "flow",
+      "rule": "Unique source-backed nonclosed-to-closed transitions in the activity window, deduplicated across copies; a later genuine close after reopening is another transition. Unknown predecessor or ambiguous ordering excluded and disclosed."
+    },
+    {
+      "measure_id": "cases.selected_closure_duration",
+      "unit": "days",
+      "entity": "case_id",
+      "basis": "flow_distribution",
+      "rule": "Unique cases with a supported closure in the window, whether closed or subsequently reopened at selected evidence cutoff. Select last supported closure in that window per case. Original receipt to that administrative closure in local calendar days; unknown endpoints excluded/disclosed. Distinct from baseline cases.closed_duration@0.2.0, which excludes still-open cases at selected evidence cutoff."
+    },
+    {
+      "measure_id": "cases.open_original_age",
+      "unit": "days",
+      "entity": "case_id",
+      "basis": "stock_distribution",
+      "rule": "Eligible open cases at endpoint; local calendar date minus original receipt date (or explicitly selected team basis). Missing receipt dates stay missing. R7 quantiles with N; no average-age substitution."
+    },
+    {
+      "measure_id": "issues.observed_combinations",
+      "unit": "cases",
+      "entity": "case_id",
+      "basis": "population_partition",
+      "rule": "Each assessed eligible case assigned once by its exact supported set at one taxonomy level; separate cases with no supported membership into assessed-none and unassessed. Additional uncertain memberships disclosed without promotion. Full-level or explicitly selected projection; top K descending count then node-ID order plus union remainder."
+    },
+    {
+      "measure_id": "issues.handling_relationship_cases",
+      "unit": "cases",
+      "entity": "case_id",
+      "basis": "relationship_matrix",
+      "rule": "Distinct case union per problem and handling pair under an explicit accepted relation type. Cells overlap. Ordered association is not causal impact; operational consequence requires its own evidence. No avoided cost/delay inference."
+    },
+    {
+      "proposal_id": "proposal.mx.commitments.recorded",
+      "contributor_entity": "commitment_id",
+      "unit": "commitments",
+      "basis": "promise activity",
+      "population_rule": "supported recorded member-facing promises; internal scope separate",
+      "unknown_rule": "unknown promise occurrence/report-only candidates disclosed",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "count_unique_eligible",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.commitments.recorded",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.commitments.follow_through",
+      "contributor_entity": "commitment_id",
+      "unit": "commitments",
+      "basis": "original-due cohort / as-of classification",
+      "population_rule": "six mutually exclusive states; one original due opportunity per commitment",
+      "unknown_rule": "unknown original due excluded eligibility; unknown fulfilment remains unknown bucket",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "recompute_cohort_partition",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.commitments.follow_through",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.effort.repeated_explanation_contacts",
+      "contributor_entity": "contact_id",
+      "unit": "contacts",
+      "basis": "contact activity",
+      "population_rule": "same material concern on supported subsequent participant contact; once per contact",
+      "unknown_rule": "unknown continuity/prior history separate; necessity not inferred",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "count_unique_eligible",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.effort.repeated_explanation_contacts",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.effort.repeated_submissions",
+      "contributor_entity": "submission_id",
+      "unit": "submission occasions",
+      "basis": "submission activity",
+      "population_rule": "same item/version/requirement on another participant submission occasion",
+      "unknown_rule": "corrections/new versions/staff forwards excluded; attempts and receipts separate",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "count_unique_eligible",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.effort.repeated_submissions",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.effort.repeat_valid_evidence_requests",
+      "contributor_entity": "request_event_id",
+      "unit": "request occasions",
+      "basis": "later request activity",
+      "population_rule": "prior source-backed validity for same item/version/requirement; request once across items",
+      "unknown_rule": "missing validity/ordering uncertain; legitimate different/expired/incomplete requirement excluded",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "count_unique_eligible",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.effort.repeat_valid_evidence_requests",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.effort.members_repeat_valid_evidence",
+      "contributor_entity": "member_reference",
+      "unit": "members",
+      "basis": "distinct reach in request activity window",
+      "population_rule": "known represented members linked to eligible request events",
+      "unknown_rule": "unknown identity disclosed; deceased status separate; no retention implication",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "recompute_distinct",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.effort.members_repeat_valid_evidence",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    },
+    {
+      "proposal_id": "proposal.mx.responses.expressed_positions",
+      "contributor_entity": "response_occasion_id + target_outcome_id + dimension",
+      "unit": "response relationships",
+      "basis": "response activity",
+      "population_rule": "explicit scoped position with respondent and target evidence",
+      "unknown_rule": "update-only distinct; silence creates no response act",
+      "denominator": "counts first; no percentage approved. Explicit eligible cohort and complete relevant ascertainment needed before any rate.",
+      "deduplication": "canonical logical occurrences; source copies/revisions/joins never multiply contributors",
+      "aggregation": "count_unique_eligible",
+      "coverage_dimensions": [
+        "source/history",
+        "identity/role",
+        "linkage",
+        "time/eligibility",
+        "classification/outcome"
+      ],
+      "source_time_access": "permitted evidence available by snapshot; occurrence basis separate from knowledge mode",
+      "measure_id": "mx.responses.expressed_positions",
+      "definition_version": "1.0.0",
+      "normative_definition": "MEMBER-EXPERIENCE.md"
+    }
+  ]
+}

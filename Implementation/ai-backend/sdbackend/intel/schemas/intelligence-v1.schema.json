@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:example-super:backend:intelligence:1.1.0",
+  "title": "Backend-owned additive intelligence companion (two read operations); Shared 1.0.0 frozen schemas unchanged",
+  "version": "1.1.0",
+  "changes": "1.1.0 (additive): sections afca and continuity; publication summary coverage is counts-only",
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "maxLength": 160, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "cursor": {"anyOf": [{"type": "string", "minLength": 1, "maxLength": 200}, {"type": "null"}]},
+    "page_size": {"type": "integer", "minimum": 1, "maximum": 100},
+    "selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["temporal_policy"],
+      "properties": {
+        "temporal_policy": {"const": "demo-held-day-v1"},
+        "view_date": {"anyOf": [{"type": "string", "format": "date"}, {"type": "null"}]},
+        "section": {"enum": ["overview", "issues", "issue", "alerts", "priorities", "arrivals", "burden",
+                              "experience", "coverage", "publications", "afca", "continuity"]},
+        "issue_id": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "grain": {"enum": ["day", "week", "month", "quarter", "observation_year"]}
+      }
+    },
+    "intelligence.get.request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operation", "context_id", "selection", "cursor", "page_size"],
+      "properties": {
+        "operation": {"const": "intelligence.get"},
+        "context_id": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "selection": {"anyOf": [{"$ref": "#/$defs/selection"}, {"type": "null"}]},
+        "cursor": {"$ref": "#/$defs/cursor"}, "page_size": {"$ref": "#/$defs/page_size"}
+      }
+    },
+    "case.memory.get.request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operation", "context_id", "case_id", "memory_revision_id", "cursor", "page_size"],
+      "properties": {
+        "operation": {"const": "case.memory.get"},
+        "context_id": {"$ref": "#/$defs/id"}, "case_id": {"$ref": "#/$defs/id"},
+        "memory_revision_id": {"anyOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "cursor": {"$ref": "#/$defs/cursor"}, "page_size": {"$ref": "#/$defs/page_size"}
+      }
+    },
+    "publication_summary": {
+      "type": "object",
+      "required": ["publication_id", "publication_policy", "temporal_policy", "view_date", "knowledge_end_exclusive",
+                   "watermarks", "coverage", "model_assessed", "human_review", "analysis_set_version"],
+      "properties": {
+        "publication_id": {"$ref": "#/$defs/id"}, "publication_policy": {"const": "synthetic-demo-v1"},
+        "temporal_policy": {"const": "demo-held-day-v1"}, "view_date": {"type": "string", "format": "date"},
+        "knowledge_end_exclusive": {"type": "string", "format": "date-time"},
+        "watermarks": {"type": "object"}, "coverage": {"type": "object"},
+        "model_assessed": {"type": "boolean"}, "human_review": {"const": "not_performed"},
+        "analysis_set_version": {"$ref": "#/$defs/id"}, "stale": {"type": "boolean"}
+      }
+    },
+    "ok_response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operation", "request_id", "status", "context", "payload"],
+      "properties": {
+        "operation": {"enum": ["intelligence.get", "case.memory.get"]}, "request_id": {"type": "string"},
+        "status": {"const": "ok"}, "context": {"type": "object"},
+        "payload": {"type": "object", "required": ["publication", "section", "items", "next_cursor", "total_items"],
+                    "properties": {"publication": {"$ref": "#/$defs/publication_summary"},
+                                   "section": {"type": "string"}, "items": {"type": "array"},
+                                   "next_cursor": {"$ref": "#/$defs/cursor"},
+                                   "total_items": {"type": "integer", "minimum": 0},
+                                   "detail": {"type": "object"}}}
+      }
+    },
+    "error_response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operation", "request_id", "status", "context", "error"],
+      "properties": {
+        "operation": {"type": "string"}, "request_id": {"type": "string"}, "status": {"const": "unavailable"},
+        "context": {"anyOf": [{"type": "object"}, {"type": "null"}]},
+        "error": {"type": "object", "required": ["code", "message", "retryable", "correlation_id"],
+                  "properties": {"code": {"enum": ["INVALID_REQUEST", "RESOURCE_UNAVAILABLE", "CONTEXT_EXPIRED",
+                                                   "NOT_CALCULATED", "HISTORY_UNAVAILABLE", "NOT_INGESTED",
+                                                   "INTERNAL_FAILURE"]},
+                                 "message": {"type": "string"}, "retryable": {"type": "boolean"},
+                                 "correlation_id": {"type": "string"}}}
+      }
+    }
+  },
+  "capabilities": {
+    "operations": ["intelligence.get", "case.memory.get"],
+    "drill_through": "intelligence.get items carry exact contributor case/event IDs and the child context_id; continue with the frozen case.get, case.sources.list, source.get, location.resolve and asset.get on that context, or case.memory.get for the cited memory",
+    "unavailable_states": ["NOT_INGESTED", "NOT_CALCULATED", "HISTORY_UNAVAILABLE", "RESOURCE_UNAVAILABLE"]
+  }
+}

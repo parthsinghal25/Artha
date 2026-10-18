@@ -1,0 +1,2232 @@
+{
+  "source_root": "../SuperDashboard",
+  "copy_root": ".",
+  "source_untouched": true,
+  "copied_files": [
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements.txt",
+      "destination": "Implementation/ai-backend/requirements.txt",
+      "original_sha256": "d8104b34cb79c409a4fe43d0445abf313e5c463e87e434925454ff79ba1a22f8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/__main__.py",
+      "destination": "Implementation/ai-backend/sdbackend/__main__.py",
+      "original_sha256": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/acceptance.py",
+      "destination": "Implementation/ai-backend/sdbackend/acceptance.py",
+      "original_sha256": "b53b3be9b27d56caee7a24b912a903c35b99d795998fbeb3bcf83f6559adac94"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/analysis_read.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/analysis_read.py",
+      "original_sha256": "7e9226d06968e79f767ab548e862a648779860f6634eaba0007a130b760ac77d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/app.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/app.py",
+      "original_sha256": "06da6a65fa57a9df4bf0bb6f604dbe4d2dc1e8be9be68908db915d0c6d1ffaa4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/auth.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/auth.py",
+      "original_sha256": "9ca3c0209fb035a344a6f44597fbb3a78df13172a7341b8a91f075fd28698dcf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/ops.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/ops.py",
+      "original_sha256": "4617c0b1f3fcc43bb3938abc8b4e8891a1998df2524334463035f613a43c2b47"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/repo.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/repo.py",
+      "original_sha256": "1ee960dc1c0fc6c212402668cd7d13c3ddda6f94e2acdbb1b2ef9fb0768d8abf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/api/state.py",
+      "destination": "Implementation/ai-backend/sdbackend/api/state.py",
+      "original_sha256": "898b7c01135f4975339123d1e98cb1a702938ce34d3ef2841d3ba33372a993b7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/canonical.py",
+      "destination": "Implementation/ai-backend/sdbackend/canonical.py",
+      "original_sha256": "fbd17f14961a12bc224f8d2ed1954ec81fbfa19e7ed787cc0e545a245ce0e751"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/citations.py",
+      "destination": "Implementation/ai-backend/sdbackend/citations.py",
+      "original_sha256": "b686ff9fb0379df85934fb9bf882e5c5923824f199c08f12b49df31e57656d51"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cli.py",
+      "destination": "Implementation/ai-backend/sdbackend/cli.py",
+      "original_sha256": "60db3391ef172960d258be41e7b49c73cab4c677cb312aea46bef8152306c7c5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/__init__.py",
+      "original_sha256": "d3738af76f85f90a1e3d66c3aecddc8e23aea5bd8a0bcae281004cb3c1c6caf9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/boot.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/boot.py",
+      "original_sha256": "f3c77d8e9f502b0addbfaae63a19e28f622ae9479e3f7b77ec417c3b24ae9c1e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/cli.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/cli.py",
+      "original_sha256": "ab03d7297a36d5b3ad1d365e942976098e7e8f4a8c9f9231e60562025f8c85a0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/publication.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/publication.py",
+      "original_sha256": "a5d44baa6ba1d4df0dffdd7e81cea104105bc9acbaf6c326de1d85538ed4f444"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/remote.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/remote.py",
+      "original_sha256": "0223072c31112af21fac41a6cb586b31abe3d0cd06e60cc9d375a6cbebf4d179"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/cloud/vertex_job.py",
+      "destination": "Implementation/ai-backend/sdbackend/cloud/vertex_job.py",
+      "original_sha256": "81cfd6beba38197de3419eaa29771693a7c8e41e0ad30caee37e9798ef6145c4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/config.py",
+      "destination": "Implementation/ai-backend/sdbackend/config.py",
+      "original_sha256": "a8672393d87649501b9cd4001803cf9a666bc981542b4072a9347ad065972b91"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/contracts.py",
+      "destination": "Implementation/ai-backend/sdbackend/contracts.py",
+      "original_sha256": "7c882fbd7fa599086644280ba0c8f84ec4bf008c2f28a0e5550cf4758417a912"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/core.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/core.py",
+      "original_sha256": "123e15ea4cb3b913ceb772021cbbe157d4b1212f43c68a51c74f53d2c1eab98f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/issues.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/issues.py",
+      "original_sha256": "3f3eba84192491e2042de65e0ad30f6ae3fb845a9b91c8b7236ed6773fdb21bf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/mx.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/mx.py",
+      "original_sha256": "2aeebc29ec7c8bfaf65ed6e4753350fe3af24beebbde42b1ed417a831f11afb8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/native_ledger.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/native_ledger.py",
+      "original_sha256": "e42f85e2d1551c9a24c69bce5341021aa63f0e5d5c30353936ee027419ca380c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/native_lifecycle.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/native_lifecycle.py",
+      "original_sha256": "2a87b84e4fdd417737a73c5be45bb2c38a25e32a555a3f31f50e2402e75e1111"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/native_tables.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/native_tables.py",
+      "original_sha256": "15be8f6006e7ed1c96deb9e8f383ae4a243cf225f56e503028fc18e4c911f624"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/native_work.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/native_work.py",
+      "original_sha256": "825f86ea0baf7954ee90f536076e6c0568fdaac539ae826b0b4930f429546193"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/producers.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/producers.py",
+      "original_sha256": "6b85e2f2507c146172b064795b349c8c0dd85359890e637b561cb93b817b2ea8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/publish.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/publish.py",
+      "original_sha256": "18411e87297314670568b2b0768cd7d0dfee883ec276c0c3ffeb8e97551e80f3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/resolvers.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/resolvers.py",
+      "original_sha256": "5ac13ddc028fe8e89b1ea5257e3fd09949fb4b2615c58585e7ad3a34d4c9f8ee"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/engine/results.py",
+      "destination": "Implementation/ai-backend/sdbackend/engine/results.py",
+      "original_sha256": "084c0567df60ccfb70bea5de533c19283fb2b062e8834b333da2bae8b42bbc62"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/evaluation/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/evaluation/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/evaluation/adapter.py",
+      "destination": "Implementation/ai-backend/sdbackend/evaluation/adapter.py",
+      "original_sha256": "b42e86f81782bdd8386d759013b8468fe1b56853f2ac21277719f4b48fcf0fe4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/base.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/base.py",
+      "original_sha256": "b4cc97605310b3038a2e5d274b2ed59dc0dfac407e63330caa5f9a08d88b8b4b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/eml.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/eml.py",
+      "original_sha256": "1e1f6433c6904f10d96b0003fb1fbb751399b05cc7f52530aa88ca70ef9451b0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/image.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/image.py",
+      "original_sha256": "979d555cb87c8f0f482b314628c8381c39149f6eb27109d7994ca68495059a18"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/jsondoc.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/jsondoc.py",
+      "original_sha256": "a89c3d4175f87d7cb81d3e7b0ecf3c07e827401f6b0efa8668b57a4eedd40475"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/pdf.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/pdf.py",
+      "original_sha256": "814b2e5a3c75147230ab3aeb5678d6556420ce527d3d73c839a6fffa925234aa"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/registry.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/registry.py",
+      "original_sha256": "2d89a6de8b6e5defa849397686406ec6d1ad413a5baa6f57b1bb200cee2bbf7e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/sniff.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/sniff.py",
+      "original_sha256": "b53f697252fd1fe9d5d89e8fa889d33f3889bf394e87339532579a1f4fcae6fc"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/textual.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/textual.py",
+      "original_sha256": "bf4f9f4f22e30311727f1beaa5f419c3704abd4cb039a2117c7eda6fc4c05c5a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/extract/xlsx.py",
+      "destination": "Implementation/ai-backend/sdbackend/extract/xlsx.py",
+      "original_sha256": "3015b4b581a723c0fa5b747d08099da58ccd3a382cf5bbafaed8d9766c17a039"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/ingest/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/ingest/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/ingest/build.py",
+      "destination": "Implementation/ai-backend/sdbackend/ingest/build.py",
+      "original_sha256": "13652c4f7f0fe803c193b79526939c3c8854f60ec75859776c5bdcced2862e8e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intake/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/intake/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intake/delivery.py",
+      "destination": "Implementation/ai-backend/sdbackend/intake/delivery.py",
+      "original_sha256": "4ce713d9f9c3954815adfb19ba01fe7cd636b8649e57df2cff63a0dcf25cf87e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/api.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/api.py",
+      "original_sha256": "91471b9452c6c36d31dd29e7f4fa73e65fb1b5c7f7cc633d6da61b17228f203a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/cli.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/cli.py",
+      "original_sha256": "f220c2a7cf060be536d92c5d45a9a3aa966e917217baea8dc824e44b84ffc8c2"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/corpus.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/corpus.py",
+      "original_sha256": "2387ad0b3d8da2a22303bad3969a7c54951f423c248cb25704ffc756d69484eb"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/discovery.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/discovery.py",
+      "original_sha256": "fd524ab93a345060e4ca73381cf7b59959dd3257a728cb8dd7c198bdcf25a46e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/evaluate.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/evaluate.py",
+      "original_sha256": "cbbdeb561931e1f1c17ca840323ac74162c9e472da91478b3bcddb1efcb549a1"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/forecast.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/forecast.py",
+      "original_sha256": "348a16332b3e8a878c8245df44a2ae978e7e99b8bf2b03ece3599c6b63015f52"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/intake.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/intake.py",
+      "original_sha256": "d20f7a5ccb7f9ddfec0c09a51ad2b0697b6841ec4fe2beeae83dd52a1605fa9a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/measures.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/measures.py",
+      "original_sha256": "d00c4f19e597e3e67736f09f1bb9a66d721985446616229936308edeae31a46a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/memory.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/memory.py",
+      "original_sha256": "f4e220934042232c7de0bae4a045b4ece8fca75be7e847535af3377c6943e0a8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/preflight.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/preflight.py",
+      "original_sha256": "5f9e36d2f730ff72e6aa78c4161b1c229c76c1610169259af4dff59cea598953"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/procedures.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/procedures.py",
+      "original_sha256": "2d9a68554f8b02a8db663bcc084780604383a8ad1cfc52fcc996fc86416e8539"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/publish.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/publish.py",
+      "original_sha256": "da6c58931606a0e6bb5de08bbee3abc0294f5341dfe768ba5ae13f902d0c244a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/report.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/report.py",
+      "original_sha256": "cfcf62cc18dd029ebe5335031ce210226ed9ceb2ab304a17cf4fdb5c6ab7290d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/schemas/intelligence-v1.schema.json",
+      "destination": "Implementation/ai-backend/sdbackend/intel/schemas/intelligence-v1.schema.json",
+      "original_sha256": "c5c2ed07ca5891620b73ceb2d2c1034890f23858a44f2270a4b964acc63a6df8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/tables.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/tables.py",
+      "original_sha256": "99e257d8a6271c2a13b3cf4c9369f16ebd609d8afc3ec4d33bd5a3260fb8a921"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/temporal.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/temporal.py",
+      "original_sha256": "c95a762311e0310d7415821a90dc09c9f750372210e4fac8ea8392c9e84fca10"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/intel/worker.py",
+      "destination": "Implementation/ai-backend/sdbackend/intel/worker.py",
+      "original_sha256": "c722a9777d0609611c4cd4c267f06826bbb84bdcf91e84e7d13b3217e29da93e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/agy_cli.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/agy_cli.py",
+      "original_sha256": "416965ec7cec490800c34716d6f38d82e9838c90f522167f782c816e9bb5e0a9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/base.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/base.py",
+      "original_sha256": "59af88cb79ff87a250dc22af4d65fb5f38ac0fae79adcbd87146e43f8298df2e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/gateway.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/gateway.py",
+      "original_sha256": "5065336c061e9c4b9875e44000d8ee6e4c61e66cf5d999330b9ed04b58d743db"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/gemini.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/gemini.py",
+      "original_sha256": "edfbe8d45144768a8378fffce002ff03c73729d37cdac95716664dfd2729f6f4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/gemma_mlx.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/gemma_mlx.py",
+      "original_sha256": "ad779b64a3fb32ce66f7c8423f6f903a1c35e9098f62095cc5bb093c6018f9e6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/smoke.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/smoke.py",
+      "original_sha256": "bf57fc9a650e1456d3b69f061da6247841a9513faebc85a27e12bd20acf3d40c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/models/vertex.py",
+      "destination": "Implementation/ai-backend/sdbackend/models/vertex.py",
+      "original_sha256": "b6cc7d56a4956772128e0be7166555581dc5e8ddd0d5aa97339f4999a7213139"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/ops/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/ops/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/ops/backup.py",
+      "destination": "Implementation/ai-backend/sdbackend/ops/backup.py",
+      "original_sha256": "5425a2c496c91ead317473891474e19ff8d120eddaac8b7029e27767ff651801"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/case_assess.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/case_assess.py",
+      "original_sha256": "20e72cc980eadf019fa0c009290d155dd9c638e23fbf3238d19366d7c4b86517"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/collective.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/collective.py",
+      "original_sha256": "061667c434e856cfc78625fe84acbd8fea96e1133f7cba9809ca878d3c0505fa"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/control.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/control.py",
+      "original_sha256": "7553e673c3feeb108919cc41902143223d1fbe25d562987c14cea901d05a9008"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/dto_compat.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/dto_compat.py",
+      "original_sha256": "947341cfc4bb9290aa06c18a953aee70d356fa7ef114cdbe9041b5d43daffb3c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/incremental.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/incremental.py",
+      "original_sha256": "d71499bfebcec83afd25821bac46db982edaa6ded7dcc316bf6bdec2865d7771"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/invalidation.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/invalidation.py",
+      "original_sha256": "f53004fa790b3f3f35be3d4bb86e8a3eea85910b89c898f7fa3325ecff9db3b9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/passages.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/passages.py",
+      "original_sha256": "d3b6a011d98d1d0fb8a2894d2fb1a6745cb86415734ed48dcf587dd69a77f461"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/runner.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/runner.py",
+      "original_sha256": "a3b0a166d17d5ea6d1e5620df2942da165ab36821ee9a107e7abf5100e320300"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/source_interpret.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/source_interpret.py",
+      "original_sha256": "914b55c72bfe10c426303bcad89996e28da6afb1578d1320be8b26a7d02367ab"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/pipeline/tools.py",
+      "destination": "Implementation/ai-backend/sdbackend/pipeline/tools.py",
+      "original_sha256": "279641a4abd25d51fcbac9c6d68b950bb1739c354a0ae2f83574a734ecb0a6c7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/policy.py",
+      "destination": "Implementation/ai-backend/sdbackend/policy.py",
+      "original_sha256": "628216f8cf25d319a32fa5f7933a698687f4834ba926ffdf2b4d46075ff26de3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/runtime.py",
+      "destination": "Implementation/ai-backend/sdbackend/runtime.py",
+      "original_sha256": "6facdbf4257289467af258f37779dab105dc0649eb76248d2f473331224b0392"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/store/__init__.py",
+      "destination": "Implementation/ai-backend/sdbackend/store/__init__.py",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/store/blobs.py",
+      "destination": "Implementation/ai-backend/sdbackend/store/blobs.py",
+      "original_sha256": "905d2edd346d790d5cba6c42ea007743742c6bab7676d774ee8b213f579b5603"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/sdbackend/store/db.py",
+      "destination": "Implementation/ai-backend/sdbackend/store/db.py",
+      "original_sha256": "6acaa435f4ac6d8ad64d190bbf2de31635301ff078570fde289964d8c9f5c252"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/combined500-v1.corpus.json",
+      "destination": "Implementation/ai-backend/config/demo/combined500-v1.corpus.json",
+      "original_sha256": "8099b8a49494f85eb05303da34cbd1c897f6a68189adc59f2936735b08a60f83"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/fixed500-agy-v1.corpus.json",
+      "destination": "Implementation/ai-backend/config/demo/fixed500-agy-v1.corpus.json",
+      "original_sha256": "86f485583c3c2bce4f472e1c8cb71259ba26d25cbdf3bd02ee8624a6aafe4294"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/p4-agy-qual-v1.corpus.json",
+      "destination": "Implementation/ai-backend/config/demo/p4-agy-qual-v1.corpus.json",
+      "original_sha256": "97db0f6c1b38481422f299b10f0b00e3d0263335e789bfe46179b8eae2dbb186"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/p4-pilot-v1.corpus.json",
+      "destination": "Implementation/ai-backend/config/demo/p4-pilot-v1.corpus.json",
+      "original_sha256": "c23a0d03c56ca77e91cb8eef54fac1156c9864dcc8a882da62f2a178e31de4de"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/policy.json",
+      "destination": "Implementation/ai-backend/config/demo/policy.json",
+      "original_sha256": "c08bd90cee804ffb401c93402daea65a585087adb7a8b38328469aa9c3502e58"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/splits/cloud480-member-split.json",
+      "destination": "Implementation/ai-backend/config/demo/splits/cloud480-member-split.json",
+      "original_sha256": "4b206bf84ca74c792261c98d439eb92f50176de918789b26d5b041f6356ad4bf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/demo/splits/p4-member-split.json",
+      "destination": "Implementation/ai-backend/config/demo/splits/p4-member-split.json",
+      "original_sha256": "2080ff2d8c1ec4b34f7622301a51680f08a1ac28c851b2e996179188015ba584"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/policy.json",
+      "destination": "Implementation/ai-backend/config/policy.json",
+      "original_sha256": "c08bd90cee804ffb401c93402daea65a585087adb7a8b38328469aa9c3502e58"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/config/reviewers.json",
+      "destination": "Implementation/ai-backend/config/reviewers.json",
+      "original_sha256": "a9d177ee1948031cea8de998120f9afd08fbf1038d633d482a7a583881112f91"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/cloud_fakes.py",
+      "destination": "Implementation/ai-backend/tests/cloud_fakes.py",
+      "original_sha256": "4abefb238e02bf8be2635e1b45cb4e35ee1a71bbf7d37b9e97f310dd9a6fda03"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/conftest.py",
+      "destination": "Implementation/ai-backend/tests/conftest.py",
+      "original_sha256": "19b9c47f993504d95412e4a733cc88ed9c1d26db5d34bd6ef8fbb3bd44904728"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/intel_mock.py",
+      "destination": "Implementation/ai-backend/tests/intel_mock.py",
+      "original_sha256": "9d71bb1d7f2375cbfda97235ea9cfb81bd2c2e0ee46d90f871481568f77e202d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/specimens.py",
+      "destination": "Implementation/ai-backend/tests/specimens.py",
+      "original_sha256": "7ecfc22902b604b0b5100a8ad2b80c9cdae8280887b7bdd20fb8c38c9227d4e8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_agy_adapter.py",
+      "destination": "Implementation/ai-backend/tests/test_agy_adapter.py",
+      "original_sha256": "218c1744074602fd6b5ee222bc1c34b4a4467e736cd0994a91897fc6af1f8b5b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_analytical_r10.py",
+      "destination": "Implementation/ai-backend/tests/test_analytical_r10.py",
+      "original_sha256": "670da5a00a0ba995561c3c1e86abb90e33f20605b810dc45e134e9328e9b1b89"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_case11_review_repairs.py",
+      "destination": "Implementation/ai-backend/tests/test_case11_review_repairs.py",
+      "original_sha256": "bd53ff7c84724fbca288a691b89eaa36120952377cff953ae3d933497f8b7804"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_cloud_serving.py",
+      "destination": "Implementation/ai-backend/tests/test_cloud_serving.py",
+      "original_sha256": "bd4ef63ecfba456e160e4c6ee6fdf2e07dde7cdb18373e874ad2403fe5cfe347"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_coverage_e09.py",
+      "destination": "Implementation/ai-backend/tests/test_coverage_e09.py",
+      "original_sha256": "23e65d16ddd4e04065f1d3d06ef39d716b47c87b3fff647668d62c6ddf00c3bd"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_engine.py",
+      "destination": "Implementation/ai-backend/tests/test_engine.py",
+      "original_sha256": "fc3cab4cab84a92435414391dee3b3055e7b8fde55ee7129809c5f1d2b87c29c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_extract_and_citations.py",
+      "destination": "Implementation/ai-backend/tests/test_extract_and_citations.py",
+      "original_sha256": "0ac617095d0b4836244aade9548936d8109973daf148382f5b02129a49731788"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_followup_f01_f06.py",
+      "destination": "Implementation/ai-backend/tests/test_followup_f01_f06.py",
+      "original_sha256": "7f4c9ad84f66debaa90d8179843f75f1e5000ff3b3ca79426b349f7a02f04a58"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_hosted_read_cache.py",
+      "destination": "Implementation/ai-backend/tests/test_hosted_read_cache.py",
+      "original_sha256": "1c9597bb232dca3be29cb12bbeeed454cd1a223ffa32e9092f2a8e87a3785e69"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_ingest_and_api.py",
+      "destination": "Implementation/ai-backend/tests/test_ingest_and_api.py",
+      "original_sha256": "50273c98a021dfba6bcf7ad1bc5f60b2e8b914a5e5d223307c90ebe9c17c36bd"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intake_extraction_r09.py",
+      "destination": "Implementation/ai-backend/tests/test_intake_extraction_r09.py",
+      "original_sha256": "f4e79cd3a3b565b1d68ec2d68e3438820a41a82a9b56935aec231743dae3e7e3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intel_mechanics.py",
+      "destination": "Implementation/ai-backend/tests/test_intel_mechanics.py",
+      "original_sha256": "f7d926e1de8d0e820f3beca21ece8e507eb3a7e8fb4323e58eb3981f09d57280"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intel_parallel_workers.py",
+      "destination": "Implementation/ai-backend/tests/test_intel_parallel_workers.py",
+      "original_sha256": "52ef10a0a4a2bef48685446f3c143a2727b67dba37c4ab142cf0aa4b45c2e7bb"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intel_preflight.py",
+      "destination": "Implementation/ai-backend/tests/test_intel_preflight.py",
+      "original_sha256": "15bd82ed6dbf616ca146315734fdb9ed522771d8b3a97d05a69d1f5ef1605aee"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intel_repairs.py",
+      "destination": "Implementation/ai-backend/tests/test_intel_repairs.py",
+      "original_sha256": "75f64d1bcf841b670b51fcac93749f5b78dcf7da8aa4f55533a5253bc85b7820"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_intel_units.py",
+      "destination": "Implementation/ai-backend/tests/test_intel_units.py",
+      "original_sha256": "dda75b076e13bd07949a2b6c689cf7adb61262687843be2930957ce48a126b39"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_issue_populations.py",
+      "destination": "Implementation/ai-backend/tests/test_issue_populations.py",
+      "original_sha256": "7456d8bf495c3cfb101446ccd0f91f569922ce41731e828c6f5bc1af9b503126"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_local_backend_control.py",
+      "destination": "Implementation/ai-backend/tests/test_local_backend_control.py",
+      "original_sha256": "ebf95e4f642079885912ce97afe58157ae5a24c53bc26f5e6d56f15a6bf3c90a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_m0_receiving.py",
+      "destination": "Implementation/ai-backend/tests/test_m0_receiving.py",
+      "original_sha256": "2b6cc700e2cf2b03778edaf1d1e79517a3bfcc2247796738a4fc409784d2cc7b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_member_experience.py",
+      "destination": "Implementation/ai-backend/tests/test_member_experience.py",
+      "original_sha256": "5d11ed3173cbd93a23a760f970f89f950ae91646e857b996f0bdeb1fb112b1d2"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_models_and_pipeline.py",
+      "destination": "Implementation/ai-backend/tests/test_models_and_pipeline.py",
+      "original_sha256": "4399a19eadfa3c053ea56467a8354fc43c7d613f43f46e583a6fd25675c51035"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_mx_queries_e08.py",
+      "destination": "Implementation/ai-backend/tests/test_mx_queries_e08.py",
+      "original_sha256": "c84c7c8c01088e2944d9047e4228e519957121a07ffc89e508e3d077b1bfcff0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_native_case11_e05_e06.py",
+      "destination": "Implementation/ai-backend/tests/test_native_case11_e05_e06.py",
+      "original_sha256": "00abde0f28a1fde3d02da83920c36257ea8213d13ee87acc523a4a0d84f99bd8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_payment_population_e04.py",
+      "destination": "Implementation/ai-backend/tests/test_payment_population_e04.py",
+      "original_sha256": "93c04a0cd18d3e4cef1b534369114ca6274364dd56de04b6d713bc9cd531d6a4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_pipeline_controls.py",
+      "destination": "Implementation/ai-backend/tests/test_pipeline_controls.py",
+      "original_sha256": "8024c4107df31e762908f3c6c176b236187fc717c474d8da874c4a27c6de59e2"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_policy_isolation_e11.py",
+      "destination": "Implementation/ai-backend/tests/test_policy_isolation_e11.py",
+      "original_sha256": "16f28af12537fc66350a3856940f3e0c07265af4d32554ea186693822fed3300"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_producers_e07.py",
+      "destination": "Implementation/ai-backend/tests/test_producers_e07.py",
+      "original_sha256": "dc625ce7943d731c853dada72c89d5b026328ba77afad8a473c2683ecb96361e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_projection_e10.py",
+      "destination": "Implementation/ai-backend/tests/test_projection_e10.py",
+      "original_sha256": "0b559b098a8906c4e81589882eff5cf22699f389d6a60ed792a717848485b75a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_results_drillthrough.py",
+      "destination": "Implementation/ai-backend/tests/test_results_drillthrough.py",
+      "original_sha256": "edd4ed3a89eeb0110583458e3987124a3a6e502304f16e97d1ecdf413b7d6d0e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_review_regressions.py",
+      "destination": "Implementation/ai-backend/tests/test_review_regressions.py",
+      "original_sha256": "5f9c8119ba4652af33e8c8f2271dcb91909cf685e96870e3be977b206d5f5920"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_vertex_provider.py",
+      "destination": "Implementation/ai-backend/tests/test_vertex_provider.py",
+      "original_sha256": "90d7745c5ef267117cc29bfbe241b476430115a145de01ea2183e292b6cd7c96"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/tests/test_vertex_qualification.py",
+      "destination": "Implementation/ai-backend/tests/test_vertex_qualification.py",
+      "original_sha256": "72f7b82914ab1beb51d82920faec21e5eeae71f2b47ac7a43d033095a44fc019"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/base.in",
+      "destination": "Implementation/ai-backend/requirements/base.in",
+      "original_sha256": "3ecda74162985ee149a926abd993c39c960096f67719dfba1750298e27d3602b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/base.lock",
+      "destination": "Implementation/ai-backend/requirements/base.lock",
+      "original_sha256": "29f8f35815de59dcb41abf14041d038303df2fc96b805c5c0413a57538872be8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/cloud.in",
+      "destination": "Implementation/ai-backend/requirements/cloud.in",
+      "original_sha256": "c147b31dc3a35fc7df696ee3a3e1eb94e868de7f1f16ce1c6f87af48791f5e86"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/cloud.lock",
+      "destination": "Implementation/ai-backend/requirements/cloud.lock",
+      "original_sha256": "b2f964f7afbce8bdf07d9809edbc9b81664245c8809773215af2ce487593e77a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/gemini.in",
+      "destination": "Implementation/ai-backend/requirements/gemini.in",
+      "original_sha256": "6a71fe970d1188538699abcb89c9b6fdf97cffe6a667300aabf0ee738da6b1fc"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/mac-local.in",
+      "destination": "Implementation/ai-backend/requirements/mac-local.in",
+      "original_sha256": "226a0f878f6ccb3b809ec747e34193b50b0df658b297e1e4842d2e1d7526924a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements/mac-local.lock",
+      "destination": "Implementation/ai-backend/requirements/mac-local.lock",
+      "original_sha256": "59270df9b1265fd56f6ef023d91634fc053ef0e4a844f838a122f6cb8b188d5a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/.gitignore",
+      "destination": "Implementation/ai-backend/.gitignore",
+      "original_sha256": "3da223d58aff6ff6f53081d112b6dacbc12aafc42dc7407f5f37959029027c59"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/agy-bulk.sh",
+      "destination": "Implementation/ai-backend/scripts/agy-bulk.sh",
+      "original_sha256": "88766f14117d37da1dae539ec41d610ed28fc9b40126afeaf54b631b05dbe138"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/agy_progress.py",
+      "destination": "Implementation/ai-backend/scripts/agy_progress.py",
+      "original_sha256": "6674e66dca832387530193b01a8cda2ee5e086e169030b6efeffe7c221fda351"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/capture_case11_probes.py",
+      "destination": "Implementation/ai-backend/scripts/capture_case11_probes.py",
+      "original_sha256": "175be3fbe9c631074b8937b517c4dd81fb59f8fab5edc38c5b923e2252a92bc4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/cloud_journey_check.py",
+      "destination": "Implementation/ai-backend/scripts/cloud_journey_check.py",
+      "original_sha256": "a9afa79208fe4bb5637da2a0690351cf858bc29a092b5cd49cb05bd283e826c9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/demo-control.sh",
+      "destination": "Implementation/ai-backend/scripts/demo-control.sh",
+      "original_sha256": "ee2faef6b74665de6a6bbfbccef1cfd68f4a528b485dd5a38cb42b591e87687b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/demo.sh",
+      "destination": "Implementation/ai-backend/scripts/demo.sh",
+      "original_sha256": "0eaada0a83bfe66c8ccd71d37a615817f2658c3b6274ab99eca373f1e0ff4420"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/demo_api_replay.py",
+      "destination": "Implementation/ai-backend/scripts/demo_api_replay.py",
+      "original_sha256": "a738c2cbaa0c0b73ccf4bf641b8e0b4746d5adcf9abeaaf0f577adedb5006cae"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/demo_control.py",
+      "destination": "Implementation/ai-backend/scripts/demo_control.py",
+      "original_sha256": "44f95b9b92f350513b2fd15b0e548cbc75539f3b95f6721b53fed057b818e7e9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/local-backend.sh",
+      "destination": "Implementation/ai-backend/scripts/local-backend.sh",
+      "original_sha256": "6a4524fd53eda0070a0654e702fc746a94046988fdc21ed02224747c2a02d725"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/local_backend.py",
+      "destination": "Implementation/ai-backend/scripts/local_backend.py",
+      "original_sha256": "177f6d318ce271fc25b2cb051af3dde5cf1e039f243832578427b9e44ab4680a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/repair_case11_stages.py",
+      "destination": "Implementation/ai-backend/scripts/repair_case11_stages.py",
+      "original_sha256": "b36b183127e6100d029c506856c8fbf021697080cb8f9f9dec9768e7ee254d5d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/scripts/setup-intel-env.sh",
+      "destination": "Implementation/ai-backend/scripts/setup-intel-env.sh",
+      "original_sha256": "96390fc1e96d6f8aed31fb3aea4d3e54d792ffe5d9ef6e4b46110ca981bec41d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/.env.example",
+      "destination": "Implementation/ai-backend/.env.example",
+      "original_sha256": "beb7119a0f99015b18c2da9d5316583512a8ce76028238d1f469b218ae255e85"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ai-backend/requirements.lock",
+      "destination": "Implementation/ai-backend/requirements.lock",
+      "original_sha256": "39f508d5c6a3bc6b609f21b40d4b1c210948186a34f2da97aaafc2aed67c288f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/build.py",
+      "destination": "Implementation/ui/build.py",
+      "original_sha256": "4ef6f0d95faecfa4ae223a19333f392372cd99e6588631e924f864fbf5833732"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/Dockerfile",
+      "destination": "Implementation/ui/Dockerfile",
+      "original_sha256": "e5c55d9f1c952870ce7d0438e99535ebe9ff00c0cb2aced8b95d3ddb2e0d67b6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/app.test.js",
+      "destination": "Implementation/ui/tests/app.test.js",
+      "original_sha256": "d841a4d2e5b56d93544d4e84e0d1a02e8444eac1951cd0388aa97bbb85b93b19"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/fixture/companion-double.js",
+      "destination": "Implementation/ui/tests/fixture/companion-double.js",
+      "original_sha256": "34aa5c93cb9a29f0823f370b587e72c20010913d44897a1072923e8ca5b7fa70"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/gateway_test.py",
+      "destination": "Implementation/ui/tests/gateway_test.py",
+      "original_sha256": "b948e014c074207b30e67910ac468e9f661b6468bfd439a95b6b465dbe6a63f0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/harness.js",
+      "destination": "Implementation/ui/tests/harness.js",
+      "original_sha256": "7cbc89922d32582e8132970286e3611ff9d949c76ee996277814b7597bf7f311"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/hosting_emulator.py",
+      "destination": "Implementation/ui/tests/hosting_emulator.py",
+      "original_sha256": "c7e7cd8b850525bffd78eadbeacaae0240cfc5fbbbd213a39934c3c1c1b71a3b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/index.html",
+      "destination": "Implementation/ui/tests/index.html",
+      "original_sha256": "06a5e5ead8a3caccd7c12a5bdb90f02564d37d163d00fb61a1b701915ac99993"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/intel.test.js",
+      "destination": "Implementation/ui/tests/intel.test.js",
+      "original_sha256": "cdf4d4ec9c0d9627ebad81d6ab0027ad2a86bb08dbbe8be9c00525e1a1ab05ee"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/make_specimens.py",
+      "destination": "Implementation/ui/tests/make_specimens.py",
+      "original_sha256": "1231910407227eb362248220e6a0c3ac82c8aee4dd57e8105861e223997785b5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/run.js",
+      "destination": "Implementation/ui/tests/run.js",
+      "original_sha256": "efc5c3b5368fe932c68d396c912d001a4a09c49adb685cb6bd1094b0899639e2"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/run_tests.py",
+      "destination": "Implementation/ui/tests/run_tests.py",
+      "original_sha256": "3fc682e589ec501851eb091d09e83d0e79a494ea18765f65d63cb00e6b5a435b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/preview.html",
+      "destination": "Implementation/ui/tests/specimens/preview.html",
+      "original_sha256": "349d79906dd4c65371afde319fd6301fb93c7be1a6cc5fa1faaad7486dc17607"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/specimen.csv",
+      "destination": "Implementation/ui/tests/specimens/specimen.csv",
+      "original_sha256": "6cb99b27eeca68768fbf8f02474f2864e24c0e33904c192287783b451a5f67bb"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/specimen.pdf",
+      "destination": "Implementation/ui/tests/specimens/specimen.pdf",
+      "original_sha256": "599da12a022321884cb544c313e2bc8029fbfc49785a16e28da6e0db82816f77"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/specimen.png",
+      "destination": "Implementation/ui/tests/specimens/specimen.png",
+      "original_sha256": "96fc8c48475b938c5f7a12d41dbdae9030740d475e3d1b831f39a93dd0053752"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/specimen.txt",
+      "destination": "Implementation/ui/tests/specimens/specimen.txt",
+      "original_sha256": "ee7b9a37fbde61f0c0eab5527c6f61955882fe01ac01d1af83fc2f133b1b9647"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/specimens/specimen.xlsx",
+      "destination": "Implementation/ui/tests/specimens/specimen.xlsx",
+      "original_sha256": "ba846ab5e570db6c49c2e71acbaf8af1548b8cc1e42d3de3d02d008249b00fda"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/tests/unit.test.js",
+      "destination": "Implementation/ui/tests/unit.test.js",
+      "original_sha256": "6db01d00ef6e411182cf3c2fd4d56c1987ef186ca74d2b1728b237778aee9133"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/server/devserver.py",
+      "destination": "Implementation/ui/server/devserver.py",
+      "original_sha256": "26745ad6a63f64a87413815b946ae33c700dbf5f65152fc49f31bd4dda18cd29"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/favicon.svg",
+      "destination": "Implementation/ui/public/favicon.svg",
+      "original_sha256": "4869bbc6849508c8b4da063f0c3772638aac9c4d960134b608bf3973b18ad11d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/Manrope-OFL.txt",
+      "destination": "Implementation/ui/public/fonts/Manrope-OFL.txt",
+      "original_sha256": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/README.md",
+      "destination": "Implementation/ui/public/fonts/README.md",
+      "original_sha256": "7c33c3468a109f0a76ff64007162d8e9d73d9d47533c7f704aa1acde22cac231"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/SourceSans3-OFL.txt",
+      "destination": "Implementation/ui/public/fonts/SourceSans3-OFL.txt",
+      "original_sha256": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/manrope-latin-wght-normal.woff2",
+      "destination": "Implementation/ui/public/fonts/manrope-latin-wght-normal.woff2",
+      "original_sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/source-sans-3-latin-wght-italic.woff2",
+      "destination": "Implementation/ui/public/fonts/source-sans-3-latin-wght-italic.woff2",
+      "original_sha256": "9a15dafc2c2b2414aaa9d6c30830d9aab4361329d8495b1574633603b994b411"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/fonts/source-sans-3-latin-wght-normal.woff2",
+      "destination": "Implementation/ui/public/fonts/source-sans-3-latin-wght-normal.woff2",
+      "original_sha256": "7a19a7027e125257d310c6dbd78ae3a30b5ea1e3794d60b12bb28227a003bfda"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/index.html",
+      "destination": "Implementation/ui/public/index.html",
+      "original_sha256": "9ccb1ffa52d16e78f3622bcb35d70d4f8a33f108f7a1d7144ed151af18cb17fd"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/public/styles.css",
+      "destination": "Implementation/ui/public/styles.css",
+      "original_sha256": "5b97e8282a1c82af1b5b37dec173fc5407deb7242333d97d7b8fdc724929f15d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/scripts/local-ui.py",
+      "destination": "Implementation/ui/scripts/local-ui.py",
+      "original_sha256": "e417474ead9320a839f04b296494159100f9f57518b0a2d415bb42638f51c432"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/api/client.js",
+      "destination": "Implementation/ui/src/api/client.js",
+      "original_sha256": "2cf47e7f2168d1ef2f2af7e3d3445e73ac91ff731cd902873280bc784eb34ec3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/api/store.js",
+      "destination": "Implementation/ui/src/api/store.js",
+      "original_sha256": "f3d7f4ccba8036ba357fac05f672cf7a43f0b11147d79f81b2ad34eb9699c2ce"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/app.js",
+      "destination": "Implementation/ui/src/app.js",
+      "original_sha256": "281a3273cc9bf6fb2f20be996b9a16b2122fad6bc732e09be691a58925d5c498"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/lib/calc.js",
+      "destination": "Implementation/ui/src/lib/calc.js",
+      "original_sha256": "937d44d29ce2ed446ec6b112d9065ca844c551d61dd8e5886b6dc8b922182f66"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/lib/digest.js",
+      "destination": "Implementation/ui/src/lib/digest.js",
+      "original_sha256": "f2f06683edb0f6344c9b3955fd78288de18edb8652c8baf8b1d11491f0a77be7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/lib/format.js",
+      "destination": "Implementation/ui/src/lib/format.js",
+      "original_sha256": "f73fb05ae7d145adef25c9fa82fd774027dcaf37b8edcf07048632a3ffe29527"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/lib/periods.js",
+      "destination": "Implementation/ui/src/lib/periods.js",
+      "original_sha256": "613d81cb7b813596047cab74714954df137f57c76627d10aecb7d8107f08d840"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/lib/schema.js",
+      "destination": "Implementation/ui/src/lib/schema.js",
+      "original_sha256": "d20cd704453030b90882111562412eb9e6b1683723f93ecacb4864ca1b89529c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/main.js",
+      "destination": "Implementation/ui/src/main.js",
+      "original_sha256": "edf9b940fd22573ddcf30afc3cf4e8e76ef6058ed121bcddd62fa0d70e9b0bc4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/dom.js",
+      "destination": "Implementation/ui/src/ui/dom.js",
+      "original_sha256": "48e992b5361c310d01c15c1cd3a78519304149ebcc1f261c254d4a1614154c2e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/drawer.js",
+      "destination": "Implementation/ui/src/ui/drawer.js",
+      "original_sha256": "24bc9fc255226539aba80301e8db0d8b05a4a37ef0e88e1de21d4856f4fa678f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/icons.js",
+      "destination": "Implementation/ui/src/ui/icons.js",
+      "original_sha256": "9ce78fac758b8cdf3caba5c2bcee0cff60afd330c2e6ff20e37d5110c67e278d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/labels.js",
+      "destination": "Implementation/ui/src/ui/labels.js",
+      "original_sha256": "09bfe622e00bd7369d161f6f19e1311bf4e87d534b45690660226b2dfdc7218a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/router.js",
+      "destination": "Implementation/ui/src/ui/router.js",
+      "original_sha256": "8c05fdeb39f3f77be2c1088ff5903ba236000df3aae250f4f0954160d1cce6cd"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/states.js",
+      "destination": "Implementation/ui/src/ui/states.js",
+      "original_sha256": "08e22f08a09fbca754cd6dc97d025f43ba32e11b15236da624d58408e8ffc2fc"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/ui/viz.js",
+      "destination": "Implementation/ui/src/ui/viz.js",
+      "original_sha256": "0157ff351b2c8566076de452e327964a4e52783868fccf25673545145f491bcf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/viewers/parsers.js",
+      "destination": "Implementation/ui/src/viewers/parsers.js",
+      "original_sha256": "29e9263676675492b70febc2f3fedb50fba2bcf3c99f405f7ab616d51bc33ef4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/viewers/viewers.js",
+      "destination": "Implementation/ui/src/viewers/viewers.js",
+      "original_sha256": "299b620a2786d299db1c54fa90583c6897ff8060ee9b05ec974b838b2c58f88f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/afca.js",
+      "destination": "Implementation/ui/src/views/afca.js",
+      "original_sha256": "e6632698701e147a211d0271ac7674195ef4351d3e2577e2d5d3bd0dceac3c42"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/brief.js",
+      "destination": "Implementation/ui/src/views/brief.js",
+      "original_sha256": "06b3f371e6ace9db10a68c7f223a96dd58f47f2011165419c47aa5ea4f112c7a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/case.js",
+      "destination": "Implementation/ui/src/views/case.js",
+      "original_sha256": "badad332881877627e1d78eb0dc5e65553b670e0b2a78401616815860c3fcc26"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/cases.js",
+      "destination": "Implementation/ui/src/views/cases.js",
+      "original_sha256": "dcc687698916959656e7e06ac60aad3b5824e58c1e1157725579a51fa8c67cd5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/experience.js",
+      "destination": "Implementation/ui/src/views/experience.js",
+      "original_sha256": "40e3e18e72335855f96a6262eb4d5851a0a22502bc01f0b25132829165b5e7ec"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/impact.js",
+      "destination": "Implementation/ui/src/views/impact.js",
+      "original_sha256": "ed2e6d6c8fccfd9c80d3b9a2dded12f28a6805962c918e33db20a52f57f12af4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/investigate.js",
+      "destination": "Implementation/ui/src/views/investigate.js",
+      "original_sha256": "2d7c0367160c1d428f4af2571f367f8f6142365716f3d25d5dc0054844e92ea1"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/issue.js",
+      "destination": "Implementation/ui/src/views/issue.js",
+      "original_sha256": "433913f745bea0aa965c66e97c9d7777479b410c484d77acd742512d9900a325"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/issues.js",
+      "destination": "Implementation/ui/src/views/issues.js",
+      "original_sha256": "f59c7bfdfe2f548bb0f59c421fdcca28a13d0513a932006ef0218b76256f706a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/model.js",
+      "destination": "Implementation/ui/src/views/model.js",
+      "original_sha256": "7aad7d673d00036b5cb6b5997909beabe4502e7999708472d263b32a2d2378ed"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/overview.js",
+      "destination": "Implementation/ui/src/views/overview.js",
+      "original_sha256": "9551f66f5ad9fb211b081ca2c9fea587cfffd5b2087128a6f48dcfe734da5393"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/population.js",
+      "destination": "Implementation/ui/src/views/population.js",
+      "original_sha256": "48e5e7be73662f449f6960b9a946c8412888ad1626e2bc28bd3ca55e4b709b18"
+    },
+    {
+      "source": "SuperDashboard/Implementation/ui/src/views/source.js",
+      "destination": "Implementation/ui/src/views/source.js",
+      "original_sha256": "1daad5832d365c55532a42b7fa4c75763610a405275bdd0221eb251efac0850e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tools/authored_receiver_check.py",
+      "destination": "Implementation/synthetic-data/tools/authored_receiver_check.py",
+      "original_sha256": "fcb4593bf50de3b4aa1210a39e3b57b9c616d7b657deaacc5dcd7b29ce7ddaad"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tools/profile_sdgen.py",
+      "destination": "Implementation/synthetic-data/tools/profile_sdgen.py",
+      "original_sha256": "b16ce46cfc17d6baba4af5bdbebb48423cbaa47d4349ae9dcbcc4570a11ece3e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tools/receiver_preflight.py",
+      "destination": "Implementation/synthetic-data/tools/receiver_preflight.py",
+      "original_sha256": "3f7dc2d3159213e3a664a51587faebace9eb317e258ec4adc793e67f8798fc4e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/requirements.txt",
+      "destination": "Implementation/synthetic-data/requirements.txt",
+      "original_sha256": "2b58ef94db80c53775e2c5a5765e9950ba3859d79b4afd625275496d3c302baf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/assetcheck.py",
+      "destination": "Implementation/synthetic-data/tests/assetcheck.py",
+      "original_sha256": "091c6024e6cdb5d9b29bcbd70c6ff395ab47719e393e5816e03e11b3e3b1e793"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/authored_helpers.py",
+      "destination": "Implementation/synthetic-data/tests/authored_helpers.py",
+      "original_sha256": "8236ad16531855e962ec37db6cea4f5f81c70fb44682c10f407b13b83225ae97"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/conftest.py",
+      "destination": "Implementation/synthetic-data/tests/conftest.py",
+      "original_sha256": "4c2f6e54e6e51fe7c683d6e558b46de176ff7d07d2a48e1c02e0c036f21770ac"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/specimens.py",
+      "destination": "Implementation/synthetic-data/tests/specimens.py",
+      "original_sha256": "84b1098847b033e5f047eab20ce9dfad78374422d927f4157976409947bc88a1"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_archetypes.py",
+      "destination": "Implementation/synthetic-data/tests/test_archetypes.py",
+      "original_sha256": "eb13263ceded3fd4ecdfeae3d6cf14b5b1caa54661e968970d163fbee8c5e188"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_asset_content.py",
+      "destination": "Implementation/synthetic-data/tests/test_asset_content.py",
+      "original_sha256": "19c2610aaf29657955c2eaf7c312f681f6ea7efb63b7e7f66c10bb92e4e45de7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_approval_revision.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_approval_revision.py",
+      "original_sha256": "a4a9acfebb83145dec3cc44f40cabacb27ce13919694bcfa251a5a88a5eb62ca"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_boundaries.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_boundaries.py",
+      "original_sha256": "151d4211e398f81b42f8085e83a4208eaf11ef7a6eae0241f3e2f83b08dd8cbc"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_coherence.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_coherence.py",
+      "original_sha256": "ba050e725f36fc161a5f4e34c92c669822caf5828ad61650122f68f0e585e08c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_contract.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_contract.py",
+      "original_sha256": "6d95856e6502e4474a32c0dbd75a8123f83ec842b428c89cebd25e8cae95759f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_expectations.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_expectations.py",
+      "original_sha256": "376f158a4c8bfaf0205677e7eee9043c471fb2a07ff03f7eb050ae18311c389b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_fidelity.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_fidelity.py",
+      "original_sha256": "eae3e9be3494123bc05c56ae1c83efbca018a9de30ee39fe1afe663a8ff09cad"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_receiver.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_receiver.py",
+      "original_sha256": "4a96e180cd32341f9a66b51bb44094bbed9b1aec8eec4d06372cd6b7c4cb3ea3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_authored_repairs.py",
+      "destination": "Implementation/synthetic-data/tests/test_authored_repairs.py",
+      "original_sha256": "ed0cc53dc9d3d90eed2ae5938b58163d1911dfb0c2d658cb19f7d174bdc6d7ab"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_complete_candidate.py",
+      "destination": "Implementation/synthetic-data/tests/test_complete_candidate.py",
+      "original_sha256": "15fdb0a7ea724dbc13fbf3ef84145095f7ed8c7bbafbb2cf3988c0ac6c2ee54e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_erratum.py",
+      "destination": "Implementation/synthetic-data/tests/test_erratum.py",
+      "original_sha256": "925fa7e4df5555d14cff63e62ec73b24c3c3d73c8f42188c1f37fd19037c9aed"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_finalisation.py",
+      "destination": "Implementation/synthetic-data/tests/test_finalisation.py",
+      "original_sha256": "86a3539ed60664d782aafafd39824187820f38f7487ddcf33546b37e5f209d3b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_integration_prep.py",
+      "destination": "Implementation/synthetic-data/tests/test_integration_prep.py",
+      "original_sha256": "92ab99f857a81ca695b84731afc5416c61fd4bda1ba2f34354ace0319ec018e8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_ip_repairs.py",
+      "destination": "Implementation/synthetic-data/tests/test_ip_repairs.py",
+      "original_sha256": "8d6a199afeb9b3aff16d161463c3b737f8b905f0d82d43cf67814184c9301c23"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_package.py",
+      "destination": "Implementation/synthetic-data/tests/test_package.py",
+      "original_sha256": "54b7b3794d0cee52abb43b69f00197fbd2372c50c5e03a82eddd2be6d4b18abe"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_repair.py",
+      "destination": "Implementation/synthetic-data/tests/test_repair.py",
+      "original_sha256": "be71c1a4ae0052fc9d48138c1cb0a1d5a5f36161104dd6931b21ec8cb97170c3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_source_repair.py",
+      "destination": "Implementation/synthetic-data/tests/test_source_repair.py",
+      "original_sha256": "97812a088d21b6bc598e531d34acce27ee20de4e704385e6ea195ddcde12d724"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_v3.py",
+      "destination": "Implementation/synthetic-data/tests/test_v3.py",
+      "original_sha256": "d50fb26edc5445e49ddeeba7a7ddecf81500497c466bb13106dd3aa2d2d4dda9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_w01_contract.py",
+      "destination": "Implementation/synthetic-data/tests/test_w01_contract.py",
+      "original_sha256": "3128871721a325ad06b20e2fa29f5ab5dc2cb211fb0afde6914da1ae1246170e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_w02_stage.py",
+      "destination": "Implementation/synthetic-data/tests/test_w02_stage.py",
+      "original_sha256": "c98e3aca7f088e4eb12e3efa2bfad1604a8a3551548f391fc530765e53a0b1f6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_w03_checks.py",
+      "destination": "Implementation/synthetic-data/tests/test_w03_checks.py",
+      "original_sha256": "7a049ca02e507118f04d69a57edc8607e049b3ac411b151af99bc718b31fca8d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_workers.py",
+      "destination": "Implementation/synthetic-data/tests/test_workers.py",
+      "original_sha256": "2f246c0d21735b8bb8bc123cf94177b0b52b4ed67af687f09fef46ed2c96d84a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/tests/test_wr_repairs.py",
+      "destination": "Implementation/synthetic-data/tests/test_wr_repairs.py",
+      "original_sha256": "6096ec4402ab39b553e0ac40fc0e7f45e920e79cd3158d11831d8aa40ee3a3f4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/repair-log-v1.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/repair-log-v1.json",
+      "original_sha256": "d4460cb5fcb0345e21f38c0804451ff81b0bef3ed5d9aa973169fb225e300dae"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/repair-log-v2.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/repair-log-v2.json",
+      "original_sha256": "9a724888416aa4a8433efa65bbfc08e11946c89e423feb5d522bbab6573ff6f2"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/repair-log-v3.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/repair-log-v3.json",
+      "original_sha256": "cc2e6983d7aabf92a739f64e8b269e5e5b304eeecd91c9e0efa5929834c42e78"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-1-case11-rehearsal-v2.md",
+      "destination": "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-1-case11-rehearsal-v2.md",
+      "original_sha256": "ca4d5038d01abe58c87dd8c87e9d789f4cb98d2b332dbf35827f758340140eeb"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-2-case11-rehearsal-v3.md",
+      "destination": "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-2-case11-rehearsal-v3.md",
+      "original_sha256": "bd292c43378caba790b012ba41dcac49f403b88c9d8607f3d910c4c6a447e8f7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v1/11-D05.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v1/11-D05.json",
+      "original_sha256": "569e6d1ceccdaf6b4bb703c46e1f003bd8a0bc3b8e171796a48ad54140e7c429"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v1/11-D06.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v1/11-D06.json",
+      "original_sha256": "eacb41966f99cbe2882c1015d78eb59d9c4a8f522acc2fbff484e1255a18d3e0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v1/11-D10.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v1/11-D10.json",
+      "original_sha256": "a0d4051901abb5969ef070fd1cd99096f87eec26fa0396d92bc3cc6e7f172d59"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v1/11-D15.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v1/11-D15.json",
+      "original_sha256": "092276964b04154f49a0d6a2977b0dc8720eb3b1de1a77dd071bff9c1b6ff3df"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v1/11-D17.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v1/11-D17.json",
+      "original_sha256": "359e319528460a37dbf4ccc307894d8b3cacc28adb393e5eec974d96e1148af0"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v2/11-D05.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v2/11-D05.json",
+      "original_sha256": "e03ef6614900f45d3935f3ad1ef25ee99a50ecdf9d8774862dfdcb3c8b4783c6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v2/11-D06.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v2/11-D06.json",
+      "original_sha256": "6480e32f77f1cdc7ba269b974b920edf75332b0a07a92b45e5586cba1b2ee13e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authored/case-11/v3/11-D05.json",
+      "destination": "Implementation/synthetic-data/authored/case-11/v3/11-D05.json",
+      "original_sha256": "16c4c0aed8cf15964d8544b83dd3696c64289b15f18249c60c06211492cc3b9d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/.gitignore",
+      "destination": "Implementation/synthetic-data/.gitignore",
+      "original_sha256": "4409b253ac33acb862192f9cad8583ed3fe0bac938082a6cfa784d7cf0d185ef"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/README.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/README.md",
+      "original_sha256": "37c8c3f3af368a318bf1a05a0ab8887527174a7b813a543993864f00d749d44e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/BATCH.json",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/BATCH.json",
+      "original_sha256": "366771a6ce124c20621a32e35456192d15fe38aedf777e8ba52ae07f4b9ac05e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/LEAK-TERMS.json",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/LEAK-TERMS.json",
+      "original_sha256": "76c963cccd577756aa5cdecf5d01bd4f77dfacbac4dc4988c8689a81f9ccaa50"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/SPLIT-MANIFEST.json",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/SPLIT-MANIFEST.json",
+      "original_sha256": "b52d82204a2b9c93d2c7183dc1f833d9d42c726e10a29878a360c301d2b1ef29"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/events.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/events.jsonl",
+      "original_sha256": "7840d2eff83c994f3128b3b47785bbd8e923f9a80b579b2dd65e668545751bd9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/expected-judgements.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/expected-judgements.jsonl",
+      "original_sha256": "65fc7d22cdcced510106d605ce90ba6ab0d9cd035f321933a28321d0f46a80e1"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M01.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M01.md",
+      "original_sha256": "a1eb36bacff7de562643bc5fe6c4a8963d3722f24b48940a339a4edd292432cd"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M02.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M02.md",
+      "original_sha256": "7801f838d49446f4d4348331cc95ef7da4870d14cf3c2b232974ae669f22ffd6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M03.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M03.md",
+      "original_sha256": "174753176fe702f77296acc31b57a177075e21d2b82dd4a382c70ff61dbeaf1f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M04.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M04.md",
+      "original_sha256": "7f0b1584fc6d76cb2ca48bf2cf0e03f2319b800b8c4b7355edd3bfbbfe3f3bd9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M05.md",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M05.md",
+      "original_sha256": "0925eb17261770f0393cc8c743cedd6571b5068ba95131784c1ce19b6dd59aa8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/cases.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/cases.jsonl",
+      "original_sha256": "fba97890ed1afc9d28d90b07d9e93eec3085b5d467178113d1888801389f2b30"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/2026-04-28_1347_mei-lin-zhou_fee.eml",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/2026-04-28_1347_mei-lin-zhou_fee.eml",
+      "original_sha256": "13c9cb918528872b0e01a39e1b9918fedb300bf11fc474418b64bf140c22193a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/statement-fee-screenshot.png",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/statement-fee-screenshot.png",
+      "original_sha256": "7bebac80135bdd3dc31b76a3dd271cf1e111d1b5968d3b056ab6c37b2417e082"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/participants.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/participants.jsonl",
+      "original_sha256": "f71e8215ff345fa0c201a1d309d93637955a75883bddfa3b8ab84ac5ed64d1f6"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/parties.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/parties.jsonl",
+      "original_sha256": "60e5688bddda13407b9ff6b2d76101fd48c21d3f9c4152806999709f93d14ace"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/sources.jsonl",
+      "destination": "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/sources.jsonl",
+      "original_sha256": "619b905fb7cce7ddc19197013e90f405f8af08bf7a608e183cc096515a993976"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/authoring-input/AUTHOR-INPUT-GUIDE.md",
+      "destination": "Implementation/synthetic-data/authoring-input/AUTHOR-INPUT-GUIDE.md",
+      "original_sha256": "90a9cd6d0c21767aa2309b89c1c3354b2bade856619baa82c33ee55db480ec46"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/__init__.py",
+      "destination": "Implementation/synthetic-data/sdgen/__init__.py",
+      "original_sha256": "f89a4fc240a06edca4cecc4099d257dcad415a98e94fbbdd9ba8d620ab99a9af"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/__main__.py",
+      "destination": "Implementation/synthetic-data/sdgen/__main__.py",
+      "original_sha256": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/__init__.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/__init__.py",
+      "original_sha256": "34a923e5f92e9de82e0c923e0386018d8033b930e81921cca2b8e19206417406"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/admin_fees.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/admin_fees.py",
+      "original_sha256": "02f569723360ae1d87082118a1237d5412b0d8f2514c05ea0c2f1382b0ed07a3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/base.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/base.py",
+      "original_sha256": "32dc92b526246a314bcfdb2d5694ad5a64b2071c917782ee64dac7ac63d769b5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/death_benefits.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/death_benefits.py",
+      "original_sha256": "990e3d13e23de210f840c6a4b3c52c38764aa22ae67c20f030ab7dc7941c743b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/pension_disputes.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/pension_disputes.py",
+      "original_sha256": "5b324a7fbe0b1b5a2c289e60dbd479ec103009d7ce5969eb391d800cecc11121"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/registry.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/registry.py",
+      "original_sha256": "b2050ac5cf32398b3e5ce264837dbf28631a5d5409ef734679954daebe0dda25"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/archetypes/tpd_insurance.py",
+      "destination": "Implementation/synthetic-data/sdgen/archetypes/tpd_insurance.py",
+      "original_sha256": "4f75deedcc3d0fb0e6b4f0bc296d48bc8b50e2b5815f195c1d450f492e77a0f4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/assets.py",
+      "destination": "Implementation/synthetic-data/sdgen/assets.py",
+      "original_sha256": "d90be3fd3014d711fdbee9d1b0fc5d4f2613d47b72ae1505de6d0e39ed2a1c14"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/atomic.py",
+      "destination": "Implementation/synthetic-data/sdgen/atomic.py",
+      "original_sha256": "d62465de040dd649350cc87755f7a1944ed9ead9553df1f521136af4cdd82559"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/__init__.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/__init__.py",
+      "original_sha256": "ba024fb1b64c68a6bde8639c7f73f8f014b5e1a63a81c8d138ebe45631ad6f10"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/events.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/events.py",
+      "original_sha256": "1092c6df71b3f7a6d1826007b34f4ffa67c2b4916f4c69b93f37d10ca2028042"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/expect.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/expect.py",
+      "original_sha256": "ddeffab4981228337ada6c0e907ee0a29c53bb98df41eded4e98ae9b9485ad19"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/export.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/export.py",
+      "original_sha256": "d8318baf96e9a420ad0dcc35fde90a5577617c8c252caf36c79748bc238c473a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/inputcheck.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/inputcheck.py",
+      "original_sha256": "1b971993e57d8afd73dad4c8e1aa5ccc6b007085b2c5aa6de2c612e08a70808a"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/model.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/model.py",
+      "original_sha256": "959332ca572654cf460a62cb988c101ad64e27457aba6a13daaaae63510e8eb5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/render.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/render.py",
+      "original_sha256": "79de1a3d06f6f958084213d386ad96313dc91de3bedfa44597cf58c435c4e5ca"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authored/verify.py",
+      "destination": "Implementation/synthetic-data/sdgen/authored/verify.py",
+      "original_sha256": "998a1627695d3518a4b46d32561d43b00c925b17091977e951028d76f9abd0b3"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/authoring_check.py",
+      "destination": "Implementation/synthetic-data/sdgen/authoring_check.py",
+      "original_sha256": "2523922d85b8fb91d2480173897abfcfb24a78c55c4dabf90f5d30509182030b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/build.py",
+      "destination": "Implementation/synthetic-data/sdgen/build.py",
+      "original_sha256": "4c79deb1433973c2fa5d6d759dc642e230440ace4cbdb7cf80d4ec79999ceeb9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/card_adapter.py",
+      "destination": "Implementation/synthetic-data/sdgen/card_adapter.py",
+      "original_sha256": "4aa489f004e917261a5839a21152ccfb8e4051d5f71803b01d40598a28d7f634"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/checks.py",
+      "destination": "Implementation/synthetic-data/sdgen/checks.py",
+      "original_sha256": "5471ae574e8e9df69039bba7cbad8eef772b45c9a34535be4fcc3c0b9455f3c8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/cli.py",
+      "destination": "Implementation/synthetic-data/sdgen/cli.py",
+      "original_sha256": "17643a83ef25531d650e46b758a24132a6249489185b1001ed452a7c524495bf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/closure.py",
+      "destination": "Implementation/synthetic-data/sdgen/closure.py",
+      "original_sha256": "ef0b96f274c00cf792bdc5a55533bae75cedcb69f8266e72b008688391b32c5d"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/contract.py",
+      "destination": "Implementation/synthetic-data/sdgen/contract.py",
+      "original_sha256": "5d0e75999eba46251d219fc2b08f8b50895f43c44680c35de5ca96520f5742ba"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/economics.py",
+      "destination": "Implementation/synthetic-data/sdgen/economics.py",
+      "original_sha256": "1d20086e45e3fc2c294260a195bb5f38281a5f70be1ad5c6f8a33d92d415ccb4"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/effective_spec.py",
+      "destination": "Implementation/synthetic-data/sdgen/effective_spec.py",
+      "original_sha256": "2e5f8cfb9e167858401acf1b67c341c9ba432976c472112d3db8b9bfd4c4c1a9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/effort.py",
+      "destination": "Implementation/synthetic-data/sdgen/effort.py",
+      "original_sha256": "ce9f2108697657f9a85b11550851df4f11768e824c6123900f91853fb58fa21b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/leakguard.py",
+      "destination": "Implementation/synthetic-data/sdgen/leakguard.py",
+      "original_sha256": "31290d59f08756bf7f2287a39cc962f4f15d7c87ad656e9197d25449bf16b102"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/microbatch.py",
+      "destination": "Implementation/synthetic-data/sdgen/microbatch.py",
+      "original_sha256": "9dba52da8d721c7f25e8fd580779c42bd0a438b52235ae599d1216842d3f98e7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/paths.py",
+      "destination": "Implementation/synthetic-data/sdgen/paths.py",
+      "original_sha256": "ba3c47074597a561b3dea85d711bff8a9d255bab2f8ca432e6b848e377203670"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/plan.py",
+      "destination": "Implementation/synthetic-data/sdgen/plan.py",
+      "original_sha256": "fecff4ca63439c0a3a1a2745b3aa14d7f5cf9a99758045cbdf1efe36f7e4d433"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/progress.py",
+      "destination": "Implementation/synthetic-data/sdgen/progress.py",
+      "original_sha256": "8b17b2e735316b9712af822eea32fcac1bb0b6ddc4a07f8c27cb35b157f9ddcf"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/receiving_export.py",
+      "destination": "Implementation/synthetic-data/sdgen/receiving_export.py",
+      "original_sha256": "72e70e43fe0ebf4b56386c31d29133f5d1bf281b222b6e22aa77805606163e29"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/release.py",
+      "destination": "Implementation/synthetic-data/sdgen/release.py",
+      "original_sha256": "21955c2d1822a45146c5eaa6d7d484a472d6428236c9b2ef856096891e766ac7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_call.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_call.py",
+      "original_sha256": "8f678b73e408a1a92bff1270f445a76867f58b334c084e0b8633300665ea81fc"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_csv.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_csv.py",
+      "original_sha256": "2da5a453a1d53133c9c18feae42952f9f66522a7cc76e0230058fd851bf984be"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_generic.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_generic.py",
+      "original_sha256": "4289f5d6f6167ad84703652dfb8ab66dfe20aee47b75726bc8634991b3f9d783"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_image.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_image.py",
+      "original_sha256": "f23890179f737b715f737559cf41670a4c52eeac75b666f9a3f510566fc12863"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_mail.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_mail.py",
+      "original_sha256": "854d06cf43eec841a3ffbb6cb10ddcbac465f89de7acd7d4f0ffb06436a4f508"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_pdf.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_pdf.py",
+      "original_sha256": "d911795dcd0846baef8b18e5c6d6d2ee619aa9019270af22de2409aa36132a3c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/render_xlsx.py",
+      "destination": "Implementation/synthetic-data/sdgen/render_xlsx.py",
+      "original_sha256": "552e5af70a934dbf32b6bd789e9e948334a7aba0c3f12879ddd4913d5abc9729"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/review.py",
+      "destination": "Implementation/synthetic-data/sdgen/review.py",
+      "original_sha256": "3b67a08d25ff8a595da6b5b205b940fcf89f3a36cbe52f8a880379677e91ff8b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/source_repair.py",
+      "destination": "Implementation/synthetic-data/sdgen/source_repair.py",
+      "original_sha256": "ef66d4871bfffa953afd94e8625f73abb38200af3b18529e599d830c94c0666b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/textfmt.py",
+      "destination": "Implementation/synthetic-data/sdgen/textfmt.py",
+      "original_sha256": "1f02aa72e7a01d85b6440c8833a3b6b81e4a1f33cae1d6593162e370fc724be9"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/tz.py",
+      "destination": "Implementation/synthetic-data/sdgen/tz.py",
+      "original_sha256": "73bad5cdf54281d3ab633e2b70454d641fea0ffb7924dd656ada55da65c7f2a7"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/workpack.py",
+      "destination": "Implementation/synthetic-data/sdgen/workpack.py",
+      "original_sha256": "c244c6c40ff27ef153370af6376732d3e465bdfc3c4c7c5e3d77e042b731a4aa"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/workpack2.py",
+      "destination": "Implementation/synthetic-data/sdgen/workpack2.py",
+      "original_sha256": "0b65a3699e2f0d6b07f22bbdee03221a49a6b40689de2c72e4edbd0fcca14259"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/workpack4.py",
+      "destination": "Implementation/synthetic-data/sdgen/workpack4.py",
+      "original_sha256": "a2a18d2b4f3f33114f4a7ef07a422af66b13af40669229fbd68492e6b89fa4b5"
+    },
+    {
+      "source": "SuperDashboard/Implementation/synthetic-data/sdgen/workpack5.py",
+      "destination": "Implementation/synthetic-data/sdgen/workpack5.py",
+      "original_sha256": "ac1e43dbdf41c8c6fccdcbbabacf1e35ef06020439d7c651e920fc120a0b2f5c"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/render_service.py",
+      "destination": "Implementation/cloud/render_service.py",
+      "original_sha256": "2e54e5d40450badd3f4857e06bdaa96722035077fe48bce884938384c72e06c8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/backend-image/.dockerignore",
+      "destination": "Implementation/cloud/backend-image/.dockerignore",
+      "original_sha256": "2d768b1ba4d3d5acdc228992e4a4db875d3d68a85b66b844f01d2121ccbaa15e"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/backend-image/Dockerfile",
+      "destination": "Implementation/cloud/backend-image/Dockerfile",
+      "original_sha256": "f41e01b6d794cc1fc14d1736460c59953c19b1defe7193b048cc6440d6f9cfeb"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/build_backend_context.py",
+      "destination": "Implementation/cloud/build_backend_context.py",
+      "original_sha256": "375c723c59a7d97c1b5c6805488fb00c518f90bace8b0e27d8735b289b9a820b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/Dockerfile",
+      "destination": "Implementation/cloud/vertex-qualification/Dockerfile",
+      "original_sha256": "8764d0d0471e1100127ad39738daa3c1263570db5b2bff8055be934146019f21"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/README.md",
+      "destination": "Implementation/cloud/vertex-qualification/README.md",
+      "original_sha256": "5da83097105990068e24a9b6ff15d1cb9ab9ceba9f83d03b4aa1a65bc0a5830f"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/build_context.py",
+      "destination": "Implementation/cloud/vertex-qualification/build_context.py",
+      "original_sha256": "0189be7d3f5e374e94577d104004e4f5ecedf402216cbc87e5c5f8f20bcbe330"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/cloudbuild.json",
+      "destination": "Implementation/cloud/vertex-qualification/cloudbuild.json",
+      "original_sha256": "a325ea8972f9b4a6a38e8e1a27485f7f0c9ef4d6aad3cbdde0676ddf1006ef75"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/prepare_input.py",
+      "destination": "Implementation/cloud/vertex-qualification/prepare_input.py",
+      "original_sha256": "33f3a782740cf2606bd75d1f07889d6970aa700a2426b10c99d1c9aba7ad4c8b"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/provision-and-run.sh",
+      "destination": "Implementation/cloud/vertex-qualification/provision-and-run.sh",
+      "original_sha256": "54767a35e3a89b6d5185189886d65734f650e5a1ea04e1a393c2292c0abc7fe8"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/requirements.lock",
+      "destination": "Implementation/cloud/vertex-qualification/requirements.lock",
+      "original_sha256": "bfe045a510c5578f52d3d32b40e14d00b61547cc2e9daf7eaa6d43e3199d4735"
+    },
+    {
+      "source": "SuperDashboard/Implementation/cloud/vertex-qualification/resume-after-input-binding.sh",
+      "destination": "Implementation/cloud/vertex-qualification/resume-after-input-binding.sh",
+      "original_sha256": "99dd74ee17a67de57c987707094b42252d2de21e3e02fba657193dab620c7471"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/MANIFEST.json",
+      "destination": "Shared/contracts/v1/MANIFEST.json",
+      "original_sha256": "da1a71564d2aa2f75727034f92ac8e47b98553cb518f364a1e63faef50535bed"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/DECISIONS.md",
+      "destination": "Shared/contracts/v1/DECISIONS.md",
+      "original_sha256": "8b6b03b79485a9488004b9a23245f70e8720efa9bdbddb53df364fb77ff75d66"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/MEMBER-EXPERIENCE.md",
+      "destination": "Shared/contracts/v1/MEMBER-EXPERIENCE.md",
+      "original_sha256": "a6c98923a4432c44143512cb92ff5f3682b63e6001fc669e9432a0be39e24a93"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/shared.schema.json",
+      "destination": "Shared/contracts/v1/shared.schema.json",
+      "original_sha256": "6800d6146996a7489e28d3c1ff5540d1d8383ab8f19fc143f03b07976b946faa"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/measure-additions.json",
+      "destination": "Shared/contracts/v1/measure-additions.json",
+      "original_sha256": "8877fdbd0dfe00dd2e70f9161a0296903ed8a67795384a54cdd74817682b7bf5"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/author_contracts.py",
+      "destination": "Shared/contracts/v1/author_contracts.py",
+      "original_sha256": "cd8f62ce4e522928e094d48c93b28dcc4768ae0b608d038d47b5777ab44d88a9"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/check_contracts.py",
+      "destination": "Shared/contracts/v1/check_contracts.py",
+      "original_sha256": "e868a9a99cddfecfc1fdbecaf311117179714f31d371efc39c68574e444e2927"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/review2_examples.py",
+      "destination": "Shared/contracts/v1/review2_examples.py",
+      "original_sha256": "417e3d735279c64b7381550895e435e1de44751e45ccdf0389809df43ec125a9"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/CONTRACT-EXAMPLES.json",
+      "destination": "Shared/contracts/v1/CONTRACT-EXAMPLES.json",
+      "original_sha256": "3dd3f27ff469bd1e9f7100ac7f199ecbbe2ac506fc60aaa30adfcf5c9114cf53"
+    },
+    {
+      "source": "SuperDashboard/Shared/contracts/v1/REVIEW-1-CLOSURE.md",
+      "destination": "Shared/contracts/v1/REVIEW-1-CLOSURE.md",
+      "original_sha256": "532707120b9cd91bc1befb6c875e3a3429ff1185be64cefe8c1d8a9e50ccb504"
+    },
+    {
+      "source": "SuperDashboard/Data/contracts/runtime.schema.json",
+      "destination": "Data/contracts/runtime.schema.json",
+      "original_sha256": "c2cabf84807cd7102217189d0a4fb0cfbddbed78a048944f66047473378579bf"
+    },
+    {
+      "source": "SuperDashboard/Data/contracts/evaluation.schema.json",
+      "destination": "Data/contracts/evaluation.schema.json",
+      "original_sha256": "bd0326399a69c825b2f72befdb35d591e08f217369930bafd226777c102330f9"
+    },
+    {
+      "source": "SuperDashboard/Data/contracts/metric-registry.json",
+      "destination": "Data/contracts/metric-registry.json",
+      "original_sha256": "3861b12d6cc218272458440b03bd074cabaa2f3264188f764e94ae117c2901e0"
+    },
+    {
+      "source": "SuperDashboard/Data/contracts/demo-config.json",
+      "destination": "Data/contracts/demo-config.json",
+      "original_sha256": "caf733dfa3d7f331ee1b48d68b4604a22923f2d4e05ee5f29e9d6e5d0c586901"
+    }
+  ],
+  "path_branding_updated_files": [
+    "Implementation/ui/server/devserver.py",
+    "Implementation/synthetic-data/tools/authored_receiver_check.py",
+    "Implementation/synthetic-data/tests/test_w01_contract.py",
+    "Implementation/synthetic-data/sdgen/paths.py",
+    "Implementation/synthetic-data/sdgen/workpack5.py",
+    "Implementation/synthetic-data/sdgen/workpack4.py",
+    "Implementation/synthetic-data/sdgen/receiving_export.py",
+    "Implementation/synthetic-data/sdgen/workpack.py",
+    "Implementation/synthetic-data/sdgen/workpack2.py",
+    "Implementation/synthetic-data/sdgen/source_repair.py",
+    "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-2-case11-rehearsal-v3.md",
+    "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-1-case11-rehearsal-v2.md",
+    "Implementation/cloud/backend-image/Dockerfile",
+    "Implementation/cloud/vertex-qualification/Dockerfile",
+    "Implementation/ai-backend/sdbackend/config.py",
+    "Implementation/ai-backend/docs/INTEL-DEMO-RUNBOOK.md",
+    "Implementation/ai-backend/sdbackend/intel/intake.py",
+    "Implementation/ai-backend/sdbackend/intel/corpus.py",
+    "Implementation/ai-backend/sdbackend/intel/preflight.py"
+  ],
+  "frozen_contracts_unchanged": true,
+  "excluded": [
+    "credentials and local environment",
+    "all runtime stores, model caches, bulk datasets and private evaluation labels",
+    "rejected datasets and archives",
+    "build output, dependencies, logs and previous handoffs"
+  ],
+  "note": "Legacy deployed cloud resource IDs are retained as operational identifiers. They are not project branding. No remote resources were renamed.",
+  "final_files": {
+    ".DS_Store": "b9dc0118041f23ab3ed4a2e809cde451d1ed081e8a205b8fcdbd75c0113036f7",
+    ".gitignore": "fc7e0b1d3cd75a7b5fce839a88606a477b7ee0de1ca2150ea2f5f3f00133aede",
+    "CONTRIBUTING.md": "d312e714bd38ecd1f2ab094ea988f1a71a2746ae01c4765ca8efa71e776477d9",
+    "Data/.DS_Store": "69db7c376aa0d7e4b2ec1e97af97a3b85c766f313bc8674c5e6a69aded2f72f2",
+    "Data/contracts/demo-config.json": "caf733dfa3d7f331ee1b48d68b4604a22923f2d4e05ee5f29e9d6e5d0c586901",
+    "Data/contracts/evaluation.schema.json": "bd0326399a69c825b2f72befdb35d591e08f217369930bafd226777c102330f9",
+    "Data/contracts/metric-registry.json": "3861b12d6cc218272458440b03bd074cabaa2f3264188f764e94ae117c2901e0",
+    "Data/contracts/runtime.schema.json": "c2cabf84807cd7102217189d0a4fb0cfbddbed78a048944f66047473378579bf",
+    "Implementation/ai-backend/.env.example": "beb7119a0f99015b18c2da9d5316583512a8ce76028238d1f469b218ae255e85",
+    "Implementation/ai-backend/.gitignore": "3da223d58aff6ff6f53081d112b6dacbc12aafc42dc7407f5f37959029027c59",
+    "Implementation/ai-backend/README.md": "08268aab5f91e99287eb24d5b32b9324ebc24e8d25e1c298223711444db30932",
+    "Implementation/ai-backend/config/demo/combined500-v1.corpus.json": "8099b8a49494f85eb05303da34cbd1c897f6a68189adc59f2936735b08a60f83",
+    "Implementation/ai-backend/config/demo/fixed500-agy-v1.corpus.json": "86f485583c3c2bce4f472e1c8cb71259ba26d25cbdf3bd02ee8624a6aafe4294",
+    "Implementation/ai-backend/config/demo/p4-agy-qual-v1.corpus.json": "97db0f6c1b38481422f299b10f0b00e3d0263335e789bfe46179b8eae2dbb186",
+    "Implementation/ai-backend/config/demo/p4-pilot-v1.corpus.json": "c23a0d03c56ca77e91cb8eef54fac1156c9864dcc8a882da62f2a178e31de4de",
+    "Implementation/ai-backend/config/demo/policy.json": "c08bd90cee804ffb401c93402daea65a585087adb7a8b38328469aa9c3502e58",
+    "Implementation/ai-backend/config/demo/splits/cloud480-member-split.json": "4b206bf84ca74c792261c98d439eb92f50176de918789b26d5b041f6356ad4bf",
+    "Implementation/ai-backend/config/demo/splits/p4-member-split.json": "2080ff2d8c1ec4b34f7622301a51680f08a1ac28c851b2e996179188015ba584",
+    "Implementation/ai-backend/config/policy.json": "c08bd90cee804ffb401c93402daea65a585087adb7a8b38328469aa9c3502e58",
+    "Implementation/ai-backend/config/reviewers.json": "a9d177ee1948031cea8de998120f9afd08fbf1038d633d482a7a583881112f91",
+    "Implementation/ai-backend/requirements/base.in": "3ecda74162985ee149a926abd993c39c960096f67719dfba1750298e27d3602b",
+    "Implementation/ai-backend/requirements/base.lock": "29f8f35815de59dcb41abf14041d038303df2fc96b805c5c0413a57538872be8",
+    "Implementation/ai-backend/requirements/cloud.in": "c147b31dc3a35fc7df696ee3a3e1eb94e868de7f1f16ce1c6f87af48791f5e86",
+    "Implementation/ai-backend/requirements/cloud.lock": "b2f964f7afbce8bdf07d9809edbc9b81664245c8809773215af2ce487593e77a",
+    "Implementation/ai-backend/requirements/gemini.in": "6a71fe970d1188538699abcb89c9b6fdf97cffe6a667300aabf0ee738da6b1fc",
+    "Implementation/ai-backend/requirements/mac-local.in": "226a0f878f6ccb3b809ec747e34193b50b0df658b297e1e4842d2e1d7526924a",
+    "Implementation/ai-backend/requirements/mac-local.lock": "59270df9b1265fd56f6ef023d91634fc053ef0e4a844f838a122f6cb8b188d5a",
+    "Implementation/ai-backend/requirements.lock": "39f508d5c6a3bc6b609f21b40d4b1c210948186a34f2da97aaafc2aed67c288f",
+    "Implementation/ai-backend/requirements.txt": "d8104b34cb79c409a4fe43d0445abf313e5c463e87e434925454ff79ba1a22f8",
+    "Implementation/ai-backend/scripts/agy-bulk.sh": "88766f14117d37da1dae539ec41d610ed28fc9b40126afeaf54b631b05dbe138",
+    "Implementation/ai-backend/scripts/agy_progress.py": "6674e66dca832387530193b01a8cda2ee5e086e169030b6efeffe7c221fda351",
+    "Implementation/ai-backend/scripts/capture_case11_probes.py": "175be3fbe9c631074b8937b517c4dd81fb59f8fab5edc38c5b923e2252a92bc4",
+    "Implementation/ai-backend/scripts/cloud_journey_check.py": "a9afa79208fe4bb5637da2a0690351cf858bc29a092b5cd49cb05bd283e826c9",
+    "Implementation/ai-backend/scripts/demo-control.sh": "ee2faef6b74665de6a6bbfbccef1cfd68f4a528b485dd5a38cb42b591e87687b",
+    "Implementation/ai-backend/scripts/demo.sh": "0eaada0a83bfe66c8ccd71d37a615817f2658c3b6274ab99eca373f1e0ff4420",
+    "Implementation/ai-backend/scripts/demo_api_replay.py": "a738c2cbaa0c0b73ccf4bf641b8e0b4746d5adcf9abeaaf0f577adedb5006cae",
+    "Implementation/ai-backend/scripts/demo_control.py": "44f95b9b92f350513b2fd15b0e548cbc75539f3b95f6721b53fed057b818e7e9",
+    "Implementation/ai-backend/scripts/local-backend.sh": "6a4524fd53eda0070a0654e702fc746a94046988fdc21ed02224747c2a02d725",
+    "Implementation/ai-backend/scripts/local_backend.py": "177f6d318ce271fc25b2cb051af3dde5cf1e039f243832578427b9e44ab4680a",
+    "Implementation/ai-backend/scripts/repair_case11_stages.py": "b36b183127e6100d029c506856c8fbf021697080cb8f9f9dec9768e7ee254d5d",
+    "Implementation/ai-backend/scripts/setup-intel-env.sh": "96390fc1e96d6f8aed31fb3aea4d3e54d792ffe5d9ef6e4b46110ca981bec41d",
+    "Implementation/ai-backend/sdbackend/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+    "Implementation/ai-backend/sdbackend/acceptance.py": "b53b3be9b27d56caee7a24b912a903c35b99d795998fbeb3bcf83f6559adac94",
+    "Implementation/ai-backend/sdbackend/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/api/analysis_read.py": "7e9226d06968e79f767ab548e862a648779860f6634eaba0007a130b760ac77d",
+    "Implementation/ai-backend/sdbackend/api/app.py": "06da6a65fa57a9df4bf0bb6f604dbe4d2dc1e8be9be68908db915d0c6d1ffaa4",
+    "Implementation/ai-backend/sdbackend/api/auth.py": "9ca3c0209fb035a344a6f44597fbb3a78df13172a7341b8a91f075fd28698dcf",
+    "Implementation/ai-backend/sdbackend/api/ops.py": "4617c0b1f3fcc43bb3938abc8b4e8891a1998df2524334463035f613a43c2b47",
+    "Implementation/ai-backend/sdbackend/api/repo.py": "1ee960dc1c0fc6c212402668cd7d13c3ddda6f94e2acdbb1b2ef9fb0768d8abf",
+    "Implementation/ai-backend/sdbackend/api/state.py": "898b7c01135f4975339123d1e98cb1a702938ce34d3ef2841d3ba33372a993b7",
+    "Implementation/ai-backend/sdbackend/canonical.py": "fbd17f14961a12bc224f8d2ed1954ec81fbfa19e7ed787cc0e545a245ce0e751",
+    "Implementation/ai-backend/sdbackend/citations.py": "b686ff9fb0379df85934fb9bf882e5c5923824f199c08f12b49df31e57656d51",
+    "Implementation/ai-backend/sdbackend/cli.py": "60db3391ef172960d258be41e7b49c73cab4c677cb312aea46bef8152306c7c5",
+    "Implementation/ai-backend/sdbackend/cloud/__init__.py": "d3738af76f85f90a1e3d66c3aecddc8e23aea5bd8a0bcae281004cb3c1c6caf9",
+    "Implementation/ai-backend/sdbackend/cloud/boot.py": "f3c77d8e9f502b0addbfaae63a19e28f622ae9479e3f7b77ec417c3b24ae9c1e",
+    "Implementation/ai-backend/sdbackend/cloud/cli.py": "ab03d7297a36d5b3ad1d365e942976098e7e8f4a8c9f9231e60562025f8c85a0",
+    "Implementation/ai-backend/sdbackend/cloud/publication.py": "a5d44baa6ba1d4df0dffdd7e81cea104105bc9acbaf6c326de1d85538ed4f444",
+    "Implementation/ai-backend/sdbackend/cloud/remote.py": "0223072c31112af21fac41a6cb586b31abe3d0cd06e60cc9d375a6cbebf4d179",
+    "Implementation/ai-backend/sdbackend/cloud/vertex_job.py": "81cfd6beba38197de3419eaa29771693a7c8e41e0ad30caee37e9798ef6145c4",
+    "Implementation/ai-backend/sdbackend/config.py": "744f3fe46f31a225bced0c93028e031bb5b1e63a7f2fc89335c2d7937ea289ae",
+    "Implementation/ai-backend/sdbackend/contracts.py": "7c882fbd7fa599086644280ba0c8f84ec4bf008c2f28a0e5550cf4758417a912",
+    "Implementation/ai-backend/sdbackend/engine/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/engine/core.py": "123e15ea4cb3b913ceb772021cbbe157d4b1212f43c68a51c74f53d2c1eab98f",
+    "Implementation/ai-backend/sdbackend/engine/issues.py": "3f3eba84192491e2042de65e0ad30f6ae3fb845a9b91c8b7236ed6773fdb21bf",
+    "Implementation/ai-backend/sdbackend/engine/mx.py": "2aeebc29ec7c8bfaf65ed6e4753350fe3af24beebbde42b1ed417a831f11afb8",
+    "Implementation/ai-backend/sdbackend/engine/native_ledger.py": "e42f85e2d1551c9a24c69bce5341021aa63f0e5d5c30353936ee027419ca380c",
+    "Implementation/ai-backend/sdbackend/engine/native_lifecycle.py": "2a87b84e4fdd417737a73c5be45bb2c38a25e32a555a3f31f50e2402e75e1111",
+    "Implementation/ai-backend/sdbackend/engine/native_tables.py": "15be8f6006e7ed1c96deb9e8f383ae4a243cf225f56e503028fc18e4c911f624",
+    "Implementation/ai-backend/sdbackend/engine/native_work.py": "825f86ea0baf7954ee90f536076e6c0568fdaac539ae826b0b4930f429546193",
+    "Implementation/ai-backend/sdbackend/engine/producers.py": "6b85e2f2507c146172b064795b349c8c0dd85359890e637b561cb93b817b2ea8",
+    "Implementation/ai-backend/sdbackend/engine/publish.py": "18411e87297314670568b2b0768cd7d0dfee883ec276c0c3ffeb8e97551e80f3",
+    "Implementation/ai-backend/sdbackend/engine/resolvers.py": "5ac13ddc028fe8e89b1ea5257e3fd09949fb4b2615c58585e7ad3a34d4c9f8ee",
+    "Implementation/ai-backend/sdbackend/engine/results.py": "084c0567df60ccfb70bea5de533c19283fb2b062e8834b333da2bae8b42bbc62",
+    "Implementation/ai-backend/sdbackend/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/evaluation/adapter.py": "b42e86f81782bdd8386d759013b8468fe1b56853f2ac21277719f4b48fcf0fe4",
+    "Implementation/ai-backend/sdbackend/extract/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/extract/base.py": "b4cc97605310b3038a2e5d274b2ed59dc0dfac407e63330caa5f9a08d88b8b4b",
+    "Implementation/ai-backend/sdbackend/extract/eml.py": "1e1f6433c6904f10d96b0003fb1fbb751399b05cc7f52530aa88ca70ef9451b0",
+    "Implementation/ai-backend/sdbackend/extract/image.py": "979d555cb87c8f0f482b314628c8381c39149f6eb27109d7994ca68495059a18",
+    "Implementation/ai-backend/sdbackend/extract/jsondoc.py": "a89c3d4175f87d7cb81d3e7b0ecf3c07e827401f6b0efa8668b57a4eedd40475",
+    "Implementation/ai-backend/sdbackend/extract/pdf.py": "814b2e5a3c75147230ab3aeb5678d6556420ce527d3d73c839a6fffa925234aa",
+    "Implementation/ai-backend/sdbackend/extract/registry.py": "2d89a6de8b6e5defa849397686406ec6d1ad413a5baa6f57b1bb200cee2bbf7e",
+    "Implementation/ai-backend/sdbackend/extract/sniff.py": "b53f697252fd1fe9d5d89e8fa889d33f3889bf394e87339532579a1f4fcae6fc",
+    "Implementation/ai-backend/sdbackend/extract/textual.py": "bf4f9f4f22e30311727f1beaa5f419c3704abd4cb039a2117c7eda6fc4c05c5a",
+    "Implementation/ai-backend/sdbackend/extract/xlsx.py": "3015b4b581a723c0fa5b747d08099da58ccd3a382cf5bbafaed8d9766c17a039",
+    "Implementation/ai-backend/sdbackend/ingest/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/ingest/build.py": "13652c4f7f0fe803c193b79526939c3c8854f60ec75859776c5bdcced2862e8e",
+    "Implementation/ai-backend/sdbackend/intake/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/intake/delivery.py": "4ce713d9f9c3954815adfb19ba01fe7cd636b8649e57df2cff63a0dcf25cf87e",
+    "Implementation/ai-backend/sdbackend/intel/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/intel/api.py": "91471b9452c6c36d31dd29e7f4fa73e65fb1b5c7f7cc633d6da61b17228f203a",
+    "Implementation/ai-backend/sdbackend/intel/cli.py": "f220c2a7cf060be536d92c5d45a9a3aa966e917217baea8dc824e44b84ffc8c2",
+    "Implementation/ai-backend/sdbackend/intel/corpus.py": "d7a0256de9dd2c4dc3d095205836497af873d7bb60a1913d56a9789884089af9",
+    "Implementation/ai-backend/sdbackend/intel/discovery.py": "fd524ab93a345060e4ca73381cf7b59959dd3257a728cb8dd7c198bdcf25a46e",
+    "Implementation/ai-backend/sdbackend/intel/evaluate.py": "cbbdeb561931e1f1c17ca840323ac74162c9e472da91478b3bcddb1efcb549a1",
+    "Implementation/ai-backend/sdbackend/intel/forecast.py": "348a16332b3e8a878c8245df44a2ae978e7e99b8bf2b03ece3599c6b63015f52",
+    "Implementation/ai-backend/sdbackend/intel/intake.py": "fa061e941dbb27a89cb7390e9188b083c70e0911bcbcb4d860a1a6338d79fec8",
+    "Implementation/ai-backend/sdbackend/intel/measures.py": "d00c4f19e597e3e67736f09f1bb9a66d721985446616229936308edeae31a46a",
+    "Implementation/ai-backend/sdbackend/intel/memory.py": "f4e220934042232c7de0bae4a045b4ece8fca75be7e847535af3377c6943e0a8",
+    "Implementation/ai-backend/sdbackend/intel/preflight.py": "31701a12ff72d56aef4408e133f75d578773160db90af117067ac4e2e3fe8198",
+    "Implementation/ai-backend/sdbackend/intel/procedures.py": "2d9a68554f8b02a8db663bcc084780604383a8ad1cfc52fcc996fc86416e8539",
+    "Implementation/ai-backend/sdbackend/intel/publish.py": "da6c58931606a0e6bb5de08bbee3abc0294f5341dfe768ba5ae13f902d0c244a",
+    "Implementation/ai-backend/sdbackend/intel/report.py": "cfcf62cc18dd029ebe5335031ce210226ed9ceb2ab304a17cf4fdb5c6ab7290d",
+    "Implementation/ai-backend/sdbackend/intel/schemas/intelligence-v1.schema.json": "c5c2ed07ca5891620b73ceb2d2c1034890f23858a44f2270a4b964acc63a6df8",
+    "Implementation/ai-backend/sdbackend/intel/tables.py": "99e257d8a6271c2a13b3cf4c9369f16ebd609d8afc3ec4d33bd5a3260fb8a921",
+    "Implementation/ai-backend/sdbackend/intel/temporal.py": "c95a762311e0310d7415821a90dc09c9f750372210e4fac8ea8392c9e84fca10",
+    "Implementation/ai-backend/sdbackend/intel/worker.py": "c722a9777d0609611c4cd4c267f06826bbb84bdcf91e84e7d13b3217e29da93e",
+    "Implementation/ai-backend/sdbackend/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/models/agy_cli.py": "416965ec7cec490800c34716d6f38d82e9838c90f522167f782c816e9bb5e0a9",
+    "Implementation/ai-backend/sdbackend/models/base.py": "59af88cb79ff87a250dc22af4d65fb5f38ac0fae79adcbd87146e43f8298df2e",
+    "Implementation/ai-backend/sdbackend/models/gateway.py": "5065336c061e9c4b9875e44000d8ee6e4c61e66cf5d999330b9ed04b58d743db",
+    "Implementation/ai-backend/sdbackend/models/gemini.py": "edfbe8d45144768a8378fffce002ff03c73729d37cdac95716664dfd2729f6f4",
+    "Implementation/ai-backend/sdbackend/models/gemma_mlx.py": "ad779b64a3fb32ce66f7c8423f6f903a1c35e9098f62095cc5bb093c6018f9e6",
+    "Implementation/ai-backend/sdbackend/models/smoke.py": "bf57fc9a650e1456d3b69f061da6247841a9513faebc85a27e12bd20acf3d40c",
+    "Implementation/ai-backend/sdbackend/models/vertex.py": "b6cc7d56a4956772128e0be7166555581dc5e8ddd0d5aa97339f4999a7213139",
+    "Implementation/ai-backend/sdbackend/ops/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/ops/backup.py": "5425a2c496c91ead317473891474e19ff8d120eddaac8b7029e27767ff651801",
+    "Implementation/ai-backend/sdbackend/pipeline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/pipeline/case_assess.py": "20e72cc980eadf019fa0c009290d155dd9c638e23fbf3238d19366d7c4b86517",
+    "Implementation/ai-backend/sdbackend/pipeline/collective.py": "061667c434e856cfc78625fe84acbd8fea96e1133f7cba9809ca878d3c0505fa",
+    "Implementation/ai-backend/sdbackend/pipeline/control.py": "7553e673c3feeb108919cc41902143223d1fbe25d562987c14cea901d05a9008",
+    "Implementation/ai-backend/sdbackend/pipeline/dto_compat.py": "947341cfc4bb9290aa06c18a953aee70d356fa7ef114cdbe9041b5d43daffb3c",
+    "Implementation/ai-backend/sdbackend/pipeline/incremental.py": "d71499bfebcec83afd25821bac46db982edaa6ded7dcc316bf6bdec2865d7771",
+    "Implementation/ai-backend/sdbackend/pipeline/invalidation.py": "f53004fa790b3f3f35be3d4bb86e8a3eea85910b89c898f7fa3325ecff9db3b9",
+    "Implementation/ai-backend/sdbackend/pipeline/passages.py": "d3b6a011d98d1d0fb8a2894d2fb1a6745cb86415734ed48dcf587dd69a77f461",
+    "Implementation/ai-backend/sdbackend/pipeline/runner.py": "a3b0a166d17d5ea6d1e5620df2942da165ab36821ee9a107e7abf5100e320300",
+    "Implementation/ai-backend/sdbackend/pipeline/source_interpret.py": "914b55c72bfe10c426303bcad89996e28da6afb1578d1320be8b26a7d02367ab",
+    "Implementation/ai-backend/sdbackend/pipeline/tools.py": "279641a4abd25d51fcbac9c6d68b950bb1739c354a0ae2f83574a734ecb0a6c7",
+    "Implementation/ai-backend/sdbackend/policy.py": "628216f8cf25d319a32fa5f7933a698687f4834ba926ffdf2b4d46075ff26de3",
+    "Implementation/ai-backend/sdbackend/runtime.py": "6facdbf4257289467af258f37779dab105dc0649eb76248d2f473331224b0392",
+    "Implementation/ai-backend/sdbackend/store/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Implementation/ai-backend/sdbackend/store/blobs.py": "905d2edd346d790d5cba6c42ea007743742c6bab7676d774ee8b213f579b5603",
+    "Implementation/ai-backend/sdbackend/store/db.py": "6acaa435f4ac6d8ad64d190bbf2de31635301ff078570fde289964d8c9f5c252",
+    "Implementation/ai-backend/tests/cloud_fakes.py": "4abefb238e02bf8be2635e1b45cb4e35ee1a71bbf7d37b9e97f310dd9a6fda03",
+    "Implementation/ai-backend/tests/conftest.py": "19b9c47f993504d95412e4a733cc88ed9c1d26db5d34bd6ef8fbb3bd44904728",
+    "Implementation/ai-backend/tests/intel_mock.py": "9d71bb1d7f2375cbfda97235ea9cfb81bd2c2e0ee46d90f871481568f77e202d",
+    "Implementation/ai-backend/tests/specimens.py": "7ecfc22902b604b0b5100a8ad2b80c9cdae8280887b7bdd20fb8c38c9227d4e8",
+    "Implementation/ai-backend/tests/test_agy_adapter.py": "218c1744074602fd6b5ee222bc1c34b4a4467e736cd0994a91897fc6af1f8b5b",
+    "Implementation/ai-backend/tests/test_analytical_r10.py": "670da5a00a0ba995561c3c1e86abb90e33f20605b810dc45e134e9328e9b1b89",
+    "Implementation/ai-backend/tests/test_case11_review_repairs.py": "bd53ff7c84724fbca288a691b89eaa36120952377cff953ae3d933497f8b7804",
+    "Implementation/ai-backend/tests/test_cloud_serving.py": "bd4ef63ecfba456e160e4c6ee6fdf2e07dde7cdb18373e874ad2403fe5cfe347",
+    "Implementation/ai-backend/tests/test_coverage_e09.py": "23e65d16ddd4e04065f1d3d06ef39d716b47c87b3fff647668d62c6ddf00c3bd",
+    "Implementation/ai-backend/tests/test_engine.py": "fc3cab4cab84a92435414391dee3b3055e7b8fde55ee7129809c5f1d2b87c29c",
+    "Implementation/ai-backend/tests/test_extract_and_citations.py": "0ac617095d0b4836244aade9548936d8109973daf148382f5b02129a49731788",
+    "Implementation/ai-backend/tests/test_followup_f01_f06.py": "7f4c9ad84f66debaa90d8179843f75f1e5000ff3b3ca79426b349f7a02f04a58",
+    "Implementation/ai-backend/tests/test_hosted_read_cache.py": "1c9597bb232dca3be29cb12bbeeed454cd1a223ffa32e9092f2a8e87a3785e69",
+    "Implementation/ai-backend/tests/test_ingest_and_api.py": "50273c98a021dfba6bcf7ad1bc5f60b2e8b914a5e5d223307c90ebe9c17c36bd",
+    "Implementation/ai-backend/tests/test_intake_extraction_r09.py": "f4e79cd3a3b565b1d68ec2d68e3438820a41a82a9b56935aec231743dae3e7e3",
+    "Implementation/ai-backend/tests/test_intel_mechanics.py": "f7d926e1de8d0e820f3beca21ece8e507eb3a7e8fb4323e58eb3981f09d57280",
+    "Implementation/ai-backend/tests/test_intel_parallel_workers.py": "52ef10a0a4a2bef48685446f3c143a2727b67dba37c4ab142cf0aa4b45c2e7bb",
+    "Implementation/ai-backend/tests/test_intel_preflight.py": "15bd82ed6dbf616ca146315734fdb9ed522771d8b3a97d05a69d1f5ef1605aee",
+    "Implementation/ai-backend/tests/test_intel_repairs.py": "75f64d1bcf841b670b51fcac93749f5b78dcf7da8aa4f55533a5253bc85b7820",
+    "Implementation/ai-backend/tests/test_intel_units.py": "dda75b076e13bd07949a2b6c689cf7adb61262687843be2930957ce48a126b39",
+    "Implementation/ai-backend/tests/test_issue_populations.py": "7456d8bf495c3cfb101446ccd0f91f569922ce41731e828c6f5bc1af9b503126",
+    "Implementation/ai-backend/tests/test_local_backend_control.py": "ebf95e4f642079885912ce97afe58157ae5a24c53bc26f5e6d56f15a6bf3c90a",
+    "Implementation/ai-backend/tests/test_m0_receiving.py": "2b6cc700e2cf2b03778edaf1d1e79517a3bfcc2247796738a4fc409784d2cc7b",
+    "Implementation/ai-backend/tests/test_member_experience.py": "5d11ed3173cbd93a23a760f970f89f950ae91646e857b996f0bdeb1fb112b1d2",
+    "Implementation/ai-backend/tests/test_models_and_pipeline.py": "4399a19eadfa3c053ea56467a8354fc43c7d613f43f46e583a6fd25675c51035",
+    "Implementation/ai-backend/tests/test_mx_queries_e08.py": "c84c7c8c01088e2944d9047e4228e519957121a07ffc89e508e3d077b1bfcff0",
+    "Implementation/ai-backend/tests/test_native_case11_e05_e06.py": "00abde0f28a1fde3d02da83920c36257ea8213d13ee87acc523a4a0d84f99bd8",
+    "Implementation/ai-backend/tests/test_payment_population_e04.py": "93c04a0cd18d3e4cef1b534369114ca6274364dd56de04b6d713bc9cd531d6a4",
+    "Implementation/ai-backend/tests/test_pipeline_controls.py": "8024c4107df31e762908f3c6c176b236187fc717c474d8da874c4a27c6de59e2",
+    "Implementation/ai-backend/tests/test_policy_isolation_e11.py": "16f28af12537fc66350a3856940f3e0c07265af4d32554ea186693822fed3300",
+    "Implementation/ai-backend/tests/test_producers_e07.py": "dc625ce7943d731c853dada72c89d5b026328ba77afad8a473c2683ecb96361e",
+    "Implementation/ai-backend/tests/test_projection_e10.py": "0b559b098a8906c4e81589882eff5cf22699f389d6a60ed792a717848485b75a",
+    "Implementation/ai-backend/tests/test_results_drillthrough.py": "edd4ed3a89eeb0110583458e3987124a3a6e502304f16e97d1ecdf413b7d6d0e",
+    "Implementation/ai-backend/tests/test_review_regressions.py": "5f9c8119ba4652af33e8c8f2271dcb91909cf685e96870e3be977b206d5f5920",
+    "Implementation/ai-backend/tests/test_vertex_provider.py": "90d7745c5ef267117cc29bfbe241b476430115a145de01ea2183e292b6cd7c96",
+    "Implementation/ai-backend/tests/test_vertex_qualification.py": "72f7b82914ab1beb51d82920faec21e5eeae71f2b47ac7a43d033095a44fc019",
+    "Implementation/cloud/README.md": "4f4408ea756ba82c877492a328d72f382123757731c9596270deaf3274c68748",
+    "Implementation/cloud/backend-image/.dockerignore": "2d768b1ba4d3d5acdc228992e4a4db875d3d68a85b66b844f01d2121ccbaa15e",
+    "Implementation/cloud/backend-image/Dockerfile": "b2580d8a75945e5057c4e7f0ffae55af605c687a31b902dbb504380dd130e3d2",
+    "Implementation/cloud/build_backend_context.py": "375c723c59a7d97c1b5c6805488fb00c518f90bace8b0e27d8735b289b9a820b",
+    "Implementation/cloud/render_service.py": "2e54e5d40450badd3f4857e06bdaa96722035077fe48bce884938384c72e06c8",
+    "Implementation/cloud/vertex-qualification/Dockerfile": "33eb53393d9e4df5352c08a35f09a0048fef44c3983bbf74481c9dec456f2367",
+    "Implementation/cloud/vertex-qualification/README.md": "16fc92d179bf82abd7bc7d1a65f42eb7155ecaa6928f50a5bae8f5a8667b0a3e",
+    "Implementation/cloud/vertex-qualification/build_context.py": "0189be7d3f5e374e94577d104004e4f5ecedf402216cbc87e5c5f8f20bcbe330",
+    "Implementation/cloud/vertex-qualification/cloudbuild.json": "a325ea8972f9b4a6a38e8e1a27485f7f0c9ef4d6aad3cbdde0676ddf1006ef75",
+    "Implementation/cloud/vertex-qualification/prepare_input.py": "33f3a782740cf2606bd75d1f07889d6970aa700a2426b10c99d1c9aba7ad4c8b",
+    "Implementation/cloud/vertex-qualification/provision-and-run.sh": "106b5fba001c7cc966aa8af0409c224271e56f4a542644a9894e4ef85939c74c",
+    "Implementation/cloud/vertex-qualification/requirements.lock": "bfe045a510c5578f52d3d32b40e14d00b61547cc2e9daf7eaa6d43e3199d4735",
+    "Implementation/cloud/vertex-qualification/resume-after-input-binding.sh": "a66e6f0aeeafffd53428bf95df258f6c2267658160bcd9f23dd75c6402ef9190",
+    "Implementation/synthetic-data/.gitignore": "4409b253ac33acb862192f9cad8583ed3fe0bac938082a6cfa784d7cf0d185ef",
+    "Implementation/synthetic-data/README.md": "0e6419d3e83f713153b3c0e0d99a21dbf4117404bf334175a3590e493aa61ec4",
+    "Implementation/synthetic-data/authored/case-11/repair-log-v1.json": "d4460cb5fcb0345e21f38c0804451ff81b0bef3ed5d9aa973169fb225e300dae",
+    "Implementation/synthetic-data/authored/case-11/repair-log-v2.json": "9a724888416aa4a8433efa65bbfc08e11946c89e423feb5d522bbab6573ff6f2",
+    "Implementation/synthetic-data/authored/case-11/repair-log-v3.json": "cc2e6983d7aabf92a739f64e8b269e5e5b304eeecd91c9e0efa5929834c42e78",
+    "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-1-case11-rehearsal-v2.md": "a01923798426f83759bd1858ddd004b75cb9c6e37193416df979a714f07f3784",
+    "Implementation/synthetic-data/authored/case-11/supplemental-rulings/SR-2-case11-rehearsal-v3.md": "92384af703909a3ef888f472b996bebb916f2f501c4eb5a458f5f02b8ca29c3e",
+    "Implementation/synthetic-data/authored/case-11/v1/11-D05.json": "569e6d1ceccdaf6b4bb703c46e1f003bd8a0bc3b8e171796a48ad54140e7c429",
+    "Implementation/synthetic-data/authored/case-11/v1/11-D06.json": "eacb41966f99cbe2882c1015d78eb59d9c4a8f522acc2fbff484e1255a18d3e0",
+    "Implementation/synthetic-data/authored/case-11/v1/11-D10.json": "a0d4051901abb5969ef070fd1cd99096f87eec26fa0396d92bc3cc6e7f172d59",
+    "Implementation/synthetic-data/authored/case-11/v1/11-D15.json": "092276964b04154f49a0d6a2977b0dc8720eb3b1de1a77dd071bff9c1b6ff3df",
+    "Implementation/synthetic-data/authored/case-11/v1/11-D17.json": "359e319528460a37dbf4ccc307894d8b3cacc28adb393e5eec974d96e1148af0",
+    "Implementation/synthetic-data/authored/case-11/v2/11-D05.json": "e03ef6614900f45d3935f3ad1ef25ee99a50ecdf9d8774862dfdcb3c8b4783c6",
+    "Implementation/synthetic-data/authored/case-11/v2/11-D06.json": "6480e32f77f1cdc7ba269b974b920edf75332b0a07a92b45e5586cba1b2ee13e",
+    "Implementation/synthetic-data/authored/case-11/v3/11-D05.json": "16c4c0aed8cf15964d8544b83dd3696c64289b15f18249c60c06211492cc3b9d",
+    "Implementation/synthetic-data/authoring-input/AUTHOR-INPUT-GUIDE.md": "90a9cd6d0c21767aa2309b89c1c3354b2bade856619baa82c33ee55db480ec46",
+    "Implementation/synthetic-data/authoring-input/examples/README.md": "37c8c3f3af368a318bf1a05a0ab8887527174a7b813a543993864f00d749d44e",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/BATCH.json": "366771a6ce124c20621a32e35456192d15fe38aedf777e8ba52ae07f4b9ac05e",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/LEAK-TERMS.json": "76c963cccd577756aa5cdecf5d01bd4f77dfacbac4dc4988c8689a81f9ccaa50",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/SPLIT-MANIFEST.json": "b52d82204a2b9c93d2c7183dc1f833d9d42c726e10a29878a360c301d2b1ef29",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/events.jsonl": "7840d2eff83c994f3128b3b47785bbd8e923f9a80b579b2dd65e668545751bd9",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/expected-judgements.jsonl": "65fc7d22cdcced510106d605ce90ba6ab0d9cd035f321933a28321d0f46a80e1",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M01.md": "a1eb36bacff7de562643bc5fe6c4a8963d3722f24b48940a339a4edd292432cd",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M02.md": "7801f838d49446f4d4348331cc95ef7da4870d14cf3c2b232974ae669f22ffd6",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M03.md": "174753176fe702f77296acc31b57a177075e21d2b82dd4a382c70ff61dbeaf1f",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M04.md": "7f0b1584fc6d76cb2ca48bf2cf0e03f2319b800b8c4b7355edd3bfbbfe3f3bd9",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/private/member-briefs/FX-M05.md": "0925eb17261770f0393cc8c743cedd6571b5068ba95131784c1ce19b6dd59aa8",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/cases.jsonl": "fba97890ed1afc9d28d90b07d9e93eec3085b5d467178113d1888801389f2b30",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/2026-04-28_1347_mei-lin-zhou_fee.eml": "13c9cb918528872b0e01a39e1b9918fedb300bf11fc474418b64bf140c22193a",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/files/statement-fee-screenshot.png": "7bebac80135bdd3dc31b76a3dd271cf1e111d1b5968d3b056ab6c37b2417e082",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/participants.jsonl": "f71e8215ff345fa0c201a1d309d93637955a75883bddfa3b8ab84ac5ed64d1f6",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/parties.jsonl": "60e5688bddda13407b9ff6b2d76101fd48c21d3f9c4152806999709f93d14ace",
+    "Implementation/synthetic-data/authoring-input/examples/fx-five-members/runtime/sources.jsonl": "619b905fb7cce7ddc19197013e90f405f8af08bf7a608e183cc096515a993976",
+    "Implementation/synthetic-data/requirements.txt": "2b58ef94db80c53775e2c5a5765e9950ba3859d79b4afd625275496d3c302baf",
+    "Implementation/synthetic-data/sdgen/__init__.py": "f89a4fc240a06edca4cecc4099d257dcad415a98e94fbbdd9ba8d620ab99a9af",
+    "Implementation/synthetic-data/sdgen/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "Implementation/synthetic-data/sdgen/archetypes/__init__.py": "34a923e5f92e9de82e0c923e0386018d8033b930e81921cca2b8e19206417406",
+    "Implementation/synthetic-data/sdgen/archetypes/admin_fees.py": "02f569723360ae1d87082118a1237d5412b0d8f2514c05ea0c2f1382b0ed07a3",
+    "Implementation/synthetic-data/sdgen/archetypes/base.py": "32dc92b526246a314bcfdb2d5694ad5a64b2071c917782ee64dac7ac63d769b5",
+    "Implementation/synthetic-data/sdgen/archetypes/death_benefits.py": "990e3d13e23de210f840c6a4b3c52c38764aa22ae67c20f030ab7dc7941c743b",
+    "Implementation/synthetic-data/sdgen/archetypes/pension_disputes.py": "5b324a7fbe0b1b5a2c289e60dbd479ec103009d7ce5969eb391d800cecc11121",
+    "Implementation/synthetic-data/sdgen/archetypes/registry.py": "b2050ac5cf32398b3e5ce264837dbf28631a5d5409ef734679954daebe0dda25",
+    "Implementation/synthetic-data/sdgen/archetypes/tpd_insurance.py": "4f75deedcc3d0fb0e6b4f0bc296d48bc8b50e2b5815f195c1d450f492e77a0f4",
+    "Implementation/synthetic-data/sdgen/assets.py": "d90be3fd3014d711fdbee9d1b0fc5d4f2613d47b72ae1505de6d0e39ed2a1c14",
+    "Implementation/synthetic-data/sdgen/atomic.py": "d62465de040dd649350cc87755f7a1944ed9ead9553df1f521136af4cdd82559",
+    "Implementation/synthetic-data/sdgen/authored/__init__.py": "ba024fb1b64c68a6bde8639c7f73f8f014b5e1a63a81c8d138ebe45631ad6f10",
+    "Implementation/synthetic-data/sdgen/authored/events.py": "1092c6df71b3f7a6d1826007b34f4ffa67c2b4916f4c69b93f37d10ca2028042",
+    "Implementation/synthetic-data/sdgen/authored/expect.py": "ddeffab4981228337ada6c0e907ee0a29c53bb98df41eded4e98ae9b9485ad19",
+    "Implementation/synthetic-data/sdgen/authored/export.py": "d8318baf96e9a420ad0dcc35fde90a5577617c8c252caf36c79748bc238c473a",
+    "Implementation/synthetic-data/sdgen/authored/inputcheck.py": "1b971993e57d8afd73dad4c8e1aa5ccc6b007085b2c5aa6de2c612e08a70808a",
+    "Implementation/synthetic-data/sdgen/authored/model.py": "959332ca572654cf460a62cb988c101ad64e27457aba6a13daaaae63510e8eb5",
+    "Implementation/synthetic-data/sdgen/authored/render.py": "79de1a3d06f6f958084213d386ad96313dc91de3bedfa44597cf58c435c4e5ca",
+    "Implementation/synthetic-data/sdgen/authored/verify.py": "998a1627695d3518a4b46d32561d43b00c925b17091977e951028d76f9abd0b3",
+    "Implementation/synthetic-data/sdgen/authoring_check.py": "2523922d85b8fb91d2480173897abfcfb24a78c55c4dabf90f5d30509182030b",
+    "Implementation/synthetic-data/sdgen/build.py": "4c79deb1433973c2fa5d6d759dc642e230440ace4cbdb7cf80d4ec79999ceeb9",
+    "Implementation/synthetic-data/sdgen/card_adapter.py": "4aa489f004e917261a5839a21152ccfb8e4051d5f71803b01d40598a28d7f634",
+    "Implementation/synthetic-data/sdgen/checks.py": "5471ae574e8e9df69039bba7cbad8eef772b45c9a34535be4fcc3c0b9455f3c8",
+    "Implementation/synthetic-data/sdgen/cli.py": "17643a83ef25531d650e46b758a24132a6249489185b1001ed452a7c524495bf",
+    "Implementation/synthetic-data/sdgen/closure.py": "ef0b96f274c00cf792bdc5a55533bae75cedcb69f8266e72b008688391b32c5d",
+    "Implementation/synthetic-data/sdgen/contract.py": "5d0e75999eba46251d219fc2b08f8b50895f43c44680c35de5ca96520f5742ba",
+    "Implementation/synthetic-data/sdgen/economics.py": "1d20086e45e3fc2c294260a195bb5f38281a5f70be1ad5c6f8a33d92d415ccb4",
+    "Implementation/synthetic-data/sdgen/effective_spec.py": "2e5f8cfb9e167858401acf1b67c341c9ba432976c472112d3db8b9bfd4c4c1a9",
+    "Implementation/synthetic-data/sdgen/effort.py": "ce9f2108697657f9a85b11550851df4f11768e824c6123900f91853fb58fa21b",
+    "Implementation/synthetic-data/sdgen/leakguard.py": "31290d59f08756bf7f2287a39cc962f4f15d7c87ad656e9197d25449bf16b102",
+    "Implementation/synthetic-data/sdgen/microbatch.py": "9dba52da8d721c7f25e8fd580779c42bd0a438b52235ae599d1216842d3f98e7",
+    "Implementation/synthetic-data/sdgen/paths.py": "98e9fd4ae64bf2875d4eb54cc70dc2d2498043a47872b9a5c9307d6479b2e9f0",
+    "Implementation/synthetic-data/sdgen/plan.py": "fecff4ca63439c0a3a1a2745b3aa14d7f5cf9a99758045cbdf1efe36f7e4d433",
+    "Implementation/synthetic-data/sdgen/progress.py": "8b17b2e735316b9712af822eea32fcac1bb0b6ddc4a07f8c27cb35b157f9ddcf",
+    "Implementation/synthetic-data/sdgen/receiving_export.py": "d97078834f8181e6f4b93a8d44feae7a1fc66acaa6a30dfc332b42c03fe52763",
+    "Implementation/synthetic-data/sdgen/release.py": "21955c2d1822a45146c5eaa6d7d484a472d6428236c9b2ef856096891e766ac7",
+    "Implementation/synthetic-data/sdgen/render_call.py": "8f678b73e408a1a92bff1270f445a76867f58b334c084e0b8633300665ea81fc",
+    "Implementation/synthetic-data/sdgen/render_csv.py": "2da5a453a1d53133c9c18feae42952f9f66522a7cc76e0230058fd851bf984be",
+    "Implementation/synthetic-data/sdgen/render_generic.py": "4289f5d6f6167ad84703652dfb8ab66dfe20aee47b75726bc8634991b3f9d783",
+    "Implementation/synthetic-data/sdgen/render_image.py": "f23890179f737b715f737559cf41670a4c52eeac75b666f9a3f510566fc12863",
+    "Implementation/synthetic-data/sdgen/render_mail.py": "854d06cf43eec841a3ffbb6cb10ddcbac465f89de7acd7d4f0ffb06436a4f508",
+    "Implementation/synthetic-data/sdgen/render_pdf.py": "d911795dcd0846baef8b18e5c6d6d2ee619aa9019270af22de2409aa36132a3c",
+    "Implementation/synthetic-data/sdgen/render_xlsx.py": "552e5af70a934dbf32b6bd789e9e948334a7aba0c3f12879ddd4913d5abc9729",
+    "Implementation/synthetic-data/sdgen/review.py": "3b67a08d25ff8a595da6b5b205b940fcf89f3a36cbe52f8a880379677e91ff8b",
+    "Implementation/synthetic-data/sdgen/source_repair.py": "bb2dfe44540461d9bb488830727afe820ff7085bdc32066d9634de15e330331e",
+    "Implementation/synthetic-data/sdgen/textfmt.py": "1f02aa72e7a01d85b6440c8833a3b6b81e4a1f33cae1d6593162e370fc724be9",
+    "Implementation/synthetic-data/sdgen/tz.py": "73bad5cdf54281d3ab633e2b70454d641fea0ffb7924dd656ada55da65c7f2a7",
+    "Implementation/synthetic-data/sdgen/workpack.py": "059ca4f2d9a2b4c37a49bb928b7cc870fd173f8a64e65147605209ef1bf9613f",
+    "Implementation/synthetic-data/sdgen/workpack2.py": "023d40df2ac8f5164fe560609d6a1965907840ba4a2f762cde22163df07fcf78",
+    "Implementation/synthetic-data/sdgen/workpack4.py": "a76849f9e98f8fd0ce93e1c24992497b8b9e41236b276580b0181643870defaf",
+    "Implementation/synthetic-data/sdgen/workpack5.py": "4c7db24bb0189a2f1b39ca3f1a9afa94812608a660f8769233d77c9927c7e815",
+    "Implementation/synthetic-data/tests/assetcheck.py": "091c6024e6cdb5d9b29bcbd70c6ff395ab47719e393e5816e03e11b3e3b1e793",
+    "Implementation/synthetic-data/tests/authored_helpers.py": "8236ad16531855e962ec37db6cea4f5f81c70fb44682c10f407b13b83225ae97",
+    "Implementation/synthetic-data/tests/conftest.py": "4c2f6e54e6e51fe7c683d6e558b46de176ff7d07d2a48e1c02e0c036f21770ac",
+    "Implementation/synthetic-data/tests/specimens.py": "84b1098847b033e5f047eab20ce9dfad78374422d927f4157976409947bc88a1",
+    "Implementation/synthetic-data/tests/test_archetypes.py": "eb13263ceded3fd4ecdfeae3d6cf14b5b1caa54661e968970d163fbee8c5e188",
+    "Implementation/synthetic-data/tests/test_asset_content.py": "19c2610aaf29657955c2eaf7c312f681f6ea7efb63b7e7f66c10bb92e4e45de7",
+    "Implementation/synthetic-data/tests/test_authored_approval_revision.py": "a4a9acfebb83145dec3cc44f40cabacb27ce13919694bcfa251a5a88a5eb62ca",
+    "Implementation/synthetic-data/tests/test_authored_boundaries.py": "151d4211e398f81b42f8085e83a4208eaf11ef7a6eae0241f3e2f83b08dd8cbc",
+    "Implementation/synthetic-data/tests/test_authored_coherence.py": "ba050e725f36fc161a5f4e34c92c669822caf5828ad61650122f68f0e585e08c",
+    "Implementation/synthetic-data/tests/test_authored_contract.py": "6d95856e6502e4474a32c0dbd75a8123f83ec842b428c89cebd25e8cae95759f",
+    "Implementation/synthetic-data/tests/test_authored_expectations.py": "376f158a4c8bfaf0205677e7eee9043c471fb2a07ff03f7eb050ae18311c389b",
+    "Implementation/synthetic-data/tests/test_authored_fidelity.py": "eae3e9be3494123bc05c56ae1c83efbca018a9de30ee39fe1afe663a8ff09cad",
+    "Implementation/synthetic-data/tests/test_authored_receiver.py": "4a96e180cd32341f9a66b51bb44094bbed9b1aec8eec4d06372cd6b7c4cb3ea3",
+    "Implementation/synthetic-data/tests/test_authored_repairs.py": "ed0cc53dc9d3d90eed2ae5938b58163d1911dfb0c2d658cb19f7d174bdc6d7ab",
+    "Implementation/synthetic-data/tests/test_complete_candidate.py": "15fdb0a7ea724dbc13fbf3ef84145095f7ed8c7bbafbb2cf3988c0ac6c2ee54e",
+    "Implementation/synthetic-data/tests/test_erratum.py": "925fa7e4df5555d14cff63e62ec73b24c3c3d73c8f42188c1f37fd19037c9aed",
+    "Implementation/synthetic-data/tests/test_finalisation.py": "86a3539ed60664d782aafafd39824187820f38f7487ddcf33546b37e5f209d3b",
+    "Implementation/synthetic-data/tests/test_integration_prep.py": "92ab99f857a81ca695b84731afc5416c61fd4bda1ba2f34354ace0319ec018e8",
+    "Implementation/synthetic-data/tests/test_ip_repairs.py": "8d6a199afeb9b3aff16d161463c3b737f8b905f0d82d43cf67814184c9301c23",
+    "Implementation/synthetic-data/tests/test_package.py": "54b7b3794d0cee52abb43b69f00197fbd2372c50c5e03a82eddd2be6d4b18abe",
+    "Implementation/synthetic-data/tests/test_repair.py": "be71c1a4ae0052fc9d48138c1cb0a1d5a5f36161104dd6931b21ec8cb97170c3",
+    "Implementation/synthetic-data/tests/test_source_repair.py": "97812a088d21b6bc598e531d34acce27ee20de4e704385e6ea195ddcde12d724",
+    "Implementation/synthetic-data/tests/test_v3.py": "d50fb26edc5445e49ddeeba7a7ddecf81500497c466bb13106dd3aa2d2d4dda9",
+    "Implementation/synthetic-data/tests/test_w01_contract.py": "7156598309d37904fbed9032df72a221c3d9a2a1e48c2dd74ead11690fff9bbe",
+    "Implementation/synthetic-data/tests/test_w02_stage.py": "c98e3aca7f088e4eb12e3efa2bfad1604a8a3551548f391fc530765e53a0b1f6",
+    "Implementation/synthetic-data/tests/test_w03_checks.py": "7a049ca02e507118f04d69a57edc8607e049b3ac411b151af99bc718b31fca8d",
+    "Implementation/synthetic-data/tests/test_workers.py": "2f246c0d21735b8bb8bc123cf94177b0b52b4ed67af687f09fef46ed2c96d84a",
+    "Implementation/synthetic-data/tests/test_wr_repairs.py": "6096ec4402ab39b553e0ac40fc0e7f45e920e79cd3158d11831d8aa40ee3a3f4",
+    "Implementation/synthetic-data/tools/authored_receiver_check.py": "ee7efed37a20a13e12e77da7bc4b5de555562e400372fcce886b9087b2877b43",
+    "Implementation/synthetic-data/tools/profile_sdgen.py": "b16ce46cfc17d6baba4af5bdbebb48423cbaa47d4349ae9dcbcc4570a11ece3e",
+    "Implementation/synthetic-data/tools/receiver_preflight.py": "3f7dc2d3159213e3a664a51587faebace9eb317e258ec4adc793e67f8798fc4e",
+    "Implementation/ui/Dockerfile": "e5c55d9f1c952870ce7d0438e99535ebe9ff00c0cb2aced8b95d3ddb2e0d67b6",
+    "Implementation/ui/README.md": "f6bda42839f2a43b82417e59885ceeeb169a2db479f0e517e27e31699847249f",
+    "Implementation/ui/build.py": "4ef6f0d95faecfa4ae223a19333f392372cd99e6588631e924f864fbf5833732",
+    "Implementation/ui/public/favicon.svg": "4869bbc6849508c8b4da063f0c3772638aac9c4d960134b608bf3973b18ad11d",
+    "Implementation/ui/public/fonts/Manrope-OFL.txt": "d826ab6583b12c26807d8716a545bdbbb672df04f48608a364ba9efdbe501c30",
+    "Implementation/ui/public/fonts/README.md": "7c33c3468a109f0a76ff64007162d8e9d73d9d47533c7f704aa1acde22cac231",
+    "Implementation/ui/public/fonts/SourceSans3-OFL.txt": "18aabf190848725e2576eefb5c29ba06aac1029d02132252a7f312eac2e50cf3",
+    "Implementation/ui/public/fonts/manrope-latin-wght-normal.woff2": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+    "Implementation/ui/public/fonts/source-sans-3-latin-wght-italic.woff2": "9a15dafc2c2b2414aaa9d6c30830d9aab4361329d8495b1574633603b994b411",
+    "Implementation/ui/public/fonts/source-sans-3-latin-wght-normal.woff2": "7a19a7027e125257d310c6dbd78ae3a30b5ea1e3794d60b12bb28227a003bfda",
+    "Implementation/ui/public/index.html": "9ccb1ffa52d16e78f3622bcb35d70d4f8a33f108f7a1d7144ed151af18cb17fd",
+    "Implementation/ui/public/styles.css": "5b97e8282a1c82af1b5b37dec173fc5407deb7242333d97d7b8fdc724929f15d",
+    "Implementation/ui/scripts/local-ui.py": "e417474ead9320a839f04b296494159100f9f57518b0a2d415bb42638f51c432",
+    "Implementation/ui/server/devserver.py": "ef827ab0c68ed84f9c0434161814a31ec5cad07b6e78e6d2b1907fe4d5cae0e2",
+    "Implementation/ui/src/api/client.js": "2cf47e7f2168d1ef2f2af7e3d3445e73ac91ff731cd902873280bc784eb34ec3",
+    "Implementation/ui/src/api/store.js": "f3d7f4ccba8036ba357fac05f672cf7a43f0b11147d79f81b2ad34eb9699c2ce",
+    "Implementation/ui/src/app.js": "281a3273cc9bf6fb2f20be996b9a16b2122fad6bc732e09be691a58925d5c498",
+    "Implementation/ui/src/lib/calc.js": "937d44d29ce2ed446ec6b112d9065ca844c551d61dd8e5886b6dc8b922182f66",
+    "Implementation/ui/src/lib/digest.js": "f2f06683edb0f6344c9b3955fd78288de18edb8652c8baf8b1d11491f0a77be7",
+    "Implementation/ui/src/lib/format.js": "f73fb05ae7d145adef25c9fa82fd774027dcaf37b8edcf07048632a3ffe29527",
+    "Implementation/ui/src/lib/periods.js": "613d81cb7b813596047cab74714954df137f57c76627d10aecb7d8107f08d840",
+    "Implementation/ui/src/lib/schema.js": "d20cd704453030b90882111562412eb9e6b1683723f93ecacb4864ca1b89529c",
+    "Implementation/ui/src/main.js": "edf9b940fd22573ddcf30afc3cf4e8e76ef6058ed121bcddd62fa0d70e9b0bc4",
+    "Implementation/ui/src/ui/dom.js": "48e992b5361c310d01c15c1cd3a78519304149ebcc1f261c254d4a1614154c2e",
+    "Implementation/ui/src/ui/drawer.js": "24bc9fc255226539aba80301e8db0d8b05a4a37ef0e88e1de21d4856f4fa678f",
+    "Implementation/ui/src/ui/icons.js": "9ce78fac758b8cdf3caba5c2bcee0cff60afd330c2e6ff20e37d5110c67e278d",
+    "Implementation/ui/src/ui/labels.js": "09bfe622e00bd7369d161f6f19e1311bf4e87d534b45690660226b2dfdc7218a",
+    "Implementation/ui/src/ui/router.js": "8c05fdeb39f3f77be2c1088ff5903ba236000df3aae250f4f0954160d1cce6cd",
+    "Implementation/ui/src/ui/states.js": "08e22f08a09fbca754cd6dc97d025f43ba32e11b15236da624d58408e8ffc2fc",
+    "Implementation/ui/src/ui/viz.js": "0157ff351b2c8566076de452e327964a4e52783868fccf25673545145f491bcf",
+    "Implementation/ui/src/viewers/parsers.js": "29e9263676675492b70febc2f3fedb50fba2bcf3c99f405f7ab616d51bc33ef4",
+    "Implementation/ui/src/viewers/viewers.js": "299b620a2786d299db1c54fa90583c6897ff8060ee9b05ec974b838b2c58f88f",
+    "Implementation/ui/src/views/afca.js": "e6632698701e147a211d0271ac7674195ef4351d3e2577e2d5d3bd0dceac3c42",
+    "Implementation/ui/src/views/brief.js": "06b3f371e6ace9db10a68c7f223a96dd58f47f2011165419c47aa5ea4f112c7a",
+    "Implementation/ui/src/views/case.js": "badad332881877627e1d78eb0dc5e65553b670e0b2a78401616815860c3fcc26",
+    "Implementation/ui/src/views/cases.js": "dcc687698916959656e7e06ac60aad3b5824e58c1e1157725579a51fa8c67cd5",
+    "Implementation/ui/src/views/experience.js": "40e3e18e72335855f96a6262eb4d5851a0a22502bc01f0b25132829165b5e7ec",
+    "Implementation/ui/src/views/impact.js": "ed2e6d6c8fccfd9c80d3b9a2dded12f28a6805962c918e33db20a52f57f12af4",
+    "Implementation/ui/src/views/investigate.js": "2d7c0367160c1d428f4af2571f367f8f6142365716f3d25d5dc0054844e92ea1",
+    "Implementation/ui/src/views/issue.js": "433913f745bea0aa965c66e97c9d7777479b410c484d77acd742512d9900a325",
+    "Implementation/ui/src/views/issues.js": "f59c7bfdfe2f548bb0f59c421fdcca28a13d0513a932006ef0218b76256f706a",
+    "Implementation/ui/src/views/model.js": "7aad7d673d00036b5cb6b5997909beabe4502e7999708472d263b32a2d2378ed",
+    "Implementation/ui/src/views/overview.js": "9551f66f5ad9fb211b081ca2c9fea587cfffd5b2087128a6f48dcfe734da5393",
+    "Implementation/ui/src/views/population.js": "48e5e7be73662f449f6960b9a946c8412888ad1626e2bc28bd3ca55e4b709b18",
+    "Implementation/ui/src/views/source.js": "1daad5832d365c55532a42b7fa4c75763610a405275bdd0221eb251efac0850e",
+    "Implementation/ui/tests/app.test.js": "d841a4d2e5b56d93544d4e84e0d1a02e8444eac1951cd0388aa97bbb85b93b19",
+    "Implementation/ui/tests/fixture/companion-double.js": "34aa5c93cb9a29f0823f370b587e72c20010913d44897a1072923e8ca5b7fa70",
+    "Implementation/ui/tests/gateway_test.py": "b948e014c074207b30e67910ac468e9f661b6468bfd439a95b6b465dbe6a63f0",
+    "Implementation/ui/tests/harness.js": "7cbc89922d32582e8132970286e3611ff9d949c76ee996277814b7597bf7f311",
+    "Implementation/ui/tests/hosting_emulator.py": "c7e7cd8b850525bffd78eadbeacaae0240cfc5fbbbd213a39934c3c1c1b71a3b",
+    "Implementation/ui/tests/index.html": "06a5e5ead8a3caccd7c12a5bdb90f02564d37d163d00fb61a1b701915ac99993",
+    "Implementation/ui/tests/intel.test.js": "cdf4d4ec9c0d9627ebad81d6ab0027ad2a86bb08dbbe8be9c00525e1a1ab05ee",
+    "Implementation/ui/tests/make_specimens.py": "1231910407227eb362248220e6a0c3ac82c8aee4dd57e8105861e223997785b5",
+    "Implementation/ui/tests/run.js": "efc5c3b5368fe932c68d396c912d001a4a09c49adb685cb6bd1094b0899639e2",
+    "Implementation/ui/tests/run_tests.py": "3fc682e589ec501851eb091d09e83d0e79a494ea18765f65d63cb00e6b5a435b",
+    "Implementation/ui/tests/specimens/preview.html": "349d79906dd4c65371afde319fd6301fb93c7be1a6cc5fa1faaad7486dc17607",
+    "Implementation/ui/tests/specimens/specimen.csv": "6cb99b27eeca68768fbf8f02474f2864e24c0e33904c192287783b451a5f67bb",
+    "Implementation/ui/tests/specimens/specimen.pdf": "599da12a022321884cb544c313e2bc8029fbfc49785a16e28da6e0db82816f77",
+    "Implementation/ui/tests/specimens/specimen.png": "96fc8c48475b938c5f7a12d41dbdae9030740d475e3d1b831f39a93dd0053752",
+    "Implementation/ui/tests/specimens/specimen.txt": "ee7b9a37fbde61f0c0eab5527c6f61955882fe01ac01d1af83fc2f133b1b9647",
+    "Implementation/ui/tests/specimens/specimen.xlsx": "fa019ae1aab0c4c4314127374610cfc3bb27690c04a8aed06e3a204d81cddc13",
+    "Implementation/ui/tests/unit.test.js": "6db01d00ef6e411182cf3c2fd4d56c1987ef186ca74d2b1728b237778aee9133",
+    "README.md": "cd8cc50269bd920df076a7658cda129ae3afcb38271834dd0158c374683ee319",
+    "Shared/contracts/v1/CONTRACT-EXAMPLES.json": "3dd3f27ff469bd1e9f7100ac7f199ecbbe2ac506fc60aaa30adfcf5c9114cf53",
+    "Shared/contracts/v1/DECISIONS.md": "8b6b03b79485a9488004b9a23245f70e8720efa9bdbddb53df364fb77ff75d66",
+    "Shared/contracts/v1/MANIFEST.json": "da1a71564d2aa2f75727034f92ac8e47b98553cb518f364a1e63faef50535bed",
+    "Shared/contracts/v1/MEMBER-EXPERIENCE.md": "a6c98923a4432c44143512cb92ff5f3682b63e6001fc669e9432a0be39e24a93",
+    "Shared/contracts/v1/REVIEW-1-CLOSURE.md": "532707120b9cd91bc1befb6c875e3a3429ff1185be64cefe8c1d8a9e50ccb504",
+    "Shared/contracts/v1/author_contracts.py": "cd8f62ce4e522928e094d48c93b28dcc4768ae0b608d038d47b5777ab44d88a9",
+    "Shared/contracts/v1/check_contracts.py": "e868a9a99cddfecfc1fdbecaf311117179714f31d371efc39c68574e444e2927",
+    "Shared/contracts/v1/measure-additions.json": "8877fdbd0dfe00dd2e70f9161a0296903ed8a67795384a54cdd74817682b7bf5",
+    "Shared/contracts/v1/review2_examples.py": "417e3d735279c64b7381550895e435e1de44751e45ccdf0389809df43ec125a9",
+    "Shared/contracts/v1/shared.schema.json": "6800d6146996a7489e28d3c1ff5540d1d8383ab8f19fc143f03b07976b946faa",
+    "docs/ARCHITECTURE.md": "1f4503c638aeb975d2112e9a0fe34c638756ecffe5680c0528f346993d2aa034",
+    "docs/CLEAN-COPY-CHECKS.json": "ede76d4677b60231b09dc4f57cd444dc2dc98307bdeecb5a5fd3d25fd09e35b6",
+    "docs/DATA.md": "22146b02340964ceec1930b4dfdd974dadb2a417d85be33a505a645be44b7e96",
+    "docs/DEPLOYMENT.md": "3aef5de3e2703bf8a6568e159a14bc9908b61aeb815b6eaa4d7196826f17352c",
+    "docs/LOCAL-DEVELOPMENT.md": "a0a32974d887cf89b58dd2dece9de0b4f313591cd060804d292e0c21cb2ae0c4",
+    "docs/STATUS.md": "e75ee35b723b303b9c34205c52d940eb79b0415ad695461af08013272fd28ec3",
+    "scripts/verify_repository.py": "6f976fd0f7d75f163b6c98ce56b0f713dcd1ed2fc25fe46c618c189069f80365"
+  }
+}

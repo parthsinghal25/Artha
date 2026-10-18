@@ -1,0 +1,63 @@
+{
+  "card": "11-D05",
+  "revision": 3,
+  "kind": "email",
+  "in_reply_to_card": "11-D04",
+  "greeting": "Hi Alicia,",
+  "blocks": [
+    {
+      "p": "Thank you for acknowledging my complaint on 31 December. I'm writing again because I still don't understand what is actually missing, and I would like to have this in writing rather than rely on what I've been told before."
+    },
+    {
+      "p": "My father's death benefit request reference is REQ-2025-11-01 (his account number is ES-M-11-2025). The attached portal receipt shows the papers as received on 21 December, but the death certificate has since been requested again. Attached are the same files once more:"
+    },
+    {
+      "ul": [
+        "DC-11.pdf - the copy of Dad's death certificate extract (he died on 7 December), certified as checked against the original by Jamie Lawson on 21 December. This is what shows his death.",
+        "ID-11.pdf - my certified identity copy, so you can confirm who is writing.",
+        "RF-11.pdf - the relationship form showing that I am his adult daughter.",
+        "11-05-portal-upload-receipt.jpg - a screenshot of the portal receipt for the upload (reference UP-11-20251221), which I saved on 29 December. It lists all three files above as received."
+      ]
+    },
+    {
+      "p": "This is the third time I've sent these same papers: with my first email on 21 December, with my complaint on 31 December, and now again here. They are the same copies, not new versions. The portal receipt I've attached shows the three files as received on 21 December."
+    },
+    {
+      "p": "I recall being told that the papers were all accepted, which is why I was so surprised to be asked for the death certificate again. I do understand that uploading documents is not the same as a formal decision on Dad's benefit, and I'm not asking for one here. What I am asking is simple: which specific item is missing or not acceptable, and is there a record that someone actually checked DC-11 and decided it was fine? Being told it was all accepted is not the same as seeing that record."
+    },
+    {
+      "p": "Could you please confirm that all four files above have reached you? I will wait for the update you mentioned for 7 January, but if you can tell me sooner which item you need, I would be very grateful."
+    }
+  ],
+  "signoff": [
+    "Kind regards,",
+    "Beth Martin"
+  ],
+  "required_tokens": [
+    "REQ-2025-11-01",
+    "DC-11.pdf",
+    "ID-11.pdf",
+    "RF-11.pdf",
+    "11-05-portal-upload-receipt.jpg",
+    "UP-11-20251221",
+    "7 January",
+    "This is the third time I've sent these same papers",
+    "with my first email on 21 December",
+    "with my complaint on 31 December",
+    "The portal receipt I've attached shows the three files as received on 21 December",
+    "The attached portal receipt shows the papers as received on 21 December, but the death certificate has since been requested again."
+  ],
+  "must_not_match": [
+    "\\balso uploaded\\b",
+    "\\bfourth\\b",
+    "\\bsame (occasion|upload) as\\b",
+    "\\bseparate(ly)? upload\\b",
+    "\\bthree (emails|communications) and",
+    "\\bI uploaded\\b",
+    "\\buploaded the papers\\b"
+  ],
+  "authored_meta": {
+    "authored_by": "synthetic-data coding assistant (Claude, Anthropic) in-session",
+    "basis": "revision 3 overlay of card 11-D05: exactly one sentence replaced per independent-review ruling SR-2 (case-11-rehearsal-v2-2026-10-14/INDEPENDENT-REVIEW.md); every other character of revision 2 is unchanged"
+  }
+}

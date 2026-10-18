@@ -1,0 +1,15 @@
+{
+ "terms": [
+  "accepted_instruction_not_applied",
+  "approval_queue_condition",
+  "repeat_valid_evidence_request",
+  "fee_schedule_misapplied",
+  "FX-EP-01",
+  "FX-EP-02",
+  "FX-EP-03",
+  "FX-EP-04",
+  "FX-EP-05",
+  "holdout",
+  "lookalike"
+ ]
+}

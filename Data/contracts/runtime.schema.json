@@ -1,0 +1,4047 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:example-super:runtime:0.2.0",
+  "title": "Complaints runtime contracts v0.2",
+  "$defs": {
+    "anchor": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "text"
+            },
+            "start_codepoint": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end_codepoint": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "kind",
+            "start_codepoint",
+            "end_codepoint"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "field"
+            },
+            "json_pointer": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "kind",
+            "json_pointer"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "evidence_ref": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "anchor": {
+          "$ref": "#/$defs/anchor"
+        }
+      },
+      "required": [
+        "source_id",
+        "content_sha256",
+        "anchor"
+      ],
+      "additionalProperties": false
+    },
+    "access": {
+      "type": "object",
+      "properties": {
+        "view_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "restricted",
+            "redacted"
+          ]
+        },
+        "redaction_state": {
+          "type": "string",
+          "enum": [
+            "none",
+            "partial",
+            "withheld"
+          ]
+        }
+      },
+      "required": [
+        "view_ids",
+        "classification",
+        "redaction_state"
+      ],
+      "additionalProperties": false
+    },
+    "envelope": {
+      "type": "object",
+      "properties": {
+        "record_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "logical_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "supersedes_record_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "available_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "occurred_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "occurrence_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "access": {
+          "$ref": "#/$defs/access"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "record_id",
+        "logical_id",
+        "supersedes_record_id",
+        "recorded_at",
+        "available_at",
+        "occurred_at",
+        "occurrence_date",
+        "access",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "value_state": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "known",
+            "partial",
+            "unknown",
+            "conflicting",
+            "not_applicable"
+          ]
+        },
+        "value": {
+          "anyOf": [
+            {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 0
+                }
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "missing_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "state",
+        "value",
+        "missing_reason",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "unknown",
+                  "conflicting",
+                  "not_applicable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "known",
+                  "partial"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "boolean"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "minItems": 0
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "party": {
+      "type": "object",
+      "properties": {
+        "party_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "member_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "party_role": {
+          "type": "string",
+          "enum": [
+            "member",
+            "beneficiary",
+            "representative",
+            "other"
+          ]
+        },
+        "support_preferences": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "party_id",
+        "member_reference",
+        "party_role",
+        "support_preferences"
+      ],
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "party_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "broad_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "original_receipt_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "complaints_receipt_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manager_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "product_or_journey": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "phone",
+            "email",
+            "portal",
+            "letter",
+            "afca",
+            "other",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "case_id",
+        "party_ids",
+        "broad_tags",
+        "original_receipt_date",
+        "complaints_receipt_date",
+        "manager_reference",
+        "product_or_journey",
+        "channel"
+      ],
+      "additionalProperties": false
+    },
+    "native_fact": {
+      "type": "object",
+      "properties": {
+        "field_key": {
+          "type": "string",
+          "enum": [
+            "original_receipt_date",
+            "complaints_receipt_date",
+            "reported_problem",
+            "requested_outcome",
+            "contact_initiator",
+            "support_preference",
+            "case_status",
+            "merits_decision",
+            "task_state",
+            "approval_state",
+            "approval_condition",
+            "execution_assertion",
+            "execution_confirmation",
+            "dependency",
+            "wait_start",
+            "wait_end",
+            "evidence_received",
+            "evidence_validity",
+            "procedure_version",
+            "routing_reference",
+            "work_duration_seconds",
+            "afca_stage",
+            "afca_closure_route",
+            "financial_amount_minor",
+            "financial_state",
+            "commitment",
+            "commitment_due_date",
+            "meaningful_action",
+            "episode_start",
+            "episode_end",
+            "financial_kind",
+            "financial_category",
+            "currency",
+            "gst_minor",
+            "obligation_reference",
+            "contact_reference",
+            "case_reference",
+            "afca_reference",
+            "work_phase",
+            "party_reference",
+            "representative_authority",
+            "channel",
+            "task_reference"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/value_state"
+        },
+        "entity_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        }
+      },
+      "required": [
+        "field_key",
+        "value",
+        "entity_id"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "original_receipt_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "complaints_receipt_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "commitment_due_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "work_duration_seconds"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "financial_amount_minor"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "gst_minor"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "currency"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "const": "AUD"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "case_status"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "open",
+                          "awaiting",
+                          "closed",
+                          "reopened",
+                          "unknown"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "merits_decision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "upheld",
+                          "partly_upheld",
+                          "not_upheld",
+                          "pending",
+                          "insufficient_evidence"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "approval_state"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "requested",
+                          "pending",
+                          "granted",
+                          "declined",
+                          "conditional",
+                          "cancelled"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "task_state"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "requested",
+                          "assigned",
+                          "attempted",
+                          "completed",
+                          "failed",
+                          "cancelled"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "contact_initiator"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "complainant",
+                          "representative",
+                          "staff",
+                          "internal",
+                          "unknown"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "meaningful_action"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "source_family": {
+          "type": "string",
+          "enum": [
+            "S01",
+            "S02",
+            "S03",
+            "S04",
+            "S05",
+            "S06",
+            "S07",
+            "S08",
+            "S09",
+            "S10",
+            "S11",
+            "S12"
+          ]
+        },
+        "subtype": {
+          "type": "string"
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "afca_matter_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "author_role": {
+          "type": "string"
+        },
+        "author_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "content_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "copy_of_source_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "thread_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "attachment_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "native_facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/native_fact"
+          },
+          "minItems": 0
+        },
+        "clarification_request_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "source_id",
+        "source_family",
+        "subtype",
+        "case_ids",
+        "afca_matter_ids",
+        "author_role",
+        "author_reference",
+        "text",
+        "content_sha256",
+        "copy_of_source_id",
+        "thread_id",
+        "attachment_source_ids",
+        "native_facts",
+        "clarification_request_id"
+      ],
+      "additionalProperties": false
+    },
+    "extracted_fact": {
+      "type": "object",
+      "properties": {
+        "fact_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "entity_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "field_key": {
+          "type": "string",
+          "enum": [
+            "original_receipt_date",
+            "complaints_receipt_date",
+            "reported_problem",
+            "requested_outcome",
+            "contact_initiator",
+            "support_preference",
+            "case_status",
+            "merits_decision",
+            "task_state",
+            "approval_state",
+            "approval_condition",
+            "execution_assertion",
+            "execution_confirmation",
+            "dependency",
+            "wait_start",
+            "wait_end",
+            "evidence_received",
+            "evidence_validity",
+            "procedure_version",
+            "routing_reference",
+            "work_duration_seconds",
+            "afca_stage",
+            "afca_closure_route",
+            "financial_amount_minor",
+            "financial_state",
+            "commitment",
+            "commitment_due_date",
+            "meaningful_action",
+            "episode_start",
+            "episode_end",
+            "financial_kind",
+            "financial_category",
+            "currency",
+            "gst_minor",
+            "obligation_reference",
+            "contact_reference",
+            "case_reference",
+            "afca_reference",
+            "work_phase",
+            "party_reference",
+            "representative_authority",
+            "channel",
+            "task_reference"
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/value_state"
+        },
+        "asserted_by_role": {
+          "type": "string"
+        },
+        "assertion_kind": {
+          "type": "string",
+          "enum": [
+            "reported",
+            "documented_native",
+            "inferred"
+          ]
+        },
+        "event_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "alternative_values": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 0
+              }
+            ]
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "fact_id",
+        "entity_id",
+        "field_key",
+        "value",
+        "asserted_by_role",
+        "assertion_kind",
+        "event_at",
+        "event_date",
+        "alternative_values"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "original_receipt_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "complaints_receipt_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "commitment_due_date"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "work_duration_seconds"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "financial_amount_minor"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "gst_minor"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "currency"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "const": "AUD"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "case_status"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "open",
+                          "awaiting",
+                          "closed",
+                          "reopened",
+                          "unknown"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "merits_decision"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "upheld",
+                          "partly_upheld",
+                          "not_upheld",
+                          "pending",
+                          "insufficient_evidence"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "approval_state"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "requested",
+                          "pending",
+                          "granted",
+                          "declined",
+                          "conditional",
+                          "cancelled"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "task_state"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "requested",
+                          "assigned",
+                          "attempted",
+                          "completed",
+                          "failed",
+                          "cancelled"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "contact_initiator"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "enum": [
+                          "complainant",
+                          "representative",
+                          "staff",
+                          "internal",
+                          "unknown"
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "field_key": {
+                "const": "meaningful_action"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "properties": {
+                  "value": {
+                    "anyOf": [
+                      {
+                        "type": "boolean"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "procedure": {
+      "type": "object",
+      "properties": {
+        "procedure_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "version": {
+          "type": "string"
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "effective_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "effective_to_exclusive": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "process_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "procedure_id",
+        "version",
+        "source_id",
+        "effective_from",
+        "effective_to_exclusive",
+        "process_name"
+      ],
+      "additionalProperties": false
+    },
+    "episode": {
+      "type": "object",
+      "properties": {
+        "episode_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "party_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "link_state": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "uncertain"
+          ]
+        },
+        "start_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "end_at_exclusive": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "interval_state": {
+          "type": "string",
+          "enum": [
+            "bounded",
+            "explicitly_ongoing",
+            "unknown"
+          ]
+        },
+        "completion_state": {
+          "type": "string",
+          "enum": [
+            "recorded_completion",
+            "action_pending",
+            "failed_attempt",
+            "closure_without_completion_evidence",
+            "unknown",
+            "conflicting"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "episode_id",
+        "party_ids",
+        "case_ids",
+        "link_state",
+        "start_at",
+        "end_at_exclusive",
+        "interval_state",
+        "completion_state",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "contact_link": {
+      "type": "object",
+      "properties": {
+        "contact_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "episode_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "initiator": {
+          "type": "string",
+          "enum": [
+            "complainant",
+            "representative",
+            "staff",
+            "internal",
+            "unknown"
+          ]
+        },
+        "repeat_state": {
+          "type": "string",
+          "enum": [
+            "first",
+            "repeat",
+            "uncertain",
+            "not_applicable"
+          ]
+        },
+        "event_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duplicate_of_contact_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "contact_id",
+        "episode_id",
+        "case_ids",
+        "source_ids",
+        "initiator",
+        "repeat_state",
+        "event_at",
+        "event_date",
+        "duplicate_of_contact_id",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "post_closure_return": {
+      "type": "object",
+      "properties": {
+        "return_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "contact_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "episode_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "party_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "member_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "prior_closures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "case_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "closure_fact_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "closed_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "closed_date": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence_ref"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "case_id",
+              "closure_fact_id",
+              "closed_at",
+              "closed_date",
+              "evidence_refs"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "return_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "return_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "returning_case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "new_case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "reopening_fact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "signal_state": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "uncertain",
+            "excluded"
+          ]
+        },
+        "continuity_state": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "uncertain",
+            "not_same_problem"
+          ]
+        },
+        "ordering_state": {
+          "type": "string",
+          "enum": [
+            "strictly_after",
+            "uncertain",
+            "not_after"
+          ]
+        },
+        "return_reason": {
+          "type": "string",
+          "enum": [
+            "reported_problem_persists",
+            "seeking_clarification",
+            "challenging_decision",
+            "other",
+            "unknown"
+          ]
+        },
+        "reason_evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 1
+        },
+        "assessed_view_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "assessed_snapshot": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "rule_version": {
+          "const": "post-closure-return-0.1"
+        }
+      },
+      "required": [
+        "return_id",
+        "contact_id",
+        "episode_id",
+        "party_ids",
+        "member_reference",
+        "prior_closures",
+        "return_at",
+        "return_date",
+        "returning_case_ids",
+        "new_case_ids",
+        "reopening_fact_ids",
+        "signal_state",
+        "continuity_state",
+        "ordering_state",
+        "return_reason",
+        "reason_evidence_refs",
+        "rationale",
+        "evidence_refs",
+        "assessed_view_id",
+        "assessed_snapshot",
+        "source_version",
+        "rule_version"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "signal_state": {
+                "const": "supported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "episode_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              },
+              "continuity_state": {
+                "const": "supported"
+              },
+              "ordering_state": {
+                "const": "strictly_after"
+              }
+            },
+            "anyOf": [
+              {
+                "properties": {
+                  "return_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "return_date": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "return_reason": {
+                "not": {
+                  "const": "unknown"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason_evidence_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence_ref"
+                },
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "membership": {
+      "type": "object",
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "episode_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "included",
+            "excluded",
+            "uncertain"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "association": {
+          "type": "string",
+          "enum": [
+            "active",
+            "historical",
+            "unknown"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "case_id",
+        "episode_id",
+        "state",
+        "reason",
+        "association",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "finding": {
+      "type": "object",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "version": {
+          "type": "string"
+        },
+        "assessed_view_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "assessed_snapshot": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "title": {
+          "type": "string"
+        },
+        "claim": {
+          "type": "string"
+        },
+        "original_failure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "handling_amplification": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "current_dependency": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_state": {
+          "type": "string",
+          "enum": [
+            "suspected",
+            "supported",
+            "confirmed_for_proposition",
+            "insufficient",
+            "conflicting"
+          ]
+        },
+        "supporting_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        },
+        "contradictory_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "missing_facts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 0
+        },
+        "memberships": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/membership"
+          },
+          "minItems": 0
+        },
+        "human_review_state": {
+          "type": "string",
+          "enum": [
+            "not_reviewed",
+            "note_present",
+            "challenged",
+            "accepted_for_discussion"
+          ]
+        },
+        "temporal_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "newly_observed",
+              "persistent",
+              "recurring",
+              "residual_backlog",
+              "insufficient_history"
+            ]
+          },
+          "minItems": 0
+        },
+        "temporal_rule_version": {
+          "type": "string"
+        },
+        "serious_review_concern": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "finding_id",
+        "version",
+        "assessed_view_id",
+        "assessed_snapshot",
+        "source_version",
+        "published_at",
+        "title",
+        "claim",
+        "original_failure",
+        "handling_amplification",
+        "current_dependency",
+        "evidence_state",
+        "supporting_refs",
+        "contradictory_refs",
+        "alternatives",
+        "missing_facts",
+        "memberships",
+        "human_review_state",
+        "temporal_flags",
+        "temporal_rule_version",
+        "serious_review_concern"
+      ],
+      "additionalProperties": false
+    },
+    "work_entry": {
+      "type": "object",
+      "properties": {
+        "work_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "afca_matter_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "contributor_role": {
+          "type": "string"
+        },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "member_contact",
+            "internal_coordination",
+            "evidence_gathering",
+            "approval",
+            "submission_preparation",
+            "conciliation_preparation",
+            "conciliation_attendance",
+            "determination_response",
+            "follow_up",
+            "other",
+            "unknown"
+          ]
+        },
+        "task_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "event_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_seconds": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duration_basis": {
+          "type": "string",
+          "enum": [
+            "recorded",
+            "estimated",
+            "unknown"
+          ]
+        },
+        "assumption_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "duplicate_of_work_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "work_id",
+        "case_ids",
+        "afca_matter_ids",
+        "contributor_role",
+        "phase",
+        "task_reference",
+        "event_at",
+        "event_date",
+        "duration_seconds",
+        "duration_basis",
+        "assumption_id",
+        "duplicate_of_work_id",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "duration_basis": {
+                "const": "unknown"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "duration_seconds": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "duration_basis": {
+                "type": "string",
+                "enum": [
+                  "recorded",
+                  "estimated"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "duration_seconds": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "duration_basis": {
+                "const": "estimated"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "assumption_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 160,
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "obligation": {
+      "type": "object",
+      "properties": {
+        "obligation_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "afca_fee",
+            "external_assistance",
+            "other_complaint_expense",
+            "compensation",
+            "settlement",
+            "benefit_principal",
+            "refund_entitlement"
+          ]
+        },
+        "currency": {
+          "const": "AUD"
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "afca_matter_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "creditor_role": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "duplicate_of_obligation_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "obligation_id",
+        "category",
+        "currency",
+        "case_ids",
+        "afca_matter_ids",
+        "creditor_role",
+        "source_ids",
+        "duplicate_of_obligation_id"
+      ],
+      "additionalProperties": false
+    },
+    "financial_event": {
+      "type": "object",
+      "properties": {
+        "financial_event_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "obligation_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "requested",
+            "offered",
+            "approved",
+            "agreed",
+            "awarded",
+            "invoiced",
+            "amount_revision",
+            "charge_adjustment",
+            "payment",
+            "payment_reversal",
+            "refund"
+          ]
+        },
+        "amount_minor": {
+          "type": "integer"
+        },
+        "gst_minor": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "currency": {
+          "const": "AUD"
+        },
+        "amount_basis": {
+          "type": "string",
+          "enum": [
+            "gross_including_gst",
+            "no_gst",
+            "unknown"
+          ]
+        },
+        "value_basis": {
+          "type": "string",
+          "enum": [
+            "synthetic_recorded",
+            "estimated"
+          ]
+        },
+        "effective_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "effective_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "invoice_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "adjusts_event_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "financial_event_id",
+        "obligation_id",
+        "kind",
+        "amount_minor",
+        "gst_minor",
+        "currency",
+        "amount_basis",
+        "value_basis",
+        "effective_at",
+        "effective_date",
+        "invoice_reference",
+        "adjusts_event_id",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "requested",
+                  "offered",
+                  "approved",
+                  "agreed",
+                  "awarded",
+                  "invoiced",
+                  "amount_revision",
+                  "payment"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount_minor": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "payment_reversal",
+                  "refund"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "amount_minor": {
+                "type": "integer",
+                "maximum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "payment",
+                  "payment_reversal",
+                  "refund"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value_basis": {
+                "const": "synthetic_recorded"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "afca_matter": {
+      "type": "object",
+      "properties": {
+        "afca_matter_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "external_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "party_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "received_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "assigned_manager": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stream": {
+          "type": "string",
+          "enum": [
+            "standard",
+            "fast_track",
+            "unknown"
+          ]
+        },
+        "stage_history": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "enum": [
+                  "registration_referral",
+                  "rules_assessment",
+                  "case_management",
+                  "conciliation",
+                  "preliminary_assessment",
+                  "decision",
+                  "closed",
+                  "unknown"
+                ]
+              },
+              "effective_at": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "effective_date": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "available_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "source_refs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/evidence_ref"
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "stage",
+              "effective_at",
+              "effective_date",
+              "available_at",
+              "source_refs"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        },
+        "closure_route": {
+          "type": "string",
+          "enum": [
+            "negotiation_agreement",
+            "conciliation_agreement",
+            "determination",
+            "withdrawn",
+            "other",
+            "unknown",
+            "not_closed"
+          ]
+        },
+        "closed_date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "afca_matter_id",
+        "external_reference",
+        "party_ids",
+        "received_date",
+        "assigned_manager",
+        "stream",
+        "stage_history",
+        "closure_route",
+        "closed_date",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "afca_link": {
+      "type": "object",
+      "properties": {
+        "afca_matter_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "case_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "link_state": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "uncertain"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "afca_matter_id",
+        "case_id",
+        "link_state",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "coverage_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "view_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "source_family": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "metric_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_exclusive": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "complete",
+            "partial",
+            "missing",
+            "unknown"
+          ]
+        },
+        "basis": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "coverage_id",
+        "view_id",
+        "source_family",
+        "metric_id",
+        "start",
+        "end_exclusive",
+        "state",
+        "basis",
+        "source_ids"
+      ],
+      "additionalProperties": false
+    },
+    "query": {
+      "type": "object",
+      "properties": {
+        "query_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "metric_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "definition_version": {
+          "const": "0.2.0"
+        },
+        "view_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "snapshot": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_version": {
+          "type": "string"
+        },
+        "finding_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "timezone": {
+          "const": "Australia/Melbourne"
+        },
+        "activity_start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "activity_end_exclusive": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "receipt_cohort_start": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_cohort_end_exclusive": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "receipt_basis": {
+          "type": "string",
+          "enum": [
+            "original_institution",
+            "complaints_team"
+          ]
+        },
+        "granularity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "daily",
+            "weekly",
+            "monthly",
+            "quarterly",
+            "annual"
+          ]
+        },
+        "issue_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "issue_population_mode": {
+          "type": "string",
+          "enum": [
+            "active_in_window",
+            "all_linked_to_date"
+          ]
+        },
+        "case_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "afca_matter_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "case_statuses": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "open",
+              "awaiting",
+              "closed",
+              "reopened",
+              "unknown"
+            ]
+          },
+          "minItems": 0
+        },
+        "age_bands": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "0_7",
+              "8_30",
+              "31_60",
+              "61_90",
+              "91_180",
+              "over_180",
+              "unknown"
+            ]
+          },
+          "minItems": 0
+        },
+        "membership_states": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "included",
+              "excluded",
+              "uncertain"
+            ]
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "query_id",
+        "metric_id",
+        "definition_version",
+        "view_id",
+        "snapshot",
+        "source_version",
+        "finding_version",
+        "timezone",
+        "activity_start",
+        "activity_end_exclusive",
+        "receipt_cohort_start",
+        "receipt_cohort_end_exclusive",
+        "receipt_basis",
+        "granularity",
+        "issue_id",
+        "issue_population_mode",
+        "case_ids",
+        "afca_matter_ids",
+        "case_statuses",
+        "age_bands",
+        "membership_states"
+      ],
+      "additionalProperties": false
+    },
+    "metric_point": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "known",
+            "partial",
+            "unavailable",
+            "not_applicable"
+          ]
+        },
+        "unit": {
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "contributor_set_reference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 160,
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "included_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "excluded_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncertain_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "coverage_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "calculation_reference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        }
+      },
+      "required": [
+        "value",
+        "state",
+        "unit",
+        "reason",
+        "contributor_set_reference",
+        "included_count",
+        "excluded_count",
+        "uncertain_count",
+        "coverage_ids",
+        "calculation_reference"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "unavailable",
+                  "not_applicable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "known",
+                  "partial"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "bucket": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end_exclusive": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "effective_end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "partial": {
+          "type": "boolean"
+        },
+        "group_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "point": {
+          "$ref": "#/$defs/metric_point"
+        }
+      },
+      "required": [
+        "start",
+        "end_exclusive",
+        "effective_end",
+        "partial",
+        "group_key",
+        "point"
+      ],
+      "additionalProperties": false
+    },
+    "metric_result": {
+      "type": "object",
+      "properties": {
+        "result_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "query": {
+          "$ref": "#/$defs/query"
+        },
+        "point": {
+          "$ref": "#/$defs/metric_point"
+        },
+        "buckets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/bucket"
+          },
+          "minItems": 0
+        },
+        "computed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "computation_state": {
+          "type": "string",
+          "enum": [
+            "ready",
+            "partial",
+            "failed",
+            "cancelled",
+            "limit_reached"
+          ]
+        },
+        "synthetic_demo": {
+          "const": true
+        }
+      },
+      "required": [
+        "result_id",
+        "query",
+        "point",
+        "buckets",
+        "computed_at",
+        "computation_state",
+        "synthetic_demo"
+      ],
+      "additionalProperties": false
+    },
+    "input_record": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "party"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/party"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "case"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/case"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "source"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/source"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "procedure"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/procedure"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "coverage"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/coverage"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "analysis_record": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "extracted_fact"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/extracted_fact"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "episode"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/episode"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "contact_link"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/contact_link"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "finding"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/finding"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "work_entry"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/work_entry"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "obligation"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/obligation"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "financial_event"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/financial_event"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "afca_matter"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/afca_matter"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "afca_link"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/afca_link"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "metric_result"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/metric_result"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": "0.2.0"
+            },
+            "kind": {
+              "const": "post_closure_return"
+            },
+            "envelope": {
+              "$ref": "#/$defs/envelope"
+            },
+            "data": {
+              "$ref": "#/$defs/post_closure_return"
+            }
+          },
+          "required": [
+            "schema_version",
+            "kind",
+            "envelope",
+            "data"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "record": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/input_record"
+        },
+        {
+          "$ref": "#/$defs/analysis_record"
+        }
+      ]
+    }
+  },
+  "$ref": "#/$defs/record"
+}

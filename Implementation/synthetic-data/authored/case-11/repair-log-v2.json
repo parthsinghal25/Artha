@@ -1,0 +1,14 @@
+{
+  "batch": "case11-rehearsal",
+  "package_version": 2,
+  "defects": [
+    {"id": "RD-1", "found_by": "independent review of v1 (external)", "kind": "content", "record": "D05 follow-up EML", "repair": "R01 bounded paragraph replacement (authored v2 overlay)"},
+    {"id": "RD-2", "found_by": "independent review of v1 (external)", "kind": "content", "record": "D06 call summary + fidelity matrix", "repair": "R02 interruption added, repetition removed, matrix split spoken/metadata with required-content checks"},
+    {"id": "RD-3", "found_by": "independent review of v1 (external)", "kind": "quotation_dependency", "record": "D10 forward EML", "repair": "re-rendered quoting the corrected D05 body exactly; own text unchanged"},
+    {"id": "RD-4", "found_by": "independent review of v1 (external)", "kind": "tooling", "record": "Batch.write", "repair": "R03 staging + atomic non-overwriting publish; review writers refuse existing records"},
+    {"id": "RD-5", "found_by": "independent review of v1 (external)", "kind": "tooling", "record": "run_checks", "repair": "R04 exact recorded inputs, layered verification, carry-forward of accepted bytes"},
+    {"id": "RD-6", "found_by": "repair-handoff request", "kind": "tooling", "record": "hard-coded AEDT", "repair": "Australia/Melbourne offset and abbreviation per supplied date; winter/summer fixtures"},
+    {"id": "RD-7", "found_by": "repair-handoff request", "kind": "tooling", "record": "forbidden-word scan", "repair": "ordinary words removed from the scan; leakage caught through control fields, identifiers and semantic checks"},
+    {"id": "RD-8", "found_by": "author's own checks during this repair", "kind": "author_side", "record": "authored D06 v2 summary", "description": "First v2 summary draft cited the case reference as if spoken and exceeded neither bound; removed from prose and the header-metadata distinction made explicit before delivery.", "content_changed_after_first_draft": true}
+  ]
+}

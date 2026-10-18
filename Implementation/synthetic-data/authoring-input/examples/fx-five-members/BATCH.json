@@ -1,0 +1,23 @@
+{
+ "input_format": "sdgen-authored-input",
+ "input_version": "1.0.0",
+ "batch_id": "fx-five-members",
+ "package_version": 1,
+ "purpose": "fixture",
+ "excluded_from_corpus": true,
+ "timezone": "Australia/Melbourne",
+ "observation_window": {
+  "start": "2025-10-01",
+  "end_exclusive": "2026-10-01"
+ },
+ "replay_checkpoints": [
+  "2026-05-31",
+  "2026-09-28",
+  "2026-09-30"
+ ],
+ "statement": "Canonical worked example and test fixture. Fictional FX- identities; never part of the 100-member corpus.",
+ "deliberate_gaps": [
+  "No work log is held for case FX-C01; missing work is not zero work.",
+  "The medical report mentioned in FX-SRC-0402 is not held."
+ ]
+}

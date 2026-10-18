@@ -1,0 +1,37 @@
+# Credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+*service-account*.json
+# Environments and caches
+.venv*/
+node_modules/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.DS_Store
+# Runtime and generated material
+var/
+dist/
+dist-*/
+reports/
+evidence/
+*.sqlite*
+*.db
+*.log
+*.zip
+*.safetensors
+*.gguf
+Data/synthesis/
+Data/incoming/
+Data/reviews/
+Data/archive/
+private-review/
+# Machine output
+Implementation/cloud/service.yaml

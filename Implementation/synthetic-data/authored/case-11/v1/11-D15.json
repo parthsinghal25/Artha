@@ -1,0 +1,52 @@
+{
+  "card": "11-D15",
+  "revision": 1,
+  "kind": "email",
+  "authoring_meta": {
+    "authored_by": "synthetic-data coding assistant (Claude, Anthropic) in-session",
+    "basis": "assistant pack 11 artifact 11-D15; unheld 11-09 is mentioned as not held and never fabricated"
+  },
+  "in_reply_to_card": "11-D10",
+  "references_cards": [
+    "11-D07",
+    "11-D08",
+    "11-D10"
+  ],
+  "greeting": "Hi Alicia,",
+  "blocks": [
+    {
+      "p": "Further to your request of 5 January and my note of 7 January on REQ-2025-11-01. I have attached the new assessment of DC-11 (11-10-new-dc-11-assessment.pdf, reference DOC-11-NDA)."
+    },
+    {
+      "ul": [
+        "DC-11 has now been assessed against the death-certificate document requirement. It is accepted for that requirement from this new assessment, dated 14 January 2026. The decision applies from its own date. It does not say how the December copy was treated, and it is not a decision on the benefit.",
+        "I have not attached an assessment of the December upload because none is held (our reference for that request is DOC-11-HDVA). I cannot give you its date or its outcome, and I cannot say why DC-11 was requested again.",
+        "RF-11 remains a separate question about the witness date. The new assessment covers DC-11 only."
+      ]
+    },
+    {
+      "p": "Let me know if you need anything else for your reply to Beth."
+    }
+  ],
+  "signoff": [
+    "Regards,",
+    "Alice Hughes",
+    "Death Benefits Administration"
+  ],
+  "required_tokens": [
+    "REQ-2025-11-01",
+    "11-10-new-dc-11-assessment.pdf",
+    "DOC-11-NDA",
+    "14 January 2026",
+    "none is held",
+    "RF-11 remains a separate"
+  ],
+  "must_not_match": [
+    "\\bpaid\\b",
+    "\\bpayment\\b",
+    "\\bAPR-",
+    "AF-e",
+    "accepted on 21 December",
+    "entitle"
+  ]
+}

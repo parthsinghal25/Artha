@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-18",
+  "scope": "clean-copy source/build/fixture verification; no model calls, cloud changes or quality evaluation",
+  "checks": {
+    "ui_build": "pass",
+    "serving_image_context": "pass",
+    "vertex_image_context": "pass",
+    "frozen_contracts_and_AI_imports": "pass",
+    "repository_hygiene": "pass: 13 frozen contract files verified; Python parsed; no credential patterns found",
+    "ui_browser": {
+      "passed": 60,
+      "failed": 0
+    },
+    "ui_gateway": {
+      "passed": 12,
+      "failed": 0
+    },
+    "backend_focused": {
+      "passed": 19,
+      "skipped": 14,
+      "failed": 0,
+      "note": "Cloud-serving tests require absent private pilot store; other fixture-dependent tests skip. Not live Cloud Run acceptance."
+    },
+    "authored_worked_example": "pass, in-memory only",
+    "data_focused": {
+      "passed": 34,
+      "failed": 2,
+      "findings": [
+        {
+          "test": "test_ledger_and_work_column_aliases_match_backend",
+          "finding": "Backend supports event_time column aliases absent from authored BACKEND_LEDGER_COLUMNS map. Same failure reproduced in original source tree.",
+          "classification": "existing source mismatch; not repaired in cleanup"
+        },
+        {
+          "test": "test_preserved_datasets_cannot_be_destinations[Data/synthesis/worker-packs-v5]",
+          "finding": "Historical glob-based preserved-directory check relies on directory existing; historical datasets intentionally excluded from source-only copy. Test generated a throwaway candidate inside clean-copy historical path; it was removed.",
+          "classification": "missing-historical-directory behavior; not a source syntax/build regression"
+        }
+      ]
+    }
+  },
+  "not_performed": [
+    "live cloud redeployment",
+    "successful Vertex inference",
+    "output-quality evaluation",
+    "full historical-data test suite"
+  ],
+  "credentials_or_model_requests": false
+}

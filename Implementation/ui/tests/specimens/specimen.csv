@@ -1,0 +1,5 @@
+reference,amount_minor,note
+00123,1250,"line one
+line two"
+00456,-300,plain
+00789,0,"quoted, comma"

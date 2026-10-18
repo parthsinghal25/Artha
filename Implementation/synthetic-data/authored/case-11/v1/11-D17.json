@@ -1,0 +1,138 @@
+{
+  "card": "11-D17",
+  "revision": 1,
+  "kind": "letter_with_cover_email",
+  "authoring_meta": {
+    "authored_by": "synthetic-data coding assistant (Claude, Anthropic) in-session",
+    "basis": "assistant pack 11 artifact 11-D17; financial state limited to approved 2026-01-13, payment is a later record (2026-03-18) and is not claimed"
+  },
+  "in_reply_to_card": "11-D24",
+  "letter_filename": "Final-response-letter-13-March-2026.pdf",
+  "letter": {
+    "title": "Final response to complaint",
+    "letterhead": {
+      "name": "Example Super",
+      "lines": [
+        "Complaints Team",
+        "complaints@examplesuper.example"
+      ]
+    },
+    "date_line": "13 March 2026",
+    "addressee": [
+      "Beth Martin",
+      "By email: beth-martin@member-mail.example"
+    ],
+    "reference_block": [
+      [
+        "Complaint reference",
+        "C-e1da28538652e263887a"
+      ],
+      [
+        "Request reference",
+        "REQ-2025-11-01"
+      ],
+      [
+        "Member",
+        "Alan Martin (deceased)"
+      ],
+      [
+        "Subject",
+        "Final response to your complaint"
+      ]
+    ],
+    "salutation": "Dear Beth,",
+    "blocks": [
+      {
+        "h": "Your complaint"
+      },
+      {
+        "p": "On 31 December 2025 you complained that the death certificate for your father, Alan Martin (item DC-11), was requested again after you uploaded it on 21 December 2025. You told us you recalled being told that your papers were all accepted, and you asked us to identify exactly which item was missing. You also asked for the separate death-benefit assessment to progress."
+      },
+      {
+        "h": "What we looked at"
+      },
+      {
+        "p": "We reviewed the documents you sent (DC-11, ID-11 and RF-11), your portal upload receipt (reference UP-11-20251221), the receiving document checklist for request REQ-2025-11-01 as at 7 January 2026, and the case-specific comparison prepared by Death Benefits Administration on 7 January 2026. We also spoke with you by phone on 2 and 9 January 2026."
+      },
+      {
+        "h": "What we found"
+      },
+      {
+        "ul": [
+          "Your upload receipt shows that DC-11, ID-11 and RF-11 were received through the portal on 21 December 2025. A receipt confirms that files arrived. It is not an assessment of whether a document meets a requirement.",
+          "As at 7 January 2026 the receiving checklist showed DC-11 as outstanding. The record of any earlier assessment of DC-11 is not held in the information available to our team, and we have been unable to obtain it.",
+          "On 14 January 2026 Death Benefits Administration assessed DC-11 against the death-certificate requirement and accepted it from that date (document reference DOC-11-NDA, attached). That assessment applies from 14 January 2026. It does not establish how your December copy was treated, and it is not a decision on the death benefit.",
+          "RF-11 has a separate witness-date question. It is a separate item from DC-11 and is not decided by this letter."
+        ]
+      },
+      {
+        "h": "Our decision"
+      },
+      {
+        "p": "We have not been able to establish why DC-11 was requested again after your upload, because the record of the original assessment of that document is not available to us. We therefore find that there is insufficient evidence on the disputed processing cause. This is not a finding that the request was justified, and it is not a finding that it was a mistake."
+      },
+      {
+        "h": "Remedy"
+      },
+      {
+        "p": "On 13 January 2026 a complaint remedy of $100.00 was approved (approval reference APR-11-01). This amount is separate from any death benefit that may be payable. Approval is a separate step from payment, and this letter does not confirm that the payment has been made."
+      },
+      {
+        "h": "What this letter does not decide"
+      },
+      {
+        "p": "This letter does not decide any entitlement to a death benefit, or its amount or payment. The benefit assessment is a separate process."
+      },
+      {
+        "h": "If you are not satisfied"
+      },
+      {
+        "p": "You have already lodged a complaint with the Australian Financial Complaints Authority (AFCA), which is registered as matter AF-e4f54a57eb8ac4390308. Example Super provided its position and evidence to AFCA on 21 January 2026. This letter does not pre-empt AFCA's outcome, and you may continue to deal with AFCA about your complaint."
+      },
+      {
+        "p": "If you would like to discuss this letter, you can reply to the covering email or write to alicia-romero@examplesuper.example."
+      }
+    ],
+    "signoff": [
+      "Yours sincerely,",
+      "",
+      "Alicia Romero",
+      "Complaints Case Manager",
+      "Example Super"
+    ],
+    "footer": "Example Super  |  Complaints Team  |  Final response"
+  },
+  "greeting": "Dear Beth,",
+  "blocks": [
+    {
+      "p": "Please find attached our final response to your complaint, dated 13 March 2026, together with the assessment of DC-11 dated 14 January 2026 that the letter refers to."
+    },
+    {
+      "p": "The letter sets out what we reviewed, what we found, our decision and the options open to you. If you have any questions about it, please reply to this email."
+    }
+  ],
+  "signoff": [
+    "Kind regards,",
+    "Alicia Romero",
+    "Complaints Case Manager",
+    "Example Super"
+  ],
+  "required_tokens": [
+    "insufficient evidence",
+    "$100.00",
+    "APR-11-01",
+    "DOC-11-NDA",
+    "AF-e4f54a57eb8ac4390308",
+    "14 January 2026",
+    "13 January 2026"
+  ],
+  "must_not_match": [
+    "\\bpaid\\b",
+    "was credited",
+    "payment was made",
+    "has been paid",
+    "accepted on 21 December",
+    "\\bresolved\\b",
+    "\\b(?:is|was|are|were) satisfied\\b"
+  ]
+}

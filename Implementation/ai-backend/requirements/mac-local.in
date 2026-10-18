@@ -1,0 +1,7 @@
+# Optional Apple-silicon extras: local Gemma (MLX) and Apple Vision OCR. No model weights are downloaded by pip;
+# weights must already exist at SDB_GEMMA_MODEL_PATH.
+pyobjc-framework-Vision ; sys_platform == "darwin"
+pyobjc-framework-Quartz ; sys_platform == "darwin"
+mlx ; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-lm ; sys_platform == "darwin" and platform_machine == "arm64"
+mlx-vlm ; sys_platform == "darwin" and platform_machine == "arm64"

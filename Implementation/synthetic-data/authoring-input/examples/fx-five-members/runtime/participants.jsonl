@@ -1,0 +1,12 @@
+{"actor_ref": "FX-P01", "display_name": "Priya Nair", "role": "member", "email": "priya.nair@member-mail.example"}
+{"actor_ref": "FX-P02", "display_name": "Tom Alvarez", "role": "member", "email": "t.alvarez@member-mail.example"}
+{"actor_ref": "FX-P03", "display_name": "Grace Whitfield", "role": "member", "email": "gracew@member-mail.example"}
+{"actor_ref": "FX-P04", "display_name": "Daniel Okafor", "role": "member", "email": "daniel.okafor@member-mail.example"}
+{"actor_ref": "FX-P05", "display_name": "Mei Lin Zhou", "role": "member", "email": "meilin.zhou@member-mail.example"}
+{"actor_ref": "FX-STAFF-PAY01", "display_name": "Harriet Cole", "role": "pension payments officer", "email": "harriet.cole@examplesuper.example", "organisation": "Example Super"}
+{"actor_ref": "FX-STAFF-CM01", "display_name": "Rohan Mehta", "role": "complaints case manager", "email": "rohan.mehta@examplesuper.example", "organisation": "Example Super"}
+{"actor_ref": "FX-STAFF-CM02", "display_name": "Lucy Tran", "role": "complaints case manager", "email": "lucy.tran@examplesuper.example", "organisation": "Example Super"}
+{"actor_ref": "FX-STAFF-FIN01", "display_name": "Owen Price", "role": "complaints finance officer", "email": "owen.price@examplesuper.example", "organisation": "Example Super"}
+{"actor_ref": "FX-STAFF-OPS01", "display_name": "Farah Siddiqui", "role": "complaints operations analyst", "email": "farah.siddiqui@examplesuper.example", "organisation": "Example Super"}
+{"actor_ref": "FX-VENDOR-CC", "display_name": "Contact centre summary service", "role": "vendor call summary service", "organisation": "Contact centre vendor"}
+{"actor_ref": "FX-EXT-SCHEME", "display_name": "Case correspondence team", "role": "external dispute scheme correspondence", "email": "case.team@external-disputes.example"}
